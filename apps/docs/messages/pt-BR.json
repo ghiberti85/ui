@@ -132,7 +132,12 @@
     "container_lg": "Container lg — máx. 1024 px",
     "section_form": "Componentes de Formulário",
     "section_display": "Componentes de Exibição",
-    "section_layout": "Componentes de Layout"
+    "section_layout": "Componentes de Layout",
+    "search_placeholder": "Buscar componentes...",
+    "search_label": "Buscar componentes",
+    "search_no_results": "Nenhum componente encontrado",
+    "search_results_count": "{count} componente(s) encontrado(s)",
+    "search_no_results_hint": "Nenhum componente corresponde a \"{query}\". Tente outro termo."
   },
   "componentPages": {
     "table_prop": "Prop",

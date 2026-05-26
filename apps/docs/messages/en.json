@@ -132,7 +132,12 @@
     "container_lg": "Container lg — max 1024 px",
     "section_form": "Form Components",
     "section_display": "Display Components",
-    "section_layout": "Layout Components"
+    "section_layout": "Layout Components",
+    "search_placeholder": "Search components...",
+    "search_label": "Search components",
+    "search_no_results": "No components found",
+    "search_results_count": "{count} component(s) found",
+    "search_no_results_hint": "No components match \"{query}\". Try a different search term."
   },
   "componentPages": {
     "table_prop": "Prop",
