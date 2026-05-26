@@ -39,7 +39,24 @@ const commonSemanticBridge = (ds) => `
   --spacing-4: var(--${ds}-spacing-4);
   --spacing-5: var(--${ds}-spacing-5);
   --spacing-6: var(--${ds}-spacing-6);
-  --spacing-8: var(--${ds}-spacing-8);`
+  --spacing-8: var(--${ds}-spacing-8);
+  --color-state-success: var(--${ds}-color-state-success);
+  --color-state-success-subtle: var(--${ds}-color-state-success-subtle);
+  --color-state-success-foreground: var(--${ds}-color-state-success-foreground);
+  --color-state-warning: var(--${ds}-color-state-warning);
+  --color-state-warning-subtle: var(--${ds}-color-state-warning-subtle);
+  --color-state-warning-foreground: var(--${ds}-color-state-warning-foreground);
+  --color-state-error: var(--${ds}-color-state-error);
+  --color-state-error-subtle: var(--${ds}-color-state-error-subtle);
+  --color-state-error-foreground: var(--${ds}-color-state-error-foreground);
+  --color-state-info: var(--${ds}-color-state-info);
+  --color-state-info-subtle: var(--${ds}-color-state-info-subtle);
+  --color-state-info-foreground: var(--${ds}-color-state-info-foreground);
+  --shadow-none: var(--${ds}-shadow-none);
+  --shadow-sm: var(--${ds}-shadow-sm);
+  --shadow-md: var(--${ds}-shadow-md);
+  --shadow-lg: var(--${ds}-shadow-lg);
+  --shadow-xl: var(--${ds}-shadow-xl);`
 
 // Per-DS extras
 const extraBridge = {
@@ -80,6 +97,7 @@ const darkModeTokens = {
     'color-semantic-primary': '#ffe600',
     'color-semantic-primary-foreground': '#000000',
     'color-semantic-accent': '#ff2d00',
+    'color-state-warning-foreground': '#000000',
   },
 }
 

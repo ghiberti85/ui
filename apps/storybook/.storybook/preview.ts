@@ -1,5 +1,8 @@
 import type { Preview } from '@storybook/react'
 
+// Import Google Fonts for all design systems
+import './fonts.css'
+
 // Import all design system token files
 import '@ghiberti85/tokens/ds-minimal'
 import '@ghiberti85/tokens/ds-editorial'
@@ -31,6 +34,13 @@ const preview: Preview = {
   ],
   parameters: {
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark',  value: '#000000' },
+      ],
+    },
   },
 }
 

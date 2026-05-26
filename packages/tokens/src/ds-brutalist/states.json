@@ -1,0 +1,18 @@
+{
+  "color": {
+    "state": {
+      "success":            { "$value": "#00ff41", "$type": "color" },
+      "success-subtle":     { "$value": "#003300", "$type": "color" },
+      "success-foreground": { "$value": "#000000", "$type": "color" },
+      "warning":            { "$value": "#ffff00", "$type": "color" },
+      "warning-subtle":     { "$value": "#333300", "$type": "color" },
+      "warning-foreground": { "$value": "#000000", "$type": "color" },
+      "error":              { "$value": "#ff0000", "$type": "color" },
+      "error-subtle":       { "$value": "#330000", "$type": "color" },
+      "error-foreground":   { "$value": "#ffffff", "$type": "color" },
+      "info":               { "$value": "#0080ff", "$type": "color" },
+      "info-subtle":        { "$value": "#001133", "$type": "color" },
+      "info-foreground":    { "$value": "#ffffff", "$type": "color" }
+    }
+  }
+}
