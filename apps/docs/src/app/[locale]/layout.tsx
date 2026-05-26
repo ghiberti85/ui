@@ -5,10 +5,39 @@ import Nav from '@/components/Nav'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import ModeToggle from '@/components/ModeToggle'
 import LocaleSwitcher from '@/components/LocaleSwitcher'
+import { DM_Sans, Playfair_Display, Bebas_Neue, JetBrains_Mono } from 'next/font/google'
 import '@ghiberti85/tokens/ds-minimal'
 import '@ghiberti85/tokens/ds-editorial'
 import '@ghiberti85/tokens/ds-brutalist'
 import './globals.css'
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+})
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-playfair-display',
+  display: 'swap',
+})
+
+const bebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-bebas-neue',
+  display: 'swap',
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+})
 
 export default async function LocaleLayout({
   children,
@@ -21,7 +50,11 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound()
 
   return (
-    <html lang={locale} data-theme="ds-minimal">
+    <html
+      lang={locale}
+      data-theme="ds-minimal"
+      className={`${dmSans.variable} ${playfairDisplay.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`}
+    >
       <body>
         <NextIntlClientProvider>
           <header className="site-header">

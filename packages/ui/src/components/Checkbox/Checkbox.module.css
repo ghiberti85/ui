@@ -1,0 +1,93 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2, 8px);
+}
+
+.root {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--border-radius-sm, 4px);
+  border: 2px solid var(--color-semantic-border, #e4e4e7);
+  background-color: var(--color-semantic-background, #fff);
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-semantic-primary, #2563eb);
+}
+
+.root[data-state='checked'],
+.root[data-state='indeterminate'] {
+  background-color: var(--color-semantic-primary, #2563eb);
+  border-color: var(--color-semantic-primary, #2563eb);
+}
+
+.root[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* CSS-drawn checkmark */
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-semantic-primary-foreground, #fff);
+  position: relative;
+}
+
+/* Checkmark via pseudo-element */
+.root[data-state='checked'] .indicator::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 2px solid currentColor;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+/* Indeterminate minus via pseudo-element */
+.root[data-state='indeterminate'] .indicator::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 1px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-md, 1rem);
+  font-weight: var(--typography-font-weight-medium, 500);
+  color: var(--color-semantic-foreground, #18181b);
+  line-height: var(--typography-line-height-tight, 1.25);
+  cursor: pointer;
+}
+
+.description {
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-sm, 0.875rem);
+  color: var(--color-semantic-foreground-muted, #71717a);
+  line-height: var(--typography-line-height-tight, 1.25);
+}

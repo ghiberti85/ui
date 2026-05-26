@@ -16,7 +16,26 @@
     "subtitle": "Three visual systems. One token format.",
     "ds_minimal": "Minimal",
     "ds_editorial": "Editorial",
-    "ds_brutalist": "Brutalist"
+    "ds_brutalist": "Brutalist",
+    "semantic_tokens": "Semantic Token Reference",
+    "semantic_tokens_desc": "How semantic color tokens resolve across each design system.",
+    "token_name": "Token"
+  },
+  "components": {
+    "title": "Components",
+    "subtitle": "React component library built on design tokens.",
+    "button_desc": "Interactive element with 4 variants and 4 sizes. Supports loading and disabled states.",
+    "badge_desc": "Small pill-shaped label for status and metadata.",
+    "input_desc": "Accessible text input with label, error, and disabled states.",
+    "card_desc": "Flexible container with compound sub-components.",
+    "input_label_default": "Email",
+    "input_label_error": "Email",
+    "input_label_disabled": "Email (disabled)",
+    "input_placeholder": "you@example.com",
+    "input_error_msg": "Please enter a valid email address.",
+    "card_title": "Card Title",
+    "card_description": "A short description of the card content.",
+    "card_content": "This is the card body. It can contain any content."
   },
   "theme_switcher": {
     "label": "Theme"
