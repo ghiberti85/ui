@@ -1,0 +1,22 @@
+{
+  "name": "@ghiberti85/tokens",
+  "version": "0.0.1",
+  "description": "Design system tokens — W3C format, powered by Style Dictionary v4",
+  "type": "module",
+  "scripts": {
+    "build": "node sd.config.mjs",
+    "dev": "node sd.config.mjs --watch",
+    "lint": "echo 'No linting needed for tokens'"
+  },
+  "exports": {
+    "./ds-minimal": "./dist/ds-minimal/variables.css",
+    "./ds-editorial": "./dist/ds-editorial/variables.css",
+    "./ds-brutalist": "./dist/ds-brutalist/variables.css",
+    "./ds-minimal/js": "./dist/ds-minimal/tokens.js",
+    "./ds-editorial/js": "./dist/ds-editorial/tokens.js",
+    "./ds-brutalist/js": "./dist/ds-brutalist/tokens.js"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.3.0"
+  }
+}

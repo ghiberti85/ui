@@ -1,0 +1,19 @@
+{
+  "color": {
+    "base": {
+      "white":        { "$value": "#FFFFFF", "$type": "color" },
+      "black":        { "$value": "#000000", "$type": "color" },
+      "yellow":       { "$value": "#FFE600", "$type": "color" },
+      "red":          { "$value": "#FF2D00", "$type": "color" },
+      "blue":         { "$value": "#0000FF", "$type": "color" }
+    },
+    "semantic": {
+      "background":         { "$value": "{color.base.white}",  "$type": "color" },
+      "foreground":         { "$value": "{color.base.black}",  "$type": "color" },
+      "border":             { "$value": "{color.base.black}",  "$type": "color" },
+      "primary":            { "$value": "{color.base.yellow}", "$type": "color" },
+      "primary-foreground": { "$value": "{color.base.black}",  "$type": "color" },
+      "accent":             { "$value": "{color.base.red}",    "$type": "color" }
+    }
+  }
+}

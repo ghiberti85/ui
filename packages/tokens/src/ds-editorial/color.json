@@ -1,0 +1,22 @@
+{
+  "color": {
+    "base": {
+      "cream":      { "$value": "#FAF7F2", "$type": "color" },
+      "ink":        { "$value": "#1A1208", "$type": "color" },
+      "ink-light":  { "$value": "#3D3020", "$type": "color" },
+      "warm-gray":  { "$value": "#8C7E6E", "$type": "color" },
+      "rule":       { "$value": "#D9CFC2", "$type": "color" },
+      "accent-red": { "$value": "#C0392B", "$type": "color" },
+      "accent-gold":{ "$value": "#B8860B", "$type": "color" }
+    },
+    "semantic": {
+      "background":         { "$value": "{color.base.cream}",      "$type": "color" },
+      "foreground":         { "$value": "{color.base.ink}",        "$type": "color" },
+      "foreground-muted":   { "$value": "{color.base.warm-gray}",  "$type": "color" },
+      "border":             { "$value": "{color.base.rule}",       "$type": "color" },
+      "primary":            { "$value": "{color.base.accent-red}",  "$type": "color" },
+      "primary-foreground": { "$value": "{color.base.cream}",      "$type": "color" },
+      "highlight":          { "$value": "{color.base.accent-gold}", "$type": "color" }
+    }
+  }
+}

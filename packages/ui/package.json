@@ -1,0 +1,36 @@
+{
+  "name": "@ghiberti85/ui",
+  "version": "0.0.1",
+  "description": "Component library — hybrid styled + headless React components",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "vitest run",
+    "test:ui": "vitest --ui"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@ghiberti85/tokens": "workspace:*",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@radix-ui/react-slot": "^1.2.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0",
+    "@vitest/ui": "^3.2.0",
+    "jsdom": "^26.1.0"
+  }
+}

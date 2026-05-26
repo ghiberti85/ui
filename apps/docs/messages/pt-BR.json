@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "tokens": "Tokens de Design",
+    "components": "Componentes",
+    "github": "GitHub"
+  },
+  "home": {
+    "title": "ghiberti85/ui",
+    "subtitle": "Design systems e biblioteca de componentes por Fernando Ghiberti",
+    "description": "Uma coleção de design systems e componentes React criados para projetos autorais. Múltiplas identidades visuais, uma API de componentes.",
+    "cta_components": "Ver Componentes",
+    "cta_tokens": "Explorar Tokens"
+  },
+  "tokens": {
+    "title": "Tokens de Design",
+    "subtitle": "Três sistemas visuais. Um formato de tokens.",
+    "ds_minimal": "Minimal",
+    "ds_editorial": "Editorial",
+    "ds_brutalist": "Brutalist"
+  },
+  "theme_switcher": {
+    "label": "Tema"
+  }
+}
