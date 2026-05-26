@@ -124,10 +124,13 @@ pnpm lint                             # lint all packages
 - [x] Token visualization page (color swatches + semantic table per DS)
 - [x] 196 unit tests passing across 14 components
 
+### Done (continued)
+- [x] Tooltip component (Radix UI, inverted colors, 4-direction animations, disabled state)
+- [x] Avatar component (image + fallback initials, auto-initials from alt, 5 sizes, circle/square)
+- [x] Docs component pages expanded (all 14 components with live demos — Form, Display, Layout sections)
+- [x] 221 unit tests passing across 16 components
+
 ### Next
-- [ ] Tooltip component (Radix UI Tooltip)
-- [ ] Avatar component (image + fallback initials)
-- [ ] Docs component pages expanded (all 14 components with live demos)
 - [ ] Docs home page redesign (showcase the 3 DS visually)
 - [ ] Storybook custom domain (Chromatic paid plan)
 
