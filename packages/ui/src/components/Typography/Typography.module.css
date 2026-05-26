@@ -1,0 +1,87 @@
+/* ── Heading ─────────────────────────────────────────────────────────────── */
+
+.heading {
+  font-family: var(--typography-font-family-sans);
+  font-weight: var(--typography-font-weight-bold);
+  line-height: var(--typography-line-height-tight);
+  color: var(--color-semantic-foreground);
+  margin: 0;
+}
+
+.heading-size-4xl { font-size: var(--typography-font-size-4xl, 2.25rem); }
+.heading-size-3xl { font-size: var(--typography-font-size-3xl, 1.875rem); }
+.heading-size-2xl { font-size: var(--typography-font-size-2xl, 1.5rem); }
+.heading-size-xl  { font-size: var(--typography-font-size-xl, 1.25rem); }
+.heading-size-lg  { font-size: var(--typography-font-size-lg, 1.125rem); }
+.heading-size-md  { font-size: var(--typography-font-size-md, 1rem); }
+
+/* ── Text ────────────────────────────────────────────────────────────────── */
+
+.text {
+  font-family: var(--typography-font-family-sans);
+  line-height: var(--typography-line-height-normal);
+  margin: 0;
+}
+
+.text-size-xs  { font-size: var(--typography-font-size-xs, 0.75rem); }
+.text-size-sm  { font-size: var(--typography-font-size-sm, 0.875rem); }
+.text-size-md  { font-size: var(--typography-font-size-md, 1rem); }
+.text-size-lg  { font-size: var(--typography-font-size-lg, 1.125rem); }
+.text-size-xl  { font-size: var(--typography-font-size-xl, 1.25rem); }
+
+.text-weight-regular  { font-weight: var(--typography-font-weight-regular, 400); }
+.text-weight-medium   { font-weight: var(--typography-font-weight-medium, 500); }
+.text-weight-semibold { font-weight: var(--typography-font-weight-semibold, 600); }
+.text-weight-bold     { font-weight: var(--typography-font-weight-bold, 700); }
+
+.text-color-default { color: var(--color-semantic-foreground); }
+.text-color-muted   { color: var(--color-semantic-foreground-muted); }
+
+/* ── Label ───────────────────────────────────────────────────────────────── */
+
+.label {
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-sm, 0.875rem);
+  font-weight: var(--typography-font-weight-medium, 500);
+  line-height: var(--typography-line-height-normal);
+  color: var(--color-semantic-foreground);
+  display: inline-block;
+}
+
+/* Asterisk via pseudo-element — not read by screen readers */
+.label-required::after {
+  content: ' *';
+  color: var(--color-semantic-foreground-muted);
+  aria-hidden: true;
+}
+
+/* ── Code ────────────────────────────────────────────────────────────────── */
+
+.code-inline {
+  font-family: var(--typography-font-family-mono, monospace);
+  font-size: 0.875em;
+  background-color: var(--color-semantic-background-subtle, rgba(0, 0, 0, 0.06));
+  color: var(--color-semantic-foreground);
+  padding: 0.1em 0.35em;
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.code-block {
+  font-family: var(--typography-font-family-mono, monospace);
+  font-size: var(--typography-font-size-sm, 0.875rem);
+  background-color: var(--color-semantic-background-subtle, rgba(0, 0, 0, 0.06));
+  color: var(--color-semantic-foreground);
+  padding: var(--spacing-4, 1rem);
+  border-radius: var(--border-radius-md, 6px);
+  overflow-x: auto;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.code-block code {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  padding: 0;
+}

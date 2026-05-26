@@ -1,0 +1,5 @@
+export { Heading, Text, Label, Code } from './Typography'
+export type { HeadingProps, HeadingSize, HeadingAs } from './Typography'
+export type { TextProps, TextSize, TextWeight, TextColor } from './Typography'
+export type { LabelProps } from './Typography'
+export type { CodeProps } from './Typography'
