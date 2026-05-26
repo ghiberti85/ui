@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import Nav from '@/components/Nav'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
+import ModeToggle from '@/components/ModeToggle'
+import LocaleSwitcher from '@/components/LocaleSwitcher'
 import '@ghiberti85/tokens/ds-minimal'
 import '@ghiberti85/tokens/ds-editorial'
 import '@ghiberti85/tokens/ds-brutalist'
@@ -25,7 +27,11 @@ export default async function LocaleLayout({
           <header className="site-header">
             <div className="site-header-inner">
               <Nav />
-              <ThemeSwitcher />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <ThemeSwitcher />
+                <LocaleSwitcher />
+                <ModeToggle />
+              </div>
             </div>
           </header>
           <main className="site-main">{children}</main>
