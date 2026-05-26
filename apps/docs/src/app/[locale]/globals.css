@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: var(--color-semantic-font-family, system-ui, sans-serif);
+  font-family: var(--font-family-sans, var(--font-dm-sans, system-ui, sans-serif));
   background: var(--color-semantic-background, #fff);
   color: var(--color-semantic-foreground, #0a0a0a);
   min-height: 100dvh;

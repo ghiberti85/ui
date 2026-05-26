@@ -16,7 +16,26 @@
     "subtitle": "Três sistemas visuais. Um formato de tokens.",
     "ds_minimal": "Minimal",
     "ds_editorial": "Editorial",
-    "ds_brutalist": "Brutalist"
+    "ds_brutalist": "Brutalist",
+    "semantic_tokens": "Referência de Tokens Semânticos",
+    "semantic_tokens_desc": "Como os tokens de cor semânticos se resolvem em cada design system.",
+    "token_name": "Token"
+  },
+  "components": {
+    "title": "Componentes",
+    "subtitle": "Biblioteca de componentes React construída sobre tokens de design.",
+    "button_desc": "Elemento interativo com 4 variantes e 4 tamanhos. Suporta estados de carregamento e desabilitado.",
+    "badge_desc": "Etiqueta pequena em formato de pílula para status e metadados.",
+    "input_desc": "Campo de texto acessível com rótulo, erro e estados desabilitados.",
+    "card_desc": "Contêiner flexível com sub-componentes compostos.",
+    "input_label_default": "E-mail",
+    "input_label_error": "E-mail",
+    "input_label_disabled": "E-mail (desabilitado)",
+    "input_placeholder": "voce@exemplo.com.br",
+    "input_error_msg": "Por favor, insira um endereço de e-mail válido.",
+    "card_title": "Título do Card",
+    "card_description": "Uma breve descrição do conteúdo do card.",
+    "card_content": "Este é o corpo do card. Pode conter qualquer conteúdo."
   },
   "theme_switcher": {
     "label": "Tema"
