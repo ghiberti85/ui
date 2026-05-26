@@ -13,11 +13,6 @@ body {
 }
 
 .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  height: 56px;
   border-bottom: 1px solid var(--color-semantic-border, #e4e4e7);
   position: sticky;
   top: 0;
@@ -25,8 +20,29 @@ body {
   z-index: 10;
 }
 
+.site-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
 .site-main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 2rem;
+}
+
+@media (max-width: 640px) {
+  .site-header-inner {
+    padding: 0 1rem;
+  }
+
+  .site-main {
+    padding: 2rem 1rem;
+  }
 }

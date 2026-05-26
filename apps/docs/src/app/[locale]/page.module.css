@@ -2,19 +2,20 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 640px;
-  padding-top: 4rem;
+  max-width: 680px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--color-semantic-foreground-muted, #71717a);
   font-weight: 500;
 }
@@ -23,11 +24,12 @@
   font-size: 1rem;
   color: var(--color-semantic-foreground-muted, #71717a);
   line-height: 1.75;
+  max-width: 560px;
 }
 
 .cta {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-top: 0.5rem;
   flex-wrap: wrap;
 }
@@ -42,6 +44,7 @@
   font-weight: 500;
   text-decoration: none;
   transition: opacity 0.15s;
+  cursor: pointer;
 }
 
 .ctaPrimary {
@@ -49,7 +52,7 @@
   color: #fff;
 }
 
-.ctaPrimary:hover { opacity: 0.9; }
+.ctaPrimary:hover { opacity: 0.85; }
 
 .ctaSecondary {
   background: transparent;
@@ -59,4 +62,17 @@
 
 .ctaSecondary:hover {
   background: var(--color-semantic-background-subtle, #fafafa);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 2.5rem;
+    gap: 1.25rem;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    justify-content: center;
+  }
 }
