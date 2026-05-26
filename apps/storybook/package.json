@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "echo 'Storybook lint skipped'"
+    "lint": "echo 'Storybook lint skipped'",
+    "chromatic": "npx chromatic --project-token=chpt_a8f4fbbe0cb68ab --build-script-name=build-storybook"
   },
   "dependencies": {
     "@ghiberti85/tokens": "workspace:*",
