@@ -1,4 +1,15 @@
 import '@testing-library/jest-dom'
+import { configureAxe } from 'vitest-axe'
+import 'vitest-axe/extend-expect'
+
+configureAxe({
+  globalOptions: {
+    rules: [
+      // Disable color-contrast rule — tokens aren't loaded in jsdom
+      { id: 'color-contrast', enabled: false },
+    ],
+  },
+})
 
 // jsdom does not implement pointer capture APIs — required by Radix UI components
 if (typeof window !== 'undefined') {

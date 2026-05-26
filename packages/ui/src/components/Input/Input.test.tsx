@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Input } from './Input'
@@ -71,5 +72,13 @@ describe('Input', () => {
   it('passes additional HTML attributes', () => {
     render(<Input id="x" data-testid="my-input" type="email" />)
     expect(screen.getByTestId('my-input')).toHaveAttribute('type', 'email')
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(<Input id="test" label="Name" />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

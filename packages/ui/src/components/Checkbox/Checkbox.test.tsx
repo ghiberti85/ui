@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Checkbox } from './Checkbox'
@@ -63,5 +64,13 @@ describe('Checkbox', () => {
   it('does not render label element when label prop is omitted', () => {
     render(<Checkbox id="x" />)
     expect(screen.queryByRole('label')).not.toBeInTheDocument()
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(<Checkbox id="terms" label="Accept terms" />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

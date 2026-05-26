@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import { Separator } from './Separator'
 
@@ -40,5 +41,13 @@ describe('Separator', () => {
   it('applies custom className', () => {
     render(<Separator className="my-separator" decorative={false} />)
     expect(screen.getByRole('separator')).toHaveClass('my-separator')
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(<Separator />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

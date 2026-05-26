@@ -16,6 +16,7 @@ import {
   Stack,
   Container,
 } from '@ghiberti85/ui'
+import { Link } from '@/i18n/navigation'
 import styles from './page.module.css'
 import { TextareaDemo, SelectDemo, CheckboxDemo, RadioGroupDemo, SwitchDemo } from '../../../components/demos/FormDemos'
 import { DialogDemo } from '../../../components/demos/DialogDemo'
@@ -43,7 +44,7 @@ export default async function ComponentsPage() {
 
       {/* Button */}
       <section className={styles.section}>
-        <h2 className={styles.componentName}>Button</h2>
+        <h2 className={styles.componentName}><Link href="/components/button">Button</Link></h2>
         <p className={styles.componentDesc}>{t('button_desc')}</p>
         <div className={styles.demo}>
           <Button variant="primary">Primary</Button>
@@ -60,7 +61,7 @@ export default async function ComponentsPage() {
 
       {/* Badge */}
       <section className={styles.section}>
-        <h2 className={styles.componentName}>Badge</h2>
+        <h2 className={styles.componentName}><Link href="/components/badge">Badge</Link></h2>
         <p className={styles.componentDesc}>{t('badge_desc')}</p>
         <div className={styles.demo}>
           <Badge variant="default">Default</Badge>
@@ -73,7 +74,7 @@ export default async function ComponentsPage() {
 
       {/* Input */}
       <section className={styles.section}>
-        <h2 className={styles.componentName}>Input</h2>
+        <h2 className={styles.componentName}><Link href="/components/input">Input</Link></h2>
         <p className={styles.componentDesc}>{t('input_desc')}</p>
         <div className={styles.demo} style={{ flexDirection: 'column', alignItems: 'flex-start', maxWidth: 360 }}>
           <Input label={t('input_label_default')} placeholder={t('input_placeholder')} />
@@ -85,7 +86,7 @@ export default async function ComponentsPage() {
 
       {/* Card */}
       <section className={styles.section}>
-        <h2 className={styles.componentName}>Card</h2>
+        <h2 className={styles.componentName}><Link href="/components/card">Card</Link></h2>
         <p className={styles.componentDesc}>{t('card_desc')}</p>
         <div className={styles.demo} style={{ alignItems: 'flex-start', flexWrap: 'wrap' }}>
           <Card style={{ width: 280 }}>
@@ -188,7 +189,7 @@ export default async function ComponentsPage() {
 
       {/* Dialog */}
       <section className={styles.section}>
-        <h2 className={styles.componentName}>Dialog</h2>
+        <h2 className={styles.componentName}><Link href="/components/dialog">Dialog</Link></h2>
         <p className={styles.componentDesc}>{t('dialog_desc')}</p>
         <div className={styles.demo}>
           <DialogDemo

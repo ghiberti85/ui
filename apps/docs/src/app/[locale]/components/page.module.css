@@ -25,6 +25,16 @@
   color: var(--color-semantic-foreground, #0a0a0a);
 }
 
+.componentName a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.componentName a:hover {
+  text-decoration: underline;
+  color: var(--color-semantic-primary, #6d28d9);
+}
+
 .componentDesc {
   font-size: 0.9375rem;
   color: var(--color-semantic-foreground-muted, #71717a);

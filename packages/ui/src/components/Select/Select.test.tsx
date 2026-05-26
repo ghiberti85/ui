@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Select } from './Select'
@@ -77,5 +78,13 @@ describe('Select', () => {
   it('renders with default value selected', () => {
     render(<Select id="fruit" options={options} defaultValue="banana" />)
     expect(screen.getByRole('combobox')).toHaveTextContent('Banana')
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(<Select id="fruit" label="Fruit" options={options} />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

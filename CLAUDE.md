@@ -127,12 +127,15 @@ pnpm lint                             # lint all packages
 ### Done (continued)
 - [x] Tooltip component (Radix UI, inverted colors, 4-direction animations, disabled state)
 - [x] Avatar component (image + fallback initials, auto-initials from alt, 5 sizes, circle/square)
-- [x] Docs component pages expanded (all 14 components with live demos — Form, Display, Layout sections)
+- [x] Docs component pages expanded (all 16 components with live demos — Form, Display, Layout sections)
+- [x] Docs home page redesign (DS showcase cards, component strip, how it works section)
 - [x] 221 unit tests passing across 16 components
 
 ### Next
-- [ ] Docs home page redesign (showcase the 3 DS visually)
 - [ ] Storybook custom domain (Chromatic paid plan)
+- [ ] Dark mode toggle in Storybook toolbar
+- [ ] Component individual pages (/components/button) with full API docs
+- [ ] Accessibility audit (axe-core integration in tests)
 
 ## Owner
 

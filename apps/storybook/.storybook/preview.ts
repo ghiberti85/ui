@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react'
+import { withMode } from './decorators'
 
 // Import Google Fonts for all design systems
 import './fonts.css'
@@ -24,6 +25,22 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
+    mode: {
+      description: 'Color mode',
+      defaultValue: 'light',
+      toolbar: {
+        title: 'Color mode',
+        icon: 'circlehollow',
+        items: [
+          { value: 'light', icon: 'sun',  title: 'Light' },
+          { value: 'dark',  icon: 'moon', title: 'Dark' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  globals: {
+    mode: 'light',
   },
   decorators: [
     (Story, context) => {
@@ -31,6 +48,7 @@ const preview: Preview = {
       document.documentElement.setAttribute('data-theme', theme)
       return Story()
     },
+    withMode,
   ],
   parameters: {
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },

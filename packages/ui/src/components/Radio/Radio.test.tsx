@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Radio, RadioGroup } from './Radio'
@@ -80,5 +81,15 @@ describe('Radio (standalone)', () => {
       </RadixRadioGroup.Root>
     )
     expect(ref.current).not.toBeNull()
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(
+      <RadioGroup name="color" legend="Pick a color" options={options} />
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })
