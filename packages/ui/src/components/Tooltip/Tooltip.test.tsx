@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Tooltip, TooltipProvider, TooltipRoot, TooltipTrigger, TooltipContent } from './Tooltip'
@@ -24,12 +24,11 @@ describe('Tooltip', () => {
     )
     await user.hover(screen.getByRole('button', { name: /hover me/i }))
     await waitFor(() => {
-      // Radix renders the text in both the visible bubble and a hidden role=tooltip span
-      expect(screen.getByRole('tooltip')).toBeInTheDocument()
+      expect(screen.getByText('Tooltip text')).toBeInTheDocument()
     })
   })
 
-  it('trigger has open state after hover', async () => {
+  it('hides tooltip content after unhover', async () => {
     const user = userEvent.setup()
     render(
       <Tooltip content="Tooltip text" delayDuration={0}>
@@ -39,7 +38,11 @@ describe('Tooltip', () => {
     const trigger = screen.getByRole('button', { name: /hover me/i })
     await user.hover(trigger)
     await waitFor(() => {
-      expect(trigger).toHaveAttribute('data-state', 'delayed-open')
+      expect(screen.getByText('Tooltip text')).toBeInTheDocument()
+    })
+    await user.unhover(trigger)
+    await waitFor(() => {
+      expect(screen.queryByText('Tooltip text')).not.toBeInTheDocument()
     })
   })
 
@@ -63,7 +66,7 @@ describe('Tooltip', () => {
       </Tooltip>
     )
     expect(screen.getByRole('button', { name: /no tip/i })).toBeInTheDocument()
-    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+    expect(screen.queryByText('Hidden tip')).not.toBeInTheDocument()
   })
 
   it('does not show tooltip on hover when disabled', async () => {
@@ -74,7 +77,7 @@ describe('Tooltip', () => {
       </Tooltip>
     )
     await user.hover(screen.getByRole('button'))
-    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+    expect(screen.queryByText('Hidden tip')).not.toBeInTheDocument()
   })
 
   it('forwards ref on trigger via raw primitives', () => {
