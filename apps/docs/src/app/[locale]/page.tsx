@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -11,10 +11,10 @@ export default function Home() {
       <p className={styles.subtitle}>{t('subtitle')}</p>
       <p className={styles.description}>{t('description')}</p>
       <div className={styles.cta}>
-        <Link href="components" className={styles.ctaPrimary}>
+        <Link href="/components" className={styles.ctaPrimary}>
           {t('cta_components')}
         </Link>
-        <Link href="tokens" className={styles.ctaSecondary}>
+        <Link href="/tokens" className={styles.ctaSecondary}>
           {t('cta_tokens')}
         </Link>
       </div>

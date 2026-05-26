@@ -23,8 +23,10 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider>
           <header className="site-header">
-            <Nav />
-            <ThemeSwitcher />
+            <div className="site-header-inner">
+              <Nav />
+              <ThemeSwitcher />
+            </div>
           </header>
           <main className="site-main">{children}</main>
         </NextIntlClientProvider>
