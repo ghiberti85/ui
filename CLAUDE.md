@@ -106,14 +106,29 @@ pnpm lint                             # lint all packages
 - [x] Language switcher (EN / PT-BR) in docs
 - [x] Vercel deploy (docs app)
 
+### Done (continued)
+- [x] Select component (Radix UI, label/error/helperText/size)
+- [x] Checkbox component (CSS-drawn, indeterminate state)
+- [x] Toggle / Switch component (Radix UI, animated)
+- [x] Radio / RadioGroup component (horizontal/vertical)
+- [x] Separator component (horizontal/vertical)
+- [x] Textarea component (resize prop)
+- [x] Typography components (Heading, Text, Label, Code)
+- [x] Layout primitives (Stack, Container)
+- [x] State tokens (success/warning/error/info) for all 3 DS
+- [x] Shadow/elevation tokens for all 3 DS
+- [x] Semantic bridge layer (unprefixed vars consumed by components)
+- [x] Dark mode tokens for all 3 DS + brutalist contrast fix
+- [x] Font loading via next/font (DM Sans, Playfair Display, Bebas Neue, JetBrains Mono)
+- [x] Docs component pages with live demos (Button, Badge, Input, Card)
+- [x] Token visualization page (color swatches + semantic table per DS)
+- [x] 196 unit tests passing across 14 components
+
 ### Next
-- [ ] Select component
-- [ ] Checkbox component
-- [ ] Toggle / Switch component
-- [ ] Tooltip component
-- [ ] Avatar component
-- [ ] Docs component pages with live demos
-- [ ] Token visualization page (full token table per DS)
+- [ ] Tooltip component (Radix UI Tooltip)
+- [ ] Avatar component (image + fallback initials)
+- [ ] Docs component pages expanded (all 14 components with live demos)
+- [ ] Docs home page redesign (showcase the 3 DS visually)
 - [ ] Storybook custom domain (Chromatic paid plan)
 
 ## Owner

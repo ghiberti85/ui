@@ -42,6 +42,45 @@
   margin-bottom: 1rem;
 }
 
+.sectionGroupTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-semantic-border, #e4e4e7);
+}
+
+.demoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3, 0.75rem);
+  align-items: flex-start;
+  padding: 1.25rem;
+  background: var(--color-semantic-background-subtle, #fafafa);
+  border-radius: var(--border-radius-md, 6px);
+  margin-bottom: 1rem;
+}
+
+.demoBox {
+  padding: 1rem;
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+  border-radius: var(--border-radius-md, 6px);
+  background: var(--color-semantic-background, #fff);
+  width: 100%;
+}
+
+.demoBoxLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+
 .importLine {
   display: block;
   font-size: 0.8125rem;
