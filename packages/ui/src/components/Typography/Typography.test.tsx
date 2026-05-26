@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import { Heading, Text, Label, Code } from './Typography'
 
@@ -198,5 +199,36 @@ describe('Code', () => {
   it('passes additional HTML attributes on block code', () => {
     render(<Code block data-testid="code-block-attr">code</Code>)
     expect(screen.getByTestId('code-block-attr')).toBeInTheDocument()
+  })
+})
+
+describe('accessibility', () => {
+  it('Heading has no violations', async () => {
+    const { container } = render(<Heading>Page Title</Heading>)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+
+  it('Text has no violations', async () => {
+    const { container } = render(<Text>Some paragraph text</Text>)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+
+  it('Label has no violations', async () => {
+    const { container } = render(
+      <div>
+        <Label htmlFor="field-id">Field label</Label>
+        <input id="field-id" />
+      </div>
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+
+  it('Code has no violations', async () => {
+    const { container } = render(<Code>const x = 1</Code>)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

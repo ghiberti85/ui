@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import { Badge } from './Badge'
 
 describe('Badge', () => {
@@ -47,5 +48,13 @@ describe('Badge', () => {
     const ref = { current: null }
     render(<Badge ref={ref}>Ref</Badge>)
     expect(ref.current).not.toBeNull()
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(<Badge>New</Badge>)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

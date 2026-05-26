@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './Card'
 
@@ -107,5 +108,22 @@ describe('Card compound usage', () => {
     expect(screen.getByText('Card Description')).toBeInTheDocument()
     expect(screen.getByText('Card Body')).toBeInTheDocument()
     expect(screen.getByText('Card Footer')).toBeInTheDocument()
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(
+      <Card>
+        <CardHeader>
+          <CardTitle>Title</CardTitle>
+          <CardDescription>Description</CardDescription>
+        </CardHeader>
+        <CardContent>Content</CardContent>
+        <CardFooter>Footer</CardFooter>
+      </Card>
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

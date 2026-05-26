@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import { Stack } from './Stack'
 
@@ -117,5 +118,13 @@ describe('Stack', () => {
       </Stack>
     )
     expect(screen.getByTestId('stack')).toHaveAttribute('aria-label', 'layout')
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(<Stack>content</Stack>)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

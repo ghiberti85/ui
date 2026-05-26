@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import {
@@ -158,5 +159,23 @@ describe('Dialog', () => {
       </Dialog>
     )
     expect(ref.current).not.toBeNull()
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations when open', async () => {
+    const { container } = render(
+      <Dialog open>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Test Dialog</DialogTitle>
+            <DialogDescription>Description for the dialog.</DialogDescription>
+          </DialogHeader>
+          <p>Dialog content</p>
+        </DialogContent>
+      </Dialog>
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

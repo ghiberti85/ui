@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Switch } from './Switch'
@@ -57,5 +58,13 @@ describe('Switch', () => {
   it('does not render label element when label prop is omitted', () => {
     render(<Switch id="x" />)
     expect(screen.queryByRole('label')).not.toBeInTheDocument()
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(<Switch id="notifications" label="Enable notifications" />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

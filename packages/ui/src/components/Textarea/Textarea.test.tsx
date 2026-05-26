@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Textarea } from './Textarea'
@@ -86,5 +87,13 @@ describe('Textarea', () => {
   it('passes additional HTML attributes', () => {
     render(<Textarea id="x" data-testid="my-ta" />)
     expect(screen.getByTestId('my-ta')).toBeInTheDocument()
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(<Textarea id="message" label="Message" />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

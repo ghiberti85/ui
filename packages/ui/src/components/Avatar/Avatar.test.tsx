@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { Avatar } from './Avatar'
 
@@ -70,5 +71,14 @@ describe('Avatar', () => {
   it('merges custom className', () => {
     const { container } = render(<Avatar fallback="FG" className="custom-class" />)
     expect((container.firstChild as HTMLElement).className).toMatch(/custom-class/)
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    // Provide alt to satisfy role="img" accessible label requirement
+    const { container } = render(<Avatar fallback="FG" alt="Fernando Ghiberti" />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

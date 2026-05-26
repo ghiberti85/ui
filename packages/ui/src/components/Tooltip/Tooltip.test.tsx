@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import { axe } from 'vitest-axe'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Tooltip, TooltipProvider, TooltipRoot, TooltipTrigger, TooltipContent } from './Tooltip'
@@ -98,5 +99,20 @@ describe('Tooltip', () => {
     expect(TooltipRoot).toBeDefined()
     expect(TooltipTrigger).toBeDefined()
     expect(TooltipContent).toBeDefined()
+  })
+})
+
+describe('accessibility', () => {
+  it('has no violations', async () => {
+    const { container } = render(
+      <TooltipProvider>
+        <TooltipRoot>
+          <TooltipTrigger>Hover me</TooltipTrigger>
+          <TooltipContent>Tooltip text</TooltipContent>
+        </TooltipRoot>
+      </TooltipProvider>
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })
