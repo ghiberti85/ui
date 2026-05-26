@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: var(--color-semantic-foreground-muted, #71717a);
+}
+
+.select {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+  border-radius: var(--border-radius-sm, 4px);
+  background: var(--color-semantic-background, #fff);
+  color: var(--color-semantic-foreground, #0a0a0a);
+  cursor: pointer;
+}
