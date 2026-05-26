@@ -1,0 +1,98 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.5);
+  animation: overlayShow 150ms ease;
+  z-index: 50;
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 480px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: var(--color-semantic-background, #fff);
+  border-radius: var(--border-radius-lg, 8px);
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.12);
+  padding: var(--spacing-6, 24px);
+  font-family: var(--typography-font-family-sans);
+  color: var(--color-semantic-foreground, #18181b);
+  animation: contentShow 150ms ease;
+  z-index: 51;
+}
+
+.content:focus-visible {
+  outline: none;
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--spacing-3, 12px);
+  right: var(--spacing-3, 12px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--border-radius-md, 6px);
+  border: none;
+  background: transparent;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  cursor: pointer;
+  font-size: var(--typography-font-size-sm, 0.875rem);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.closeButton:hover {
+  background-color: var(--color-semantic-background-subtle, #f4f4f5);
+  color: var(--color-semantic-foreground, #18181b);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--color-semantic-primary, #2563eb);
+  outline-offset: 2px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1, 4px);
+  margin-bottom: var(--spacing-4, 16px);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-2, 8px);
+  margin-top: var(--spacing-6, 24px);
+}
+
+.title {
+  font-size: var(--typography-font-size-lg, 1.125rem);
+  font-weight: var(--typography-font-weight-semibold, 600);
+  line-height: var(--typography-line-height-tight, 1.25);
+  margin: 0;
+}
+
+.description {
+  font-size: var(--typography-font-size-sm, 0.875rem);
+  color: var(--color-semantic-foreground-muted, #71717a);
+  line-height: var(--typography-line-height-normal, 1.5);
+  margin: 0;
+}
+
+@keyframes overlayShow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contentShow {
+  from { opacity: 0; transform: translate(-50%, -48%) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}

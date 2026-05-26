@@ -1,0 +1,62 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 640px;
+  padding-top: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  line-height: 1.75;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--border-radius-md, 6px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.ctaPrimary {
+  background: var(--color-semantic-primary, #2563eb);
+  color: #fff;
+}
+
+.ctaPrimary:hover { opacity: 0.9; }
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--color-semantic-foreground, #0a0a0a);
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+}
+
+.ctaSecondary:hover {
+  background: var(--color-semantic-background-subtle, #fafafa);
+}
