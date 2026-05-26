@@ -24,7 +24,9 @@
       "border":             { "$value": "{color.base.gray-200}","$type": "color" },
       "primary":            { "$value": "{color.base.accent}",  "$type": "color" },
       "primary-hover":      { "$value": "{color.base.accent-hover}", "$type": "color" },
-      "primary-foreground": { "$value": "{color.base.white}",   "$type": "color" }
+      "primary-foreground": { "$value": "{color.base.white}",   "$type": "color" },
+      "destructive":            { "$value": "#DC2626",             "$type": "color" },
+      "destructive-foreground": { "$value": "{color.base.white}",  "$type": "color" }
     }
   }
 }

@@ -20,5 +20,12 @@
   },
   "theme_switcher": {
     "label": "Tema"
+  },
+  "mode_toggle": {
+    "light": "Alternar para modo claro",
+    "dark": "Alternar para modo escuro"
+  },
+  "locale_switcher": {
+    "label": "Idioma"
   }
 }
