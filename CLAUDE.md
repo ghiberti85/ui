@@ -146,10 +146,17 @@ pnpm lint                             # lint all packages
 - [x] Component individual pages (/components/button, /badge, /input, /card, /dialog)
 - [x] Accessibility audit — vitest-axe integrated, 240 tests passing (19 axe tests)
 
-### Next
-- [ ] Storybook custom domain (Chromatic paid plan)
+### Done (continued)
 - [x] Individual pages for remaining 11 components (Textarea, Select, Checkbox, Radio, Switch, Separator, Typography, Stack, Container, Tooltip, Avatar)
-- [ ] Search / filter on /components page
+- [x] Search / filter on /components page
+- [x] Responsive mobile nav with hamburger menu + Storybook link
+- [x] Mandatory end-of-iteration flow (docs → tests → commit → PR → merge)
+
+### Next
+- [ ] Página de "Getting Started" (instalação, configuração, primeiro componente)
+- [ ] Sidebar de navegação na docs (links para todas as páginas de componentes)
+- [ ] Navegação anterior/próximo entre páginas de componentes
+- [ ] Testes de acessibilidade (axe) para Tooltip e Avatar
 
 ## Owner
 
