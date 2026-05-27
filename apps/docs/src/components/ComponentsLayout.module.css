@@ -129,10 +129,15 @@
   .sidebar {
     position: static;
     max-height: none;
-    overflow: visible;
+    overflow: hidden;
     padding-right: 0;
     padding-bottom: 0;
     margin-bottom: 0;
+    /* extend to page edges so the strip goes full width */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   /* Mobile nav: horizontal scrollable strip, no wrap */
@@ -145,12 +150,12 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 0.25rem;
-    padding-bottom: 0.75rem;
-    /* hide scrollbar visually but keep scroll */
+    padding: 0.5rem 1rem 0.625rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
     scrollbar-width: none;
     -ms-overflow-style: none;
     border-bottom: 1px solid var(--color-semantic-border, #e4e4e7);
-    margin-bottom: 0.25rem;
   }
 
   .sidebarList::-webkit-scrollbar {
