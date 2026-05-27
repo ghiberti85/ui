@@ -36,7 +36,6 @@ import {
   TableHead,
   TableCell,
   TableCaption,
-  Toaster,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -493,7 +492,6 @@ export default function ComponentsPageClient() {
         <>
           <div className={styles.demoColumn}>
             <ToastDemo />
-            <Toaster />
           </div>
           <code className={styles.importLine}>import {'{ Toaster, useToast }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
