@@ -52,12 +52,12 @@ body {
     gap: 0;
   }
 
-  /* Hide theme/locale/mode controls from header on mobile — they live in the Nav dropdown */
   .site-header-controls {
     display: none;
   }
 
   .site-main {
     padding: 2rem 1rem;
+    padding-bottom: calc(2rem + 60px);
   }
 }

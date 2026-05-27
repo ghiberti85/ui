@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Outer rounded square -->
+  <rect width="32" height="32" rx="8" fill="#0a0a0a"/>
+  <!-- Token stack — 3 horizontal bars offset like stacked design tokens -->
+  <rect x="7" y="9" width="14" height="3" rx="1.5" fill="white"/>
+  <rect x="7" y="14.5" width="10" height="3" rx="1.5" fill="white" opacity="0.7"/>
+  <rect x="7" y="20" width="18" height="3" rx="1.5" fill="white" opacity="0.45"/>
+  <!-- Accent dot — primary color -->
+  <circle cx="25" cy="10.5" r="3" fill="#6d28d9"/>
+</svg>

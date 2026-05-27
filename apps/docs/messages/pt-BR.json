@@ -5,7 +5,9 @@
     "github": "GitHub",
     "storybook": "Storybook",
     "menu_open": "Abrir menu",
-    "menu_close": "Fechar menu"
+    "menu_close": "Fechar menu",
+    "home": "Início",
+    "settings": "Ajustes"
   },
   "home": {
     "title": "ghiberti85/ui",
