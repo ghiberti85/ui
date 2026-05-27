@@ -1,1 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Global reset + base styles for Storybook ─────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-sans, 'DM Sans', system-ui, sans-serif);
+  background: var(--color-semantic-background, #ffffff);
+  color: var(--color-semantic-foreground, #0a0a0a);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Storybook story wrapper picks up theme background */
+.sb-show-main.sb-main-padded {
+  background: var(--color-semantic-background, #ffffff);
+}
