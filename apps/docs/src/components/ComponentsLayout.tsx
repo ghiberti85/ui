@@ -87,7 +87,7 @@ export default function ComponentsLayout({
                 </Link>
               ) : <span className={styles.prevNextSpacer} />}
               {nextSlug && (
-                <Link href={`/components/${nextSlug}`} className={`${styles.prevNextCard} ${styles.prevNextCardRight}`}>
+                <Link href={`/components/${nextSlug}`} className={styles.prevNextCard}>
                   <span className={styles.prevNextName}>{COMPONENT_LABELS[nextSlug]}</span>
                   <span className={styles.prevNextDir}>→</span>
                 </Link>
