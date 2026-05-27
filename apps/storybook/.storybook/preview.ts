@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react'
 import { withMode } from './decorators'
 
-// Import Google Fonts for all design systems
+// Import Google Fonts + global base reset for all design systems
 import './fonts.css'
 
 // Import all design system token files
@@ -52,13 +52,9 @@ const preview: Preview = {
   ],
   parameters: {
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#ffffff' },
-        { name: 'dark',  value: '#000000' },
-      ],
-    },
+    // Disable the built-in Storybook backgrounds addon so our CSS tokens control the bg
+    backgrounds: { disable: true },
+    layout: 'padded',
   },
 }
 
