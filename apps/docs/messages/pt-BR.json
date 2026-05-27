@@ -7,7 +7,8 @@
     "menu_open": "Abrir menu",
     "menu_close": "Fechar menu",
     "home": "Início",
-    "settings": "Ajustes"
+    "settings": "Ajustes",
+    "getting_started": "Começar"
   },
   "home": {
     "title": "ghiberti85/ui",
@@ -315,6 +316,32 @@
     "button_group_variants": "Variantes",
     "button_group_sizes": "Tamanhos",
     "button_group_states": "Estados"
+  },
+  "sidebar": {
+    "components_heading": "Componentes",
+    "all_components": "Todos os Componentes",
+    "previous": "Anterior",
+    "next": "Próximo"
+  },
+  "gettingStarted": {
+    "badge": "Documentação",
+    "title": "Primeiros Passos",
+    "subtitle": "Instale os pacotes, configure o tema e renderize seu primeiro componente em minutos.",
+    "step_install_title": "Instale os pacotes",
+    "step_install_desc": "Adicione os tokens e a biblioteca de componentes ao seu projeto.",
+    "step_tokens_title": "Importe o CSS do design system",
+    "step_tokens_desc": "Importe um arquivo de design system na raiz da sua aplicação (ex: layout.tsx ou _app.tsx). Isso injeta todas as CSS custom properties na página.",
+    "step_tokens_tip": "Cada design system tem seu próprio arquivo CSS. Você pode carregar múltiplos sistemas e alternar entre eles em tempo de execução usando o atributo data-theme.",
+    "step_theme_title": "Aplique um tema no elemento HTML",
+    "step_theme_desc": "Adicione data-theme na sua tag <html>. Todos os componentes leem os tokens desse escopo automaticamente.",
+    "step_component_title": "Use seu primeiro componente",
+    "step_component_desc": "Importe qualquer componente de @ghiberti85/ui e use no seu JSX. Nenhuma configuração extra necessária.",
+    "step_switch_title": "Troque temas e modo escuro",
+    "step_switch_desc": "Temas e modo escuro são CSS puro — troque um atributo data em tempo de execução e todos os componentes atualizam instantaneamente.",
+    "next_title": "O que vem a seguir?",
+    "next_components": "Ver Componentes",
+    "next_tokens": "Explorar Tokens",
+    "next_github": "Ver no GitHub"
   },
   "theme_switcher": {
     "label": "Tema"
