@@ -39,7 +39,7 @@
     var(--color-semantic-primary, #2563eb)
   );
   background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
+  animation: shimmer 6s linear infinite;
 }
 
 @keyframes shimmer {
