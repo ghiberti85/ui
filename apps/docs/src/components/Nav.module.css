@@ -72,7 +72,7 @@
 
 .mobileMenu {
   position: fixed;
-  top: 57px; /* height of the header (56px) + 1px border */
+  top: 57px; /* header height (56px) + 1px border */
   left: 0;
   right: 0;
   background: var(--color-semantic-background, #fff);
@@ -98,6 +98,17 @@
 .mobileLink:hover {
   background: var(--color-semantic-background-subtle, #fafafa);
   color: var(--color-semantic-foreground, #0a0a0a);
+}
+
+/* Controls row inside mobile dropdown (theme + locale + mode) */
+.mobileControls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.625rem 0.875rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--color-semantic-border, #e4e4e7);
 }
 
 /* ── Responsive breakpoint ─────────────────────────────────────────────────── */
