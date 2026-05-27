@@ -9,14 +9,21 @@
     "chromatic": "npx chromatic --project-token=chpt_a8f4fbbe0cb68ab --build-script-name=build-storybook"
   },
   "dependencies": {
+    "@fontsource/bebas-neue": "^5.2.7",
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/dm-sans": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/playfair-display": "^5.2.8",
+    "@fontsource/source-sans-3": "^5.2.9",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@ghiberti85/tokens": "workspace:*",
     "@ghiberti85/ui": "workspace:*"
   },
   "devDependencies": {
-    "@storybook/react": "^8.6.0",
     "@storybook/addon-a11y": "^8.6.0",
     "@storybook/addon-essentials": "^8.6.0",
     "@storybook/addon-interactions": "^8.6.0",
+    "@storybook/react": "^8.6.0",
     "@storybook/react-vite": "^8.6.0",
     "@storybook/test": "^8.6.0",
     "@types/react": "^19.1.0",
