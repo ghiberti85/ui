@@ -135,7 +135,7 @@ pnpm lint                             # lint all packages
 
 ### Next
 - [ ] Storybook custom domain (Chromatic paid plan)
-- [ ] Individual pages for remaining 11 components (Textarea, Select, Checkbox, Radio, Switch, Separator, Typography, Stack, Container, Tooltip, Avatar)
+- [x] Individual pages for remaining 11 components (Textarea, Select, Checkbox, Radio, Switch, Separator, Typography, Stack, Container, Tooltip, Avatar)
 - [ ] Search / filter on /components page
 
 ## Owner

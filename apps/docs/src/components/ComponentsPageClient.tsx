@@ -18,6 +18,8 @@ import {
   Code,
   Stack,
   Container,
+  Tooltip,
+  Avatar,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -31,6 +33,7 @@ interface ComponentEntry {
   description: string
   section: string
   element: React.ReactNode
+  href?: string
 }
 
 export default function ComponentsPageClient() {
@@ -136,6 +139,7 @@ export default function ComponentsPageClient() {
       name: 'Textarea',
       description: t('textarea_desc'),
       section: 'form',
+      href: '/components/textarea',
       element: (
         <>
           <div className={styles.demo}>
@@ -157,6 +161,7 @@ export default function ComponentsPageClient() {
       name: 'Select',
       description: t('select_desc'),
       section: 'form',
+      href: '/components/select',
       element: (
         <>
           <div className={styles.demo}>
@@ -178,6 +183,7 @@ export default function ComponentsPageClient() {
       name: 'Checkbox',
       description: t('checkbox_desc'),
       section: 'form',
+      href: '/components/checkbox',
       element: (
         <>
           <div className={styles.demo}>
@@ -198,6 +204,7 @@ export default function ComponentsPageClient() {
       name: 'Radio / RadioGroup',
       description: t('radio_desc'),
       section: 'form',
+      href: '/components/radio',
       element: (
         <>
           <div className={styles.demo}>
@@ -215,6 +222,7 @@ export default function ComponentsPageClient() {
       name: 'Switch',
       description: t('switch_desc'),
       section: 'form',
+      href: '/components/switch',
       element: (
         <>
           <div className={styles.demo}>
@@ -256,6 +264,7 @@ export default function ComponentsPageClient() {
       name: 'Separator',
       description: t('separator_desc'),
       section: 'display',
+      href: '/components/separator',
       element: (
         <>
           <div className={styles.demoColumn}>
@@ -272,6 +281,7 @@ export default function ComponentsPageClient() {
       name: 'Typography',
       description: t('typography_desc'),
       section: 'display',
+      href: '/components/typography',
       element: (
         <>
           <div className={styles.demoBoxLabel}>{t('typography_heading_label')}</div>
@@ -304,6 +314,7 @@ export default function ComponentsPageClient() {
       name: 'Stack',
       description: t('stack_desc'),
       section: 'layout',
+      href: '/components/stack',
       element: (
         <>
           <div className={styles.demoBoxLabel}>{t('stack_vertical_label')}</div>
@@ -331,6 +342,7 @@ export default function ComponentsPageClient() {
       name: 'Container',
       description: t('container_desc'),
       section: 'layout',
+      href: '/components/container',
       element: (
         <>
           <div className={styles.demoColumn}>
@@ -345,6 +357,53 @@ export default function ComponentsPageClient() {
             </Container>
           </div>
           <code className={styles.importLine}>import {'{ Container }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'tooltip',
+      name: 'Tooltip',
+      description: t('tooltip_desc'),
+      section: 'display',
+      href: '/components/tooltip',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Tooltip content={t('tooltip_demo_top')} side="top">
+              <Button variant="secondary">Top</Button>
+            </Tooltip>
+            <Tooltip content={t('tooltip_demo_right')} side="right">
+              <Button variant="secondary">Right</Button>
+            </Tooltip>
+            <Tooltip content={t('tooltip_demo_bottom')} side="bottom">
+              <Button variant="secondary">Bottom</Button>
+            </Tooltip>
+            <Tooltip content={t('tooltip_demo_left')} side="left">
+              <Button variant="secondary">Left</Button>
+            </Tooltip>
+          </div>
+          <code className={styles.importLine}>import {'{ Tooltip }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'avatar',
+      name: 'Avatar',
+      description: t('avatar_desc'),
+      section: 'display',
+      href: '/components/avatar',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Avatar fallback="FG" size="xs" />
+            <Avatar fallback="FG" size="sm" />
+            <Avatar fallback="FG" size="md" />
+            <Avatar fallback="FG" size="lg" />
+            <Avatar fallback="FG" size="xl" />
+            <Avatar fallback="FG" size="lg" shape="square" />
+            <Avatar alt="Fernando Ghiberti" size="md" />
+          </div>
+          <code className={styles.importLine}>import {'{ Avatar }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },
