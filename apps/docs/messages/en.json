@@ -149,7 +149,11 @@
     "tooltip_demo_top": "Tooltip on top",
     "tooltip_demo_right": "Tooltip on right",
     "tooltip_demo_bottom": "Tooltip on bottom",
-    "tooltip_demo_left": "Tooltip on left"
+    "tooltip_demo_left": "Tooltip on left",
+    "tabs_desc": "Layered sections of content displayed one at a time. Built on Radix UI with keyboard navigation.",
+    "accordion_desc": "Vertically stacked interactive headings that each reveal a section of content. Supports single and multiple open items.",
+    "toast_desc": "Temporary feedback messages that appear and auto-dismiss. Supports default, success, warning, error, and info variants.",
+    "table_component_desc": "Responsive data table with header, body, footer, and caption. Supports striped rows."
   },
   "componentPages": {
     "table_prop": "Prop",

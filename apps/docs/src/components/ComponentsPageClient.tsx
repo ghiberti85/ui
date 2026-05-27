@@ -31,9 +31,12 @@ import {
   Table,
   TableHeader,
   TableBody,
+  TableFooter,
   TableRow,
   TableHead,
   TableCell,
+  TableCaption,
+  Toaster,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -419,6 +422,116 @@ export default function ComponentsPageClient() {
             <Avatar alt="Fernando Ghiberti" size="md" />
           </div>
           <code className={styles.importLine}>import {'{ Avatar }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'tabs',
+      name: 'Tabs',
+      description: t('tabs_desc'),
+      section: 'display',
+      href: '/components/tabs',
+      element: (
+        <>
+          <div className={styles.demoColumn}>
+            <Tabs defaultValue="account">
+              <TabsList>
+                <TabsTrigger value="account">Account</TabsTrigger>
+                <TabsTrigger value="password">Password</TabsTrigger>
+                <TabsTrigger value="notifications">Notifications</TabsTrigger>
+              </TabsList>
+              <TabsContent value="account">
+                <p style={{ fontSize: '0.875rem', padding: '0.75rem 0' }}>Manage your account settings.</p>
+              </TabsContent>
+              <TabsContent value="password">
+                <p style={{ fontSize: '0.875rem', padding: '0.75rem 0' }}>Change your password here.</p>
+              </TabsContent>
+              <TabsContent value="notifications">
+                <p style={{ fontSize: '0.875rem', padding: '0.75rem 0' }}>Configure notification preferences.</p>
+              </TabsContent>
+            </Tabs>
+          </div>
+          <code className={styles.importLine}>import {'{ Tabs, TabsList, TabsTrigger, TabsContent }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'accordion',
+      name: 'Accordion',
+      description: t('accordion_desc'),
+      section: 'display',
+      href: '/components/accordion',
+      element: (
+        <>
+          <div className={styles.demoColumn} style={{ maxWidth: 560 }}>
+            <Accordion type="single" collapsible defaultValue="item-1">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What are design tokens?</AccordionTrigger>
+                <AccordionContent>Design tokens are the visual design atoms — colors, spacing, and typography stored as named variables.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Does it support dark mode?</AccordionTrigger>
+                <AccordionContent>Yes. Apply <code>data-mode=&quot;dark&quot;</code> to any ancestor element to activate the dark palette.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Is it framework-agnostic?</AccordionTrigger>
+                <AccordionContent>Works with Next.js, Remix, Vite, and any framework that supports React 18+.</AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+          <code className={styles.importLine}>import {'{ Accordion, AccordionItem, AccordionTrigger, AccordionContent }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'toast',
+      name: 'Toast',
+      description: t('toast_desc'),
+      section: 'display',
+      href: '/components/toast',
+      element: (
+        <>
+          <div className={styles.demoColumn}>
+            <ToastDemo />
+            <Toaster />
+          </div>
+          <code className={styles.importLine}>import {'{ Toaster, useToast }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'table',
+      name: 'Table',
+      description: t('table_component_desc'),
+      section: 'display',
+      href: '/components/table',
+      element: (
+        <>
+          <div className={styles.demoColumn}>
+            <Table>
+              <TableCaption>Recent invoices.</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Invoice</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Method</TableHead>
+                  <TableHead>Amount</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow><TableCell>INV-001</TableCell><TableCell>Paid</TableCell><TableCell>Credit Card</TableCell><TableCell>$250.00</TableCell></TableRow>
+                <TableRow><TableCell>INV-002</TableCell><TableCell>Pending</TableCell><TableCell>Bank Transfer</TableCell><TableCell>$150.00</TableCell></TableRow>
+                <TableRow><TableCell>INV-003</TableCell><TableCell>Paid</TableCell><TableCell>PayPal</TableCell><TableCell>$350.00</TableCell></TableRow>
+              </TableBody>
+              <TableFooter>
+                <TableRow>
+                  <TableCell colSpan={3}>Total</TableCell>
+                  <TableCell>$750.00</TableCell>
+                </TableRow>
+              </TableFooter>
+            </Table>
+          </div>
+          <code className={styles.importLine}>import {'{ Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },

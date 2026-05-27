@@ -149,7 +149,11 @@
     "tooltip_demo_top": "Tooltip acima",
     "tooltip_demo_right": "Tooltip à direita",
     "tooltip_demo_bottom": "Tooltip abaixo",
-    "tooltip_demo_left": "Tooltip à esquerda"
+    "tooltip_demo_left": "Tooltip à esquerda",
+    "tabs_desc": "Seções de conteúdo empilhadas exibidas uma de cada vez. Construído sobre o Radix UI com navegação por teclado.",
+    "accordion_desc": "Cabeçalhos interativos empilhados verticalmente que revelam seções de conteúdo. Suporta um ou múltiplos itens abertos.",
+    "toast_desc": "Mensagens de feedback temporárias que aparecem e se dispensam automaticamente. Suporta variantes padrão, sucesso, aviso, erro e informação.",
+    "table_component_desc": "Tabela de dados responsiva com cabeçalho, corpo, rodapé e legenda. Suporta linhas alternadas."
   },
   "componentPages": {
     "table_prop": "Prop",
