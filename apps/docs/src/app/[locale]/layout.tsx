@@ -14,7 +14,18 @@ import '@ghiberti85/tokens/ds-brutalist'
 import './globals.css'
 
 export const metadata: Metadata = {
-  icons: { icon: '/favicon.svg' },
+  title: 'Ghiberti UI — Design System',
+  description: 'Design tokens and React component library — ds-minimal, ds-editorial, ds-brutalist',
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Ghiberti UI',
+  },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/icon-192.svg',
+  },
 }
 
 const dmSans = DM_Sans({
@@ -61,6 +72,9 @@ export default async function LocaleLayout({
       data-theme="ds-minimal"
       className={`${dmSans.variable} ${playfairDisplay.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <meta name="theme-color" content="#6d28d9" />
+      </head>
       <body>
         <NextIntlClientProvider>
           <header className="site-header">
