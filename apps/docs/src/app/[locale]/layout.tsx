@@ -74,6 +74,12 @@ export default async function LocaleLayout({
     >
       <head>
         <meta name="theme-color" content="#6d28d9" />
+        {/* Anti-flash: apply dark mode before first paint */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('docs-color-mode');var d=s!==null?s==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.setAttribute('data-mode','dark');}catch(e){}})();`,
+          }}
+        />
       </head>
       <body>
         <NextIntlClientProvider>

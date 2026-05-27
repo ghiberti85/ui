@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   border: 1px solid var(--color-semantic-border, #e4e4e7);
   border-radius: var(--border-radius-md, 6px);
   overflow: hidden;
@@ -8,6 +9,7 @@
 .pre {
   margin: 0;
   padding: 1.25rem 1.5rem;
+  padding-right: 5rem; /* room for copy button */
   background: var(--color-semantic-background-subtle, #fafafa);
   overflow-x: auto;
   font-size: 0.875rem;
@@ -18,4 +20,38 @@
   font-family: var(--font-jetbrains-mono, monospace);
   color: var(--color-semantic-foreground, #0a0a0a);
   white-space: pre;
+}
+
+.copyBtn {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.625rem;
+  background: var(--color-semantic-background, #fff);
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+  border-radius: var(--border-radius-sm, 4px);
+  color: var(--color-semantic-foreground-muted);
+  font-size: 0.75rem;
+  font-family: var(--font-family-sans, sans-serif);
+  cursor: pointer;
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+  z-index: 1;
+}
+
+.copyBtn:hover {
+  color: var(--color-semantic-foreground);
+  background: var(--color-semantic-background-subtle);
+  border-color: var(--color-semantic-foreground-muted);
+}
+
+.copyBtn:focus-visible {
+  outline: 2px solid var(--color-semantic-primary);
+  outline-offset: 2px;
+}
+
+.copyLabel {
+  line-height: 1;
 }
