@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
@@ -5,11 +6,16 @@ import Nav from '@/components/Nav'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import ModeToggle from '@/components/ModeToggle'
 import LocaleSwitcher from '@/components/LocaleSwitcher'
+import BottomNav from '@/components/BottomNav'
 import { DM_Sans, Playfair_Display, Bebas_Neue, JetBrains_Mono } from 'next/font/google'
 import '@ghiberti85/tokens/ds-minimal'
 import '@ghiberti85/tokens/ds-editorial'
 import '@ghiberti85/tokens/ds-brutalist'
 import './globals.css'
+
+export const metadata: Metadata = {
+  icons: { icon: '/favicon.svg' },
+}
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -68,6 +74,7 @@ export default async function LocaleLayout({
             </div>
           </header>
           <main className="site-main">{children}</main>
+          <BottomNav />
         </NextIntlClientProvider>
       </body>
     </html>

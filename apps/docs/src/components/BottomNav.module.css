@@ -1,0 +1,76 @@
+.bottomNav {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .bottomNav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--color-semantic-background, #fff);
+    border-top: 1px solid var(--color-semantic-border, #e4e4e7);
+    z-index: 100;
+    align-items: stretch;
+  }
+
+  .tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-decoration: none;
+    color: var(--color-semantic-foreground-muted, #71717a);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .tab:hover {
+    color: var(--color-semantic-foreground, #0a0a0a);
+  }
+
+  .tabActive {
+    color: var(--color-semantic-primary, #6d28d9);
+  }
+
+  .tabLabel {
+    line-height: 1;
+  }
+
+  /* Settings panel — slides up from above the bottom nav */
+  .settingsPanel {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    background: var(--color-semantic-background, #fff);
+    border-top: 1px solid var(--color-semantic-border, #e4e4e7);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+    z-index: 99;
+    animation: slideUp 0.18s ease-out;
+  }
+
+  .settingsPanelInner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
