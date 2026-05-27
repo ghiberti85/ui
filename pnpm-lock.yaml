@@ -203,12 +203,9 @@ importers:
       '@vitest/ui':
         specifier: ^3.2.0
         version: 3.2.4(vitest@3.2.4)
-<<<<<<< HEAD
       eslint:
         specifier: ^10.4.0
         version: 10.4.0
-=======
->>>>>>> origin/main
       eslint-plugin-react-hooks:
         specifier: ^7.1.1
         version: 7.1.1(eslint@10.4.0)
