@@ -9,6 +9,7 @@ const COMPONENT_SLUGS = [
   'button', 'badge', 'input', 'textarea', 'select',
   'checkbox', 'radio', 'switch', 'card', 'dialog',
   'tooltip', 'avatar', 'separator', 'typography', 'stack', 'container',
+  'tabs', 'accordion', 'toast', 'table',
 ]
 
 const COMPONENT_LABELS: Record<string, string> = {
@@ -16,6 +17,7 @@ const COMPONENT_LABELS: Record<string, string> = {
   select: 'Select', checkbox: 'Checkbox', radio: 'Radio', switch: 'Switch',
   card: 'Card', dialog: 'Dialog', tooltip: 'Tooltip', avatar: 'Avatar',
   separator: 'Separator', typography: 'Typography', stack: 'Stack', container: 'Container',
+  tabs: 'Tabs', accordion: 'Accordion', toast: 'Toast', table: 'Table',
 }
 
 function getCurrentSlug(pathname: string): string | null {
@@ -83,13 +85,13 @@ export default function ComponentsLayout({
                   <span className={styles.prevNextDir}>← {t('previous')}</span>
                   <span className={styles.prevNextName}>{COMPONENT_LABELS[prevSlug]}</span>
                 </Link>
-              ) : <div />}
-              {nextSlug ? (
+              ) : <span className={styles.prevNextSpacer} />}
+              {nextSlug && (
                 <Link href={`/components/${nextSlug}`} className={`${styles.prevNextCard} ${styles.prevNextCardRight}`}>
                   <span className={styles.prevNextDir}>{t('next')} →</span>
                   <span className={styles.prevNextName}>{COMPONENT_LABELS[nextSlug]}</span>
                 </Link>
-              ) : <div />}
+              )}
             </div>
           </div>
         )}
