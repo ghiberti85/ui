@@ -161,6 +161,12 @@ pnpm lint                             # lint all packages
 - [ ] Navegação anterior/próximo entre páginas de componentes
 - [ ] Testes de acessibilidade (axe) para Tooltip e Avatar
 
+### Next — Integração de Projetos (requer desktop)
+- [ ] **DS ds-icc** — adicionar design system do projeto ICC (requer acesso ao repo pelo desktop para extrair cores/tipografia)
+- [ ] **DS ds-financas-casal** — adicionar design system do projeto Finanças Casal (idem)
+- [ ] **DS ds-dev-interview-lab** — adicionar design system do projeto Dev Interview Lab (idem)
+- [ ] Registrar os 3 novos DS no `sd.config.mjs`, Storybook toolbar e docs
+
 ### Next — Wow Factor (alto impacto visual / técnico)
 - [ ] **Live theme playground** — página interativa onde o usuário ajusta tokens (cor primária, radius, tipografia) em tempo real e vê todos os componentes atualizarem ao vivo (CSS custom properties via range/color inputs)
 - [ ] **Dark mode automático** — detectar `prefers-color-scheme` sem JS na hidratação (anti-flash com script inline no `<head>`)
