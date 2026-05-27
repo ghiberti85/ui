@@ -10,13 +10,14 @@ export default function ModeToggle() {
   const t = useTranslations('mode_toggle')
   const [dark, setDark] = useState(false)
 
-  // Apply saved preference on mount — runs before paint to avoid flash
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY)
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     const isDark = saved !== null ? saved === 'dark' : prefersDark
-    setDark(isDark)
     document.documentElement.setAttribute('data-mode', isDark ? 'dark' : '')
+    // localStorage is SSR-unavailable so this must run in an effect
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setDark(isDark)
   }, [])
 
   const toggle = () => {
