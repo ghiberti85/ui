@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import ThemeSwitcher from './ThemeSwitcher'
+import LocaleSwitcher from './LocaleSwitcher'
+import ModeToggle from './ModeToggle'
 import styles from './Nav.module.css'
 
 export default function Nav() {
@@ -83,6 +86,13 @@ export default function Nav() {
           >
             {t('github')}
           </a>
+
+          {/* Controls — theme, locale, mode */}
+          <div className={styles.mobileControls}>
+            <ThemeSwitcher />
+            <LocaleSwitcher />
+            <ModeToggle />
+          </div>
         </div>
       )}
     </nav>

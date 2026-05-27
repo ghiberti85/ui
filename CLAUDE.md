@@ -152,11 +152,26 @@ pnpm lint                             # lint all packages
 - [x] Responsive mobile nav with hamburger menu + Storybook link
 - [x] Mandatory end-of-iteration flow (docs → tests → commit → PR → merge)
 
-### Next
+### Done (continued)
+- [x] Mobile nav fix — controls (theme/locale/mode) moved to hamburger dropdown, header sem overflow
+
+### Next — DX & Polish
 - [ ] Página de "Getting Started" (instalação, configuração, primeiro componente)
 - [ ] Sidebar de navegação na docs (links para todas as páginas de componentes)
 - [ ] Navegação anterior/próximo entre páginas de componentes
 - [ ] Testes de acessibilidade (axe) para Tooltip e Avatar
+
+### Next — Wow Factor (alto impacto visual / técnico)
+- [ ] **Live theme playground** — página interativa onde o usuário ajusta tokens (cor primária, radius, tipografia) em tempo real e vê todos os componentes atualizarem ao vivo (CSS custom properties via range/color inputs)
+- [ ] **Dark mode automático** — detectar `prefers-color-scheme` sem JS na hidratação (anti-flash com script inline no `<head>`)
+- [ ] **Copy-to-clipboard** em todos os code blocks das páginas de componentes
+- [ ] **Componente Tier 2** — Table, Toast/Notification, Tabs, Accordion
+- [ ] **Motion tokens** — `--transition-*` e `--animation-*` tokens nos 3 DS, aplicados aos componentes existentes
+- [ ] **Figma Tokens export** — gerar JSON compatível com Figma Tokens / Tokens Studio a partir do Style Dictionary
+- [ ] **npmjs publish** — publicar `@ghiberti85/tokens` e `@ghiberti85/ui` no npm com semantic-release + changesets
+- [ ] **CLI scaffold** — `npx @ghiberti85/ui init` que instala deps e copia CSS global para o projeto do usuário
+- [ ] **Chromatic visual diff badge** no README com link para o último build
+- [ ] **OG image dinâmica** na docs — Next.js `ImageResponse` gerando preview com o design system ativo
 
 ## Owner
 

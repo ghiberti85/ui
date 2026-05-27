@@ -60,7 +60,7 @@ export default async function LocaleLayout({
           <header className="site-header">
             <div className="site-header-inner">
               <Nav />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <div className="site-header-controls">
                 <ThemeSwitcher />
                 <LocaleSwitcher />
                 <ModeToggle />
