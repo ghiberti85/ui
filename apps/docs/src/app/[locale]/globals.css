@@ -18,6 +18,8 @@ body {
   top: 0;
   background: var(--color-semantic-background, #fff);
   z-index: 10;
+  /* Establish stacking context so the mobile Nav dropdown sits below the header border */
+  isolation: isolate;
 }
 
 .site-header-inner {

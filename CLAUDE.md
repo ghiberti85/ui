@@ -129,13 +129,14 @@ pnpm lint                             # lint all packages
 - [x] Avatar component (image + fallback initials, auto-initials from alt, 5 sizes, circle/square)
 - [x] Docs component pages expanded (all 16 components with live demos — Form, Display, Layout sections)
 - [x] Docs home page redesign (DS showcase cards, component strip, how it works section)
-- [x] 221 unit tests passing across 16 components
+- [x] Dark mode toggle in Storybook toolbar (globalTypes + withMode decorator)
+- [x] Component individual pages (/components/button, /badge, /input, /card, /dialog)
+- [x] Accessibility audit — vitest-axe integrated, 240 tests passing (19 axe tests)
 
 ### Next
 - [ ] Storybook custom domain (Chromatic paid plan)
-- [ ] Dark mode toggle in Storybook toolbar
-- [ ] Component individual pages (/components/button) with full API docs
-- [ ] Accessibility audit (axe-core integration in tests)
+- [x] Individual pages for remaining 11 components (Textarea, Select, Checkbox, Radio, Switch, Separator, Typography, Stack, Container, Tooltip, Avatar)
+- [ ] Search / filter on /components page
 
 ## Owner
 
