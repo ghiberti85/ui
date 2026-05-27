@@ -7,7 +7,8 @@
     "menu_open": "Open menu",
     "menu_close": "Close menu",
     "home": "Home",
-    "settings": "Settings"
+    "settings": "Settings",
+    "getting_started": "Get Started"
   },
   "home": {
     "title": "ghiberti85/ui",
@@ -315,6 +316,32 @@
     "button_group_variants": "Variants",
     "button_group_sizes": "Sizes",
     "button_group_states": "States"
+  },
+  "sidebar": {
+    "components_heading": "Components",
+    "all_components": "All Components",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "gettingStarted": {
+    "badge": "Documentation",
+    "title": "Getting Started",
+    "subtitle": "Install the packages, configure your theme, and render your first component in minutes.",
+    "step_install_title": "Install the packages",
+    "step_install_desc": "Add both the tokens and the UI component library to your project.",
+    "step_tokens_title": "Import the design system CSS",
+    "step_tokens_desc": "Import one design system stylesheet at the root of your app (e.g. layout.tsx or _app.tsx). This injects all CSS custom properties into the page.",
+    "step_tokens_tip": "Each design system ships its own CSS file. You can load multiple systems and switch between them at runtime using the data-theme attribute.",
+    "step_theme_title": "Apply a theme to your HTML element",
+    "step_theme_desc": "Add data-theme to your <html> tag. All components read tokens from that scope automatically.",
+    "step_component_title": "Use your first component",
+    "step_component_desc": "Import any component from @ghiberti85/ui and drop it into your JSX. No extra configuration needed.",
+    "step_switch_title": "Switch themes and dark mode",
+    "step_switch_desc": "Themes and dark mode are pure CSS — flip a data attribute at runtime and every component updates instantly.",
+    "next_title": "What's next?",
+    "next_components": "Browse Components",
+    "next_tokens": "Explore Tokens",
+    "next_github": "View on GitHub"
   },
   "theme_switcher": {
     "label": "Theme"

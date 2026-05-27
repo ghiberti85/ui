@@ -14,6 +14,7 @@ export default function Nav() {
       </Link>
 
       <div className={styles.links}>
+        <Link href="/getting-started" className={styles.link}>{t('getting_started')}</Link>
         <Link href="/tokens" className={styles.link}>{t('tokens')}</Link>
         <Link href="/components" className={styles.link}>{t('components')}</Link>
         <a

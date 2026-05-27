@@ -154,11 +154,14 @@ pnpm lint                             # lint all packages
 
 ### Done (continued)
 - [x] Mobile nav fix — controls (theme/locale/mode) moved to hamburger dropdown, header sem overflow
+- [x] Bottom navigation bar (replaces hamburger on mobile) — Home/Tokens/Components/Settings tabs
+- [x] Favicon — elegant SVG token-stack icon with purple accent dot
+- [x] Home title shimmer animation slowed to 6s
+- [x] Getting Started page — install, token import, theme setup, first component, dark mode
+- [x] Sidebar de navegação nas docs (todos os componentes com link direto)
+- [x] Navegação anterior/próximo entre páginas de componentes (prev/next)
 
 ### Next — DX & Polish
-- [ ] Página de "Getting Started" (instalação, configuração, primeiro componente)
-- [ ] Sidebar de navegação na docs (links para todas as páginas de componentes)
-- [ ] Navegação anterior/próximo entre páginas de componentes
 - [ ] Testes de acessibilidade (axe) para Tooltip e Avatar
 
 ### Next — Integração de Projetos (requer desktop)
