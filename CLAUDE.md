@@ -167,9 +167,17 @@ pnpm lint                             # lint all packages
 - [x] Toast component (Radix UI, 5 variants, useToast hook, Toaster convenience component)
 - [x] Table component (semantic HTML, striped rows, scrollable wrapper)
 - [x] 287 unit tests passing
+- [x] Dark mode contrast audit — WCAG AA fixes for all 3 DS (background-subtle, foreground-muted, border, primary, state tokens)
+- [x] Bugfix: ToastDemo context error — useToast called outside Toaster provider
 
 ### Next — DX & Polish
 - [ ] Testes de acessibilidade (axe) para Tooltip e Avatar
+
+### Next — Wow Factor (alto impacto visual / técnico)
+- [ ] **Copy-to-clipboard** em todos os code blocks das páginas de componentes
+- [ ] **Live theme playground** — página interativa onde o usuário ajusta tokens em tempo real
+- [ ] **Dark mode automático** — anti-flash com script inline no `<head>`
+- [ ] **Motion tokens** — `--transition-*` e `--animation-*` tokens nos 3 DS
 
 ### Next — Integração de Projetos (requer desktop)
 - [ ] **DS ds-icc** — adicionar design system do projeto ICC (requer acesso ao repo pelo desktop para extrair cores/tipografia)
@@ -181,7 +189,6 @@ pnpm lint                             # lint all packages
 - [ ] **Live theme playground** — página interativa onde o usuário ajusta tokens (cor primária, radius, tipografia) em tempo real e vê todos os componentes atualizarem ao vivo (CSS custom properties via range/color inputs)
 - [ ] **Dark mode automático** — detectar `prefers-color-scheme` sem JS na hidratação (anti-flash com script inline no `<head>`)
 - [ ] **Copy-to-clipboard** em todos os code blocks das páginas de componentes
-- [ ] **Componente Tier 2** — Table, Toast/Notification, Tabs, Accordion
 - [ ] **Motion tokens** — `--transition-*` e `--animation-*` tokens nos 3 DS, aplicados aos componentes existentes
 - [ ] **Figma Tokens export** — gerar JSON compatível com Figma Tokens / Tokens Studio a partir do Style Dictionary
 - [ ] **npmjs publish** — publicar `@ghiberti85/tokens` e `@ghiberti85/ui` no npm com semantic-release + changesets
