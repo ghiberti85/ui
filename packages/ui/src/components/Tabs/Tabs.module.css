@@ -27,6 +27,16 @@
   flex-direction: row;
   gap: 0.25rem;
   border-bottom: 1px solid var(--color-semantic-border);
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 640px) {
+  .root-horizontal .trigger {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
 }
 
 /* Vertical: triggers in a column with a right border rule */
