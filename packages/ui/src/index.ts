@@ -15,6 +15,10 @@ export * from './components/Avatar'
 export * from './components/Typography'
 export * from './components/Stack'
 export * from './components/Container'
+export * from './components/Toast'
+export * from './components/Tabs'
+export * from './components/Accordion'
+export * from './components/Table'
 
 // Utils
 export { cn } from './utils/cn'

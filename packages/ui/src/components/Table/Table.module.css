@@ -1,0 +1,80 @@
+/* ─── Wrapper ───────────────────────────────────────────────────────────────── */
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--border-radius-md);
+}
+
+/* ─── Table ─────────────────────────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
+  color: var(--color-semantic-foreground);
+  background-color: var(--color-semantic-background);
+}
+
+/* ─── Header section ────────────────────────────────────────────────────────── */
+.header {
+  /* no extra styles needed beyond child th */
+}
+
+/* ─── Body section ──────────────────────────────────────────────────────────── */
+.body {
+  /* hover handled on rows */
+}
+
+/* ─── Footer section ────────────────────────────────────────────────────────── */
+.footer {
+  border-top: 2px solid var(--color-semantic-border);
+  background-color: var(--color-semantic-background-subtle);
+  font-weight: 500;
+}
+
+/* ─── Row ───────────────────────────────────────────────────────────────────── */
+.row {
+  transition: background-color 0.15s ease;
+}
+
+/* Hover only on tbody rows */
+.body .row:hover {
+  background-color: var(--color-semantic-background-subtle);
+}
+
+/* Striped variant — even rows get the subtle background */
+.rowStriped:nth-child(even) {
+  background-color: var(--color-semantic-background-subtle);
+}
+
+/* ─── Head cell (th) ────────────────────────────────────────────────────────── */
+.head {
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-semantic-foreground-muted);
+  border-bottom: 2px solid var(--color-semantic-border);
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+  background-color: var(--color-semantic-background);
+}
+
+/* ─── Data cell (td) ────────────────────────────────────────────────────────── */
+.cell {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-semantic-border);
+  vertical-align: middle;
+}
+
+/* Last row in body — no bottom border */
+.body .row:last-child .cell {
+  border-bottom: none;
+}
+
+/* ─── Caption ───────────────────────────────────────────────────────────────── */
+.caption {
+  caption-side: bottom;
+  font-size: 0.8125rem;
+  color: var(--color-semantic-foreground-muted);
+  padding-top: 0.75rem;
+  text-align: center;
+}
