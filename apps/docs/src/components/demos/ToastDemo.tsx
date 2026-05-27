@@ -1,8 +1,8 @@
 'use client'
 
-import { useToast, Button } from '@ghiberti85/ui'
+import { useToast, Toaster, Button } from '@ghiberti85/ui'
 
-export function ToastDemo() {
+function ToastButtons() {
   const { toast } = useToast()
 
   return (
@@ -23,5 +23,13 @@ export function ToastDemo() {
         Info
       </Button>
     </div>
+  )
+}
+
+export function ToastDemo() {
+  return (
+    <Toaster>
+      <ToastButtons />
+    </Toaster>
   )
 }
