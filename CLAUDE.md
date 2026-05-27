@@ -18,6 +18,19 @@ These apply to every task, no exceptions:
 4. **i18n** — every user-facing string in `apps/docs` must exist in both `en.json` and `pt-BR.json`.
 5. **No hardcoded values** — components must consume only CSS custom properties (`var(--color-semantic-*)`, `var(--border-radius-*)`, etc.). Never hardcode colors, sizes, or spacing.
 
+## End-of-Iteration Flow (mandatory after every implementation, fix, or edit)
+
+At the end of **every** iteration — no exceptions — execute these steps in order:
+
+1. **Review docs** — check that `apps/docs` pages reflect the change (new/updated component page, i18n keys in `en.json` + `pt-BR.json`, Storybook story).
+2. **Run tests** — `pnpm test` must pass. Fix any failures before proceeding.
+3. **Update roadmap** — mark completed items in `## Roadmap` and add next items if relevant.
+4. **Commit** — clear, descriptive commit message on the feature branch `claude/friendly-lamport-g7exP`.
+5. **Open PR** — use `mcp__github__create_pull_request` targeting `main` with a summary of what changed.
+6. **Merge PR** — use `mcp__github__merge_pull_request` with `squash` method immediately after creating it (resolve any merge conflicts first by merging `origin/main` locally).
+
+This flow is non-negotiable and must be completed before reporting a task as done.
+
 ## Architecture Decisions
 
 ### Tokens
