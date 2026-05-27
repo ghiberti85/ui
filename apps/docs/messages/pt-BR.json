@@ -2,7 +2,10 @@
   "nav": {
     "tokens": "Tokens de Design",
     "components": "Componentes",
-    "github": "GitHub"
+    "github": "GitHub",
+    "storybook": "Storybook",
+    "menu_open": "Abrir menu",
+    "menu_close": "Fechar menu"
   },
   "home": {
     "title": "ghiberti85/ui",

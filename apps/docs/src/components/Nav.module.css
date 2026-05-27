@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  position: relative;
 }
 
 .logo {
@@ -9,7 +10,10 @@
   font-size: 1rem;
   text-decoration: none;
   color: var(--color-semantic-foreground, #0a0a0a);
+  white-space: nowrap;
 }
+
+/* ── Desktop links ─────────────────────────────────────────────────────────── */
 
 .links {
   display: flex;
@@ -21,8 +25,89 @@
   text-decoration: none;
   color: var(--color-semantic-foreground-muted, #71717a);
   transition: color 0.15s;
+  white-space: nowrap;
 }
 
 .link:hover {
   color: var(--color-semantic-foreground, #0a0a0a);
+}
+
+/* ── Hamburger button ──────────────────────────────────────────────────────── */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius-sm, 4px);
+  color: var(--color-semantic-foreground, #0a0a0a);
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--color-semantic-primary, #6d28d9);
+  outline-offset: 2px;
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+  transform-origin: center;
+}
+
+.barTop  { transform: translateY(7px) rotate(45deg); }
+.barMid  { opacity: 0; transform: scaleX(0); }
+.barBot  { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile dropdown ───────────────────────────────────────────────────────── */
+
+.mobileMenu {
+  position: fixed;
+  top: 57px; /* height of the header (56px) + 1px border */
+  left: 0;
+  right: 0;
+  background: var(--color-semantic-background, #fff);
+  border-bottom: 1px solid var(--color-semantic-border, #e4e4e7);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 1rem 1rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobileLink {
+  display: block;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  border-radius: var(--border-radius-md, 6px);
+  transition: background 0.12s, color 0.12s;
+}
+
+.mobileLink:hover {
+  background: var(--color-semantic-background-subtle, #fafafa);
+  color: var(--color-semantic-foreground, #0a0a0a);
+}
+
+/* ── Responsive breakpoint ─────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
