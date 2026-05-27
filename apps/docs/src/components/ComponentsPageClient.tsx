@@ -20,12 +20,27 @@ import {
   Container,
   Tooltip,
   Avatar,
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
 import searchStyles from './ComponentsPageClient.module.css'
 import { TextareaDemo, SelectDemo, CheckboxDemo, RadioGroupDemo, SwitchDemo } from './demos/FormDemos'
 import { DialogDemo } from './demos/DialogDemo'
+import { ToastDemo } from './demos/ToastDemo'
 
 interface ComponentEntry {
   id: string

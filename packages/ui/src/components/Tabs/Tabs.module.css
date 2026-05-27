@@ -1,0 +1,130 @@
+/* ── Root ─────────────────────────────────────────────────────────────────── */
+
+.root {
+  display: flex;
+  font-family: var(--font-family-sans);
+}
+
+.root-horizontal {
+  flex-direction: column;
+}
+
+.root-vertical {
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+/* ── List ─────────────────────────────────────────────────────────────────── */
+
+.list {
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Horizontal: triggers in a row with a bottom border rule */
+.root-horizontal .list {
+  flex-direction: row;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--color-semantic-border);
+}
+
+/* Vertical: triggers in a column with a right border rule */
+.root-vertical .list {
+  flex-direction: column;
+  gap: 0.25rem;
+  border-right: 1px solid var(--color-semantic-border);
+  padding-right: 0.25rem;
+}
+
+/* ── Trigger ──────────────────────────────────────────────────────────────── */
+
+.trigger {
+  all: unset;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-semantic-foreground-muted);
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+  outline: none;
+}
+
+/* Bottom indicator for horizontal tabs */
+.root-horizontal .trigger::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; /* sits on top of the list border */
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: var(--border-radius-full);
+  background-color: transparent;
+  transition: background-color 150ms ease;
+}
+
+/* Right indicator for vertical tabs */
+.root-vertical .trigger::after {
+  content: '';
+  position: absolute;
+  right: -5px; /* sits on top of the list border */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-radius: var(--border-radius-full);
+  background-color: transparent;
+  transition: background-color 150ms ease;
+}
+
+/* Hover */
+.trigger:hover:not([data-disabled]):not([data-state='active']) {
+  color: var(--color-semantic-foreground);
+  background-color: var(--color-semantic-background-subtle);
+}
+
+/* Active / selected */
+.trigger[data-state='active'] {
+  color: var(--color-semantic-primary);
+}
+
+.trigger[data-state='active']::after {
+  background-color: var(--color-semantic-primary);
+}
+
+/* Focus-visible ring */
+.trigger:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-semantic-background), 0 0 0 4px var(--color-semantic-primary);
+  border-radius: var(--border-radius-md);
+}
+
+/* Disabled */
+.trigger[data-disabled] {
+  color: var(--color-semantic-foreground-muted);
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Content ──────────────────────────────────────────────────────────────── */
+
+.content {
+  padding-top: 1rem;
+  color: var(--color-semantic-foreground);
+  font-family: var(--font-family-sans);
+  outline: none;
+}
+
+.content:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-semantic-background), 0 0 0 4px var(--color-semantic-primary);
+  border-radius: var(--border-radius-md);
+}

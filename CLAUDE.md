@@ -161,6 +161,13 @@ pnpm lint                             # lint all packages
 - [x] Sidebar de navegação nas docs (todos os componentes com link direto)
 - [x] Navegação anterior/próximo entre páginas de componentes (prev/next)
 
+### Done (continued)
+- [x] Tabs component (Radix UI, horizontal/vertical, controlled/uncontrolled)
+- [x] Accordion component (Radix UI, single/multiple, animated height)
+- [x] Toast component (Radix UI, 5 variants, useToast hook, Toaster convenience component)
+- [x] Table component (semantic HTML, striped rows, scrollable wrapper)
+- [x] 287 unit tests passing
+
 ### Next — DX & Polish
 - [ ] Testes de acessibilidade (axe) para Tooltip e Avatar
 
