@@ -120,10 +120,10 @@ export default async function Image({ params }: { params: Promise<{ component: s
     tags: ['Accessible', 'TypeScript'],
   }
 
-  const font400 = loadFont('dm-sans-latin-400-normal.woff2')
-  const font700 = loadFont('dm-sans-latin-700-normal.woff2')
+  const font400 = loadFont('dm-sans-latin-400-normal.woff')
+  const font700 = loadFont('dm-sans-latin-700-normal.woff')
 
-  const fonts: ConstructorParameters<typeof ImageResponse>[1]['fonts'] = []
+  const fonts: { name: string; data: Buffer; weight: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900; style: 'normal' | 'italic' }[] = []
   if (font400) {
     fonts.push({ name: 'DM Sans', data: font400, weight: 400, style: 'normal' })
   }

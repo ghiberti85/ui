@@ -232,9 +232,9 @@ export default function PlaygroundClient({ labels }: { labels: Labels }) {
             <p className={styles.previewGroupLabel}>Badge</p>
             <div className={styles.previewRow}>
               <Badge variant="default">Default</Badge>
-              <Badge variant="success">Success</Badge>
-              <Badge variant="warning">Warning</Badge>
-              <Badge variant="error">Error</Badge>
+              <Badge variant="secondary">Secondary</Badge>
+              <Badge variant="outline">Outline</Badge>
+              <Badge variant="destructive">Destructive</Badge>
             </div>
           </div>
 
@@ -269,8 +269,8 @@ export default function PlaygroundClient({ labels }: { labels: Labels }) {
           <div className={styles.previewGroup}>
             <p className={styles.previewGroupLabel}>Switch &amp; Checkbox</p>
             <div className={styles.previewRow}>
-              <Switch id="pg-switch" defaultChecked aria-label="Toggle feature" />
-              <Checkbox id="pg-check" defaultChecked aria-label="Accept terms" />
+              <Switch id="pg-switch" checked aria-label="Toggle feature" />
+              <Checkbox id="pg-check" checked aria-label="Accept terms" />
               <Checkbox id="pg-check2" aria-label="Newsletter" />
             </div>
           </div>
