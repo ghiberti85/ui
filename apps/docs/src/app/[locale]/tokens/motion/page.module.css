@@ -1,0 +1,173 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-semantic-foreground, #0a0a0a);
+}
+
+.desc {
+  font-size: 1.125rem;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+/* ── Section ─────────────────────────────────────────────── */
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--color-semantic-foreground, #0a0a0a);
+}
+
+.sectionDesc {
+  font-size: 0.9375rem;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+/* ── Demo boxes ──────────────────────────────────────────── */
+.demoRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.demoBox {
+  flex: 1 1 180px;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+  border-radius: var(--border-radius-lg, 8px);
+  background: var(--color-semantic-background-subtle, #fafafa);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background var(--demo-duration, 200ms) var(--easing-default, cubic-bezier(0.4, 0, 0.2, 1)),
+              border-color var(--demo-duration, 200ms) var(--easing-default, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.demoBox:hover {
+  background: var(--color-semantic-primary, #6d28d9);
+  border-color: var(--color-semantic-primary, #6d28d9);
+}
+
+.demoBox:hover .demoLabel,
+.demoBox:hover .demoValue {
+  color: #fff;
+}
+
+.demoLabel {
+  font-size: 0.8125rem;
+  font-family: monospace;
+  color: var(--color-semantic-foreground, #0a0a0a);
+  transition: color var(--demo-duration, 200ms) var(--easing-default, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.demoValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-semantic-foreground, #0a0a0a);
+  transition: color var(--demo-duration, 200ms) var(--easing-default, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+/* ── Table ───────────────────────────────────────────────── */
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--border-radius-lg, 8px);
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th {
+  background: var(--color-semantic-background-subtle, #fafafa);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-semantic-foreground-muted, #71717a);
+  border-bottom: 1px solid var(--color-semantic-border, #e4e4e7);
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-semantic-border, #e4e4e7);
+  color: var(--color-semantic-foreground, #0a0a0a);
+  vertical-align: top;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: var(--color-semantic-background-subtle, #fafafa);
+}
+
+/* ── Inline code ─────────────────────────────────────────── */
+.code {
+  font-family: monospace;
+  font-size: 0.8125rem;
+  background: var(--color-semantic-background-subtle, #fafafa);
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+  border-radius: var(--border-radius-sm, 4px);
+  padding: 0.125rem 0.375rem;
+  color: var(--color-semantic-foreground, #0a0a0a);
+}
+
+/* ── Code block ──────────────────────────────────────────── */
+.codeBlock {
+  background: var(--color-semantic-background-subtle, #fafafa);
+  border: 1px solid var(--color-semantic-border, #e4e4e7);
+  border-radius: var(--border-radius-lg, 8px);
+  padding: 1.25rem 1.5rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--color-semantic-foreground, #0a0a0a);
+  overflow-x: auto;
+  line-height: 1.7;
+  white-space: pre;
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .demoRow {
+    flex-direction: column;
+  }
+
+  .demoBox {
+    flex: 1 1 auto;
+  }
+
+  .table {
+    font-size: 0.8125rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem 0.75rem;
+  }
+}

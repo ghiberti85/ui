@@ -14,7 +14,16 @@ export default async function PlaygroundPage() {
   const t = await getTranslations('playground')
 
   return (
-    <PlaygroundClient
+    <>
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '2rem 1rem 0' }}>
+        <h2 style={{ fontSize: '1.125rem', fontWeight: 700, marginBottom: '0.375rem', color: 'var(--color-semantic-foreground)' }}>
+          {t('how_title')}
+        </h2>
+        <p style={{ fontSize: '0.9375rem', color: 'var(--color-semantic-foreground-muted)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+          {t('how_desc')}
+        </p>
+      </div>
+      <PlaygroundClient
       labels={{
         title: t('title'),
         description: t('description'),
@@ -29,5 +38,6 @@ export default async function PlaygroundPage() {
         preview: t('preview'),
       }}
     />
+    </>
   )
 }
