@@ -8,7 +8,8 @@
     "menu_close": "Fechar menu",
     "home": "Início",
     "settings": "Ajustes",
-    "getting_started": "Começar"
+    "getting_started": "Começar",
+    "playground": "Playground"
   },
   "home": {
     "title": "ghiberti85/ui",
@@ -346,6 +347,19 @@
     "next_components": "Ver Componentes",
     "next_tokens": "Explorar Tokens",
     "next_github": "Ver no GitHub"
+  },
+  "playground": {
+    "title": "Playground de Temas",
+    "description": "Personalize tokens de design em tempo real",
+    "primary_color": "Cor Primária",
+    "background": "Fundo",
+    "border_radius": "Raio das Bordas",
+    "font_size": "Tamanho Base da Fonte",
+    "reset": "Resetar",
+    "copy_css": "Copiar CSS",
+    "copied": "Copiado!",
+    "controls": "Controles",
+    "preview": "Visualização"
   },
   "theme_switcher": {
     "label": "Tema"
