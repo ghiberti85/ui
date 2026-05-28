@@ -9,7 +9,8 @@
     "home": "Início",
     "settings": "Ajustes",
     "getting_started": "Começar",
-    "playground": "Playground"
+    "playground": "Playground",
+    "motion_tokens": "Movimento"
   },
   "home": {
     "title": "ghiberti85/ui",
@@ -359,7 +360,9 @@
     "copy_css": "Copiar CSS",
     "copied": "Copiado!",
     "controls": "Controles",
-    "preview": "Visualização"
+    "preview": "Visualização",
+    "how_title": "Como funciona",
+    "how_desc": "Ajuste os sliders e os seletores de cor à esquerda para sobrescrever as propriedades CSS em tempo real. O painel de visualização reflete cada mudança instantaneamente — sem etapa de build. Copie o trecho CSS gerado e cole no stylesheet global do seu projeto."
   },
   "theme_switcher": {
     "label": "Tema"
@@ -370,5 +373,18 @@
   },
   "locale_switcher": {
     "label": "Idioma"
+  },
+  "motion": {
+    "title": "Tokens de Movimento",
+    "desc": "Durações de transição e curvas de easing nos três design systems. Cada DS tem seu próprio ritmo — brutalist é rápido, editorial é suave.",
+    "transitions": "Durações de Transição",
+    "transitions_desc": "Passe o mouse nas caixas abaixo para sentir a diferença de velocidade entre os design systems.",
+    "easing": "Curvas de Easing",
+    "easing_desc": "Todos os design systems compartilham as mesmas curvas base, mas --easing-spring varia por personalidade do DS.",
+    "usage": "Uso",
+    "usage_desc": "Aplique os tokens de movimento diretamente nos seus CSS Modules:",
+    "token": "Token",
+    "label": "Rótulo",
+    "value": "Valor"
   }
 }

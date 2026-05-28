@@ -13,21 +13,23 @@ Monorepo with two main products:
 These apply to every task, no exceptions:
 
 1. **Tests** — every component change or addition must have corresponding test coverage (Vitest + Testing Library). Run `pnpm test` before considering any task done.
-2. **Documentation** — every new component needs a Storybook story (`*.stories.tsx`) with autodocs and all variants covered. Update `apps/docs` pages when adding components.
+2. **Documentation** — **every implementation, edit, or fix — no matter how small — MUST update ALL of the following without exception:** (a) `apps/docs` pages for the affected component/feature, (b) Storybook stories (`*.stories.tsx`) with autodocs and all variants covered, (c) tests in `*.test.tsx`, and (d) the Roadmap section in this file. **Omitting any of these four items is a hard failure — do not consider the task done until all four are complete.**
 3. **Roadmap** — after completing any significant feature or component, update the `## Roadmap` section at the bottom of this file marking items as done and adding new ones.
 4. **i18n** — every user-facing string in `apps/docs` must exist in both `en.json` and `pt-BR.json`.
 5. **No hardcoded values** — components must consume only CSS custom properties (`var(--color-semantic-*)`, `var(--border-radius-*)`, etc.). Never hardcode colors, sizes, or spacing.
 
 ## End-of-Iteration Flow (mandatory after every implementation, fix, or edit)
 
+**⚠️ MANDATORY after every implementation, edit, or fix — no exceptions**
+
 At the end of **every** iteration — no exceptions — execute these steps in order:
 
-1. **Review docs** — check that `apps/docs` pages reflect the change (new/updated component page, i18n keys in `en.json` + `pt-BR.json`, Storybook story).
-2. **Run tests** — `pnpm test` must pass. Fix any failures before proceeding.
-3. **Update roadmap** — mark completed items in `## Roadmap` and add next items if relevant.
-4. **Commit** — clear, descriptive commit message on the feature branch `claude/friendly-lamport-g7exP`.
-5. **Open PR** — use `mcp__github__create_pull_request` targeting `main` with a summary of what changed.
-6. **Merge PR** — use `mcp__github__merge_pull_request` with `squash` method immediately after creating it (resolve any merge conflicts first by merging `origin/main` locally).
+1. **Review/update docs** — ensure `apps/docs` pages reflect the change: new/updated component page, i18n keys added to both `en.json` and `pt-BR.json`, Storybook story created/updated.
+2. **Add/update Storybook stories** — every component change needs a corresponding `*.stories.tsx` update with autodocs and all variants covered.
+3. **pnpm test must pass** — run `pnpm test` from root; fix all failures before proceeding. Never commit with failing tests.
+4. **Update roadmap** — mark completed items in `## Roadmap` and add next items if relevant.
+5. **Commit** — clear, descriptive commit message on the feature branch `claude/friendly-lamport-g7exP`.
+6. **PR → merge** — use `mcp__github__create_pull_request` targeting `main`, then immediately merge with `mcp__github__merge_pull_request` using `squash` method (resolve any conflicts by merging `origin/main` locally first).
 
 This flow is non-negotiable and must be completed before reporting a task as done.
 
@@ -181,6 +183,11 @@ pnpm lint                             # lint all packages
 - [x] **Live theme playground** — `/playground` page with real-time CSS custom property editor (primary color, background, border radius, font size, reset, copy CSS)
 - [x] Copy-to-clipboard em todos os code blocks das páginas de componentes
 - [x] Dark mode automático — anti-flash com script inline no `<head>`
+
+### Done (continued)
+- [x] Motion tokens docs page (/tokens/motion) — transition durations table, easing curves, live hover demos
+- [x] Playground docs page with how-it-works explanation (how_title + how_desc i18n keys)
+- [x] Mandatory update rule reinforced in CLAUDE.md — rule #2 explicit 4-item checklist, end-of-iteration flow with bold warning and numbered 1-6 steps
 
 ### Next — Integração de Projetos (requer desktop)
 - [ ] **DS ds-icc** — adicionar design system do projeto ICC (requer acesso ao repo pelo desktop para extrair cores/tipografia)
