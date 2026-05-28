@@ -30,40 +30,20 @@ interface Labels {
   preview: string
 }
 
-interface Overrides {
-  primary: string
-  background: string
-  borderRadius: number
-  fontSize: number
-}
-
-const DEFAULTS: Overrides = {
-  primary: '',
-  background: '',
-  borderRadius: 6,
-  fontSize: 16,
-}
-
-function getInitialColor(varName: string): string {
-  if (typeof window === 'undefined') return '#6d28d9'
+function getInitialColor(varName: string, fallback: string): string {
+  if (typeof window === 'undefined') return fallback
   const val = getComputedStyle(document.documentElement).getPropertyValue(varName).trim()
-  return val || '#6d28d9'
+  return val || fallback
 }
 
 export default function PlaygroundClient({ labels }: { labels: Labels }) {
-  const [primary, setPrimary] = useState('')
-  const [background, setBackground] = useState('')
+  const [primary, setPrimary] = useState(() => getInitialColor('--color-semantic-primary', '#6d28d9'))
+  const [background, setBackground] = useState(() => getInitialColor('--color-semantic-background', '#ffffff'))
   const [borderRadius, setBorderRadius] = useState(6)
   const [fontSize, setFontSize] = useState(16)
   const [copied, setCopied] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const overriddenVars = useRef<Set<string>>(new Set())
-
-  // Initialize color inputs from current CSS vars after mount
-  useEffect(() => {
-    setPrimary(getInitialColor('--color-semantic-primary'))
-    setBackground(getInitialColor('--color-semantic-background'))
-  }, [])
 
   const setVar = useCallback((varName: string, value: string) => {
     document.documentElement.style.setProperty(varName, value)
@@ -113,8 +93,8 @@ export default function PlaygroundClient({ labels }: { labels: Labels }) {
     })
     overriddenVars.current.clear()
     // Re-read current values from CSS
-    setPrimary(getInitialColor('--color-semantic-primary'))
-    setBackground(getInitialColor('--color-semantic-background'))
+    setPrimary(getInitialColor('--color-semantic-primary', '#6d28d9'))
+    setBackground(getInitialColor('--color-semantic-background', '#ffffff'))
     setBorderRadius(6)
     setFontSize(16)
   }, [removeVar])
