@@ -65,8 +65,8 @@
   cursor: pointer;
   white-space: nowrap;
   transition:
-    color 150ms ease,
-    background-color 150ms ease;
+    color var(--transition-fast, 150ms) var(--easing-default, ease),
+    background-color var(--transition-fast, 150ms) var(--easing-default, ease);
   outline: none;
 }
 
@@ -80,7 +80,7 @@
   height: 2px;
   border-radius: var(--border-radius-full);
   background-color: transparent;
-  transition: background-color 150ms ease;
+  transition: background-color var(--transition-fast, 150ms) var(--easing-default, ease);
 }
 
 /* Right indicator for vertical tabs */
@@ -93,7 +93,7 @@
   width: 2px;
   border-radius: var(--border-radius-full);
   background-color: transparent;
-  transition: background-color 150ms ease;
+  transition: background-color var(--transition-fast, 150ms) var(--easing-default, ease);
 }
 
 /* Hover */

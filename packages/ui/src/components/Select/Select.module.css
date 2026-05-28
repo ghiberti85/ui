@@ -23,7 +23,7 @@
   color: var(--color-semantic-foreground, #18181b);
   font-family: var(--typography-font-family-sans);
   cursor: pointer;
-  transition: border-color 150ms ease, box-shadow 150ms ease;
+  transition: border-color var(--transition-fast, 150ms) var(--easing-default, ease), box-shadow var(--transition-fast, 150ms) var(--easing-default, ease);
   box-sizing: border-box;
   gap: var(--spacing-2, 8px);
 }
@@ -103,7 +103,7 @@
   color: var(--color-semantic-foreground, #18181b);
   cursor: pointer;
   user-select: none;
-  transition: background-color 100ms ease;
+  transition: background-color var(--transition-fast, 100ms) var(--easing-default, ease);
   outline: none;
 }
 

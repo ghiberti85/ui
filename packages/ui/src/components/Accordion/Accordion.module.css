@@ -49,7 +49,7 @@
   font-weight: 600;
   color: var(--color-semantic-foreground);
   text-align: left;
-  transition: background-color 150ms ease;
+  transition: background-color var(--transition-fast, 150ms) var(--easing-default, ease);
 }
 
 .trigger:hover {
@@ -64,7 +64,7 @@
 .chevron {
   flex-shrink: 0;
   color: var(--color-semantic-foreground-muted);
-  transition: transform 200ms ease;
+  transition: transform var(--transition-base, 200ms) var(--easing-default, ease);
 }
 
 .trigger[data-state='open'] .chevron {
@@ -76,11 +76,11 @@
 }
 
 .content[data-state='open'] {
-  animation: slideDown 200ms ease-out;
+  animation: slideDown var(--transition-base, 200ms) var(--easing-out, ease-out);
 }
 
 .content[data-state='closed'] {
-  animation: slideUp 200ms ease-out;
+  animation: slideUp var(--transition-base, 200ms) var(--easing-out, ease-out);
 }
 
 .contentInner {

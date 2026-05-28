@@ -47,12 +47,12 @@
 
 /* Slide in from right */
 .toast[data-state='open'] {
-  animation: slideIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideIn var(--transition-base, 200ms) var(--easing-spring, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 /* Slide out to right */
 .toast[data-state='closed'] {
-  animation: slideOut 180ms ease-in forwards;
+  animation: slideOut var(--transition-fast, 180ms) var(--easing-in, ease-in) forwards;
 }
 
 /* Swipe gesture */
@@ -62,11 +62,11 @@
 
 .toast[data-swipe='cancel'] {
   transform: translateX(0);
-  transition: transform 200ms ease-out;
+  transition: transform var(--transition-base, 200ms) var(--easing-out, ease-out);
 }
 
 .toast[data-swipe='end'] {
-  animation: swipeOut 100ms ease-out forwards;
+  animation: swipeOut var(--transition-fast, 100ms) var(--easing-out, ease-out) forwards;
 }
 
 /* ─── Variants ──────────────────────────────────────────────────────────────── */
@@ -151,7 +151,7 @@
   font-weight: var(--typography-font-weight-medium, 500);
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color 150ms ease, opacity 150ms ease;
+  transition: background-color var(--transition-fast, 150ms) var(--easing-default, ease), opacity var(--transition-fast, 150ms) var(--easing-default, ease);
 }
 
 .action:hover {
@@ -181,7 +181,7 @@
   opacity: 0.6;
   cursor: pointer;
   font-size: var(--typography-font-size-xs, 0.75rem);
-  transition: opacity 150ms ease, background-color 150ms ease;
+  transition: opacity var(--transition-fast, 150ms) var(--easing-default, ease), background-color var(--transition-fast, 150ms) var(--easing-default, ease);
 }
 
 .closeButton:hover {

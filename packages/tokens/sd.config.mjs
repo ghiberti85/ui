@@ -56,7 +56,14 @@ const commonSemanticBridge = (ds) => `
   --shadow-sm: var(--${ds}-shadow-sm);
   --shadow-md: var(--${ds}-shadow-md);
   --shadow-lg: var(--${ds}-shadow-lg);
-  --shadow-xl: var(--${ds}-shadow-xl);`
+  --shadow-xl: var(--${ds}-shadow-xl);
+  --transition-fast: var(--${ds}-transition-fast);
+  --transition-base: var(--${ds}-transition-base);
+  --transition-slow: var(--${ds}-transition-slow);
+  --easing-default: var(--${ds}-easing-default);
+  --easing-in: var(--${ds}-easing-in);
+  --easing-out: var(--${ds}-easing-out);
+  --easing-spring: var(--${ds}-easing-spring);`
 
 // Per-DS extras
 const extraBridge = {

@@ -12,7 +12,7 @@
   border: 2px solid var(--color-semantic-border, #e4e4e7);
   background-color: var(--color-semantic-background, #fff);
   cursor: pointer;
-  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  transition: border-color var(--transition-fast, 150ms) var(--easing-default, ease), background-color var(--transition-fast, 150ms) var(--easing-default, ease), box-shadow var(--transition-fast, 150ms) var(--easing-default, ease);
   position: relative;
   appearance: none;
   -webkit-appearance: none;
