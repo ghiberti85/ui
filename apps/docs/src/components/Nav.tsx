@@ -17,6 +17,7 @@ export default function Nav() {
         <Link href="/getting-started" className={styles.link}>{t('getting_started')}</Link>
         <Link href="/tokens" className={styles.link}>{t('tokens')}</Link>
         <Link href="/components" className={styles.link}>{t('components')}</Link>
+        <Link href="/playground" className={styles.link}>{t('playground')}</Link>
         <a
           href="https://main--6a1610ad99f4ffa5234828d5.chromatic.com"
           className={styles.link}
