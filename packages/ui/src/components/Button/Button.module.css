@@ -9,7 +9,7 @@
   line-height: var(--typography-line-height-tight);
   cursor: pointer;
   border: 1.5px solid transparent;
-  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, opacity 150ms ease;
+  transition: background-color var(--transition-fast, 150ms) var(--easing-default, ease), border-color var(--transition-fast, 150ms) var(--easing-default, ease), color var(--transition-fast, 150ms) var(--easing-default, ease), opacity var(--transition-fast, 150ms) var(--easing-default, ease);
   text-decoration: none;
   white-space: nowrap;
 

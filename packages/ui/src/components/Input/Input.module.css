@@ -22,7 +22,7 @@
   font-family: var(--typography-font-family-sans);
   font-size: var(--typography-font-size-md, 1rem);
   padding: 0 var(--spacing-3, 12px);
-  transition: border-color 150ms ease, box-shadow 150ms ease;
+  transition: border-color var(--transition-fast, 150ms) var(--easing-default, ease), box-shadow var(--transition-fast, 150ms) var(--easing-default, ease);
   box-sizing: border-box;
 }
 

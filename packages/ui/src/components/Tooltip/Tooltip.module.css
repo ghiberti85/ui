@@ -13,8 +13,8 @@
   z-index: 50;
 
   /* Entrance animation */
-  animation-duration: 150ms;
-  animation-timing-function: ease-out;
+  animation-duration: var(--transition-fast, 150ms);
+  animation-timing-function: var(--easing-out, ease-out);
   transform-origin: var(--radix-tooltip-content-transform-origin);
 }
 
