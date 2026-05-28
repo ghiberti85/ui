@@ -14,8 +14,22 @@ import '@ghiberti85/tokens/ds-brutalist'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
+  ),
   title: 'Ghiberti UI — Design System',
   description: 'Design tokens and React component library — ds-minimal, ds-editorial, ds-brutalist',
+  openGraph: {
+    type: 'website',
+    siteName: 'Ghiberti UI',
+    title: 'Ghiberti UI — Design System',
+    description: 'Design tokens and React component library — ds-minimal, ds-editorial, ds-brutalist',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ghiberti UI — Design System',
+    description: 'Design tokens and React component library — ds-minimal, ds-editorial, ds-brutalist',
+  },
   manifest: '/manifest.webmanifest',
   appleWebApp: {
     capable: true,

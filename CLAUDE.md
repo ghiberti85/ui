@@ -193,7 +193,7 @@ pnpm lint                             # lint all packages
 - [ ] **npmjs publish** — publicar `@ghiberti85/tokens` e `@ghiberti85/ui` no npm com semantic-release + changesets
 - [ ] **CLI scaffold** — `npx @ghiberti85/ui init` que instala deps e copia CSS global para o projeto do usuário
 - [ ] **Chromatic visual diff badge** no README com link para o último build
-- [ ] **OG image dinâmica** na docs — Next.js `ImageResponse` gerando preview com o design system ativo
+- [x] **OG image dinâmica** na docs — Next.js `ImageResponse` gerando preview com o design system ativo (home + per-component, DM Sans font, dark card with purple accent bar)
 
 ## Owner
 
