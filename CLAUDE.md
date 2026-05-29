@@ -189,6 +189,16 @@ pnpm lint                             # lint all packages
 - [x] Playground docs page with how-it-works explanation (how_title + how_desc i18n keys)
 - [x] Mandatory update rule reinforced in CLAUDE.md — rule #2 explicit 4-item checklist, end-of-iteration flow with bold warning and numbered 1-6 steps
 
+### Done (continued)
+- [x] Progress component (animated fill, 5 variants, 3 sizes, role=progressbar a11y)
+- [x] Skeleton component (CSS shimmer + SkeletonText + SkeletonAvatar helpers)
+- [x] Alert component (4 variants, built-in SVG icons, optional title, dismiss button)
+- [x] Popover component (Radix UI, animated scale+fade, arrow, PopoverClose)
+- [x] Spinner component (CSS border trick, 4 sizes, 4 variants, accessible label)
+- [x] 326 unit tests passing (39 new tests across 5 new components)
+- [x] Individual docs pages + sidebar links + ComponentsPageClient demos for all 5 components
+- [x] EN/PT-BR i18n keys for all 5 new components
+
 ### Next — Integração de Projetos (requer desktop)
 - [ ] **DS ds-icc** — adicionar design system do projeto ICC (requer acesso ao repo pelo desktop para extrair cores/tipografia)
 - [ ] **DS ds-financas-casal** — adicionar design system do projeto Finanças Casal (idem)
