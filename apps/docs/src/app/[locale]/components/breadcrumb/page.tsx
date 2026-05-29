@@ -13,7 +13,7 @@ import {
 } from '@ghiberti85/ui'
 import styles from '../[component]/component-page.module.css'
 
-export default async function BreadcrumbPage() {
+export default async function BreadcrumbDocPage() {
   const t = await getTranslations('componentPages')
   const tc = await getTranslations('components')
 
