@@ -190,6 +190,17 @@ pnpm lint                             # lint all packages
 - [x] Mandatory update rule reinforced in CLAUDE.md — rule #2 explicit 4-item checklist, end-of-iteration flow with bold warning and numbered 1-6 steps
 
 ### Done (continued)
+- [x] DropdownMenu component (Radix UI, labels, separators, checkbox/radio items, submenus, keyboard shortcuts)
+- [x] AlertDialog component (Radix UI, destructive variant, same overlay pattern as Dialog)
+- [x] Combobox component (built on Popover, searchable, keyboard navigation, accessible ARIA)
+- [x] Breadcrumb component (pure semantic HTML, custom separator, ellipsis, aria-current)
+- [x] Pagination component (pure HTML, ellipsis for large ranges, siblingCount, showFirstLast, aria-current)
+- [x] 367 unit tests passing across 30 test files
+- [x] Docs pages for all 5 new components with live demos, props tables, and usage code
+- [x] i18n keys for all 5 components in en.json and pt-BR.json
+- [x] ComponentsLayout sidebar updated with 5 new slugs
+
+### Done (continued)
 - [x] Progress component (animated fill, 5 variants, 3 sizes, role=progressbar a11y)
 - [x] Skeleton component (CSS shimmer + SkeletonText + SkeletonAvatar helpers)
 - [x] Alert component (4 variants, built-in SVG icons, optional title, dismiss button)

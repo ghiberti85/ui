@@ -160,7 +160,12 @@
     "skeleton_desc": "CSS shimmer placeholder for loading states. Includes SkeletonText and SkeletonAvatar helpers.",
     "alert_desc": "Contextual feedback messages with 4 variants, optional title, built-in icons, and dismiss button.",
     "popover_desc": "Floating panel built on Radix UI. Supports all 4 sides, arrow, and animated open/close.",
-    "spinner_desc": "CSS-only loading spinner. 4 sizes, 4 variants, accessible label."
+    "spinner_desc": "CSS-only loading spinner. 4 sizes, 4 variants, accessible label.",
+    "dropdown_menu_desc": "Context menu built on Radix UI. Supports items, labels, separators, checkboxes, radio groups, submenus, and keyboard shortcuts.",
+    "alert_dialog_desc": "Modal confirmation dialog built on Radix UI. Blocks interaction until the user responds. Supports a destructive action variant.",
+    "combobox_desc": "Searchable select built on Popover with real-time filtering, keyboard navigation, and accessible ARIA attributes.",
+    "breadcrumb_desc": "Semantic navigation trail with support for custom separators, ellipsis, and aria-current on the active page.",
+    "pagination_desc": "Page navigation control with ellipsis for large ranges. Supports sibling count, first/last buttons, and aria-current."
   },
   "componentPages": {
     "table_prop": "Prop",
@@ -326,7 +331,23 @@
     "dialog_close_desc": "Element that closes the dialog when activated.",
     "button_group_variants": "Variants",
     "button_group_sizes": "Sizes",
-    "button_group_states": "States"
+    "button_group_states": "States",
+    "dropdown_menu_prop_children": "Menu content and trigger.",
+    "alert_dialog_prop_trigger": "Element that opens the dialog.",
+    "alert_dialog_prop_variant": "Action button variant: default or destructive.",
+    "combobox_prop_options": "Array of { value, label, disabled? } objects.",
+    "combobox_prop_value": "Controlled selected value.",
+    "combobox_prop_onChange": "Callback when value changes.",
+    "combobox_prop_placeholder": "Placeholder text for the trigger button.",
+    "combobox_prop_searchPlaceholder": "Placeholder for the search input.",
+    "combobox_prop_emptyText": "Text shown when no options match the search.",
+    "combobox_prop_disabled": "Disables the combobox.",
+    "breadcrumb_prop_children": "BreadcrumbList and its items.",
+    "pagination_prop_page": "Current page (1-based).",
+    "pagination_prop_totalPages": "Total number of pages.",
+    "pagination_prop_onPageChange": "Callback when page changes.",
+    "pagination_prop_siblingCount": "Number of page buttons shown on each side of current page.",
+    "pagination_prop_showFirstLast": "Show first and last page jump buttons."
   },
   "sidebar": {
     "components_heading": "Components",

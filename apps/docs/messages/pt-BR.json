@@ -160,7 +160,12 @@
     "skeleton_desc": "Placeholder shimmer em CSS para estados de carregamento. Inclui SkeletonText e SkeletonAvatar.",
     "alert_desc": "Mensagens de feedback contextual com 4 variantes, título opcional, ícones integrados e botão de fechar.",
     "popover_desc": "Painel flutuante baseado em Radix UI. Suporta 4 lados, seta e animação de abertura/fechamento.",
-    "spinner_desc": "Spinner de carregamento em CSS puro. 4 tamanhos, 4 variantes, label acessível."
+    "spinner_desc": "Spinner de carregamento em CSS puro. 4 tamanhos, 4 variantes, label acessível.",
+    "dropdown_menu_desc": "Menu de contexto baseado em Radix UI. Suporta itens, rótulos, separadores, checkboxes, grupos de rádio, submenus e atalhos de teclado.",
+    "alert_dialog_desc": "Diálogo modal de confirmação baseado em Radix UI. Bloqueia a interação até que o usuário responda. Suporta variante de ação destrutiva.",
+    "combobox_desc": "Select com busca baseado em Popover com filtragem em tempo real, navegação por teclado e atributos ARIA acessíveis.",
+    "breadcrumb_desc": "Trilha de navegação semântica com suporte a separadores personalizados, reticências e aria-current na página ativa.",
+    "pagination_desc": "Controle de navegação por páginas com reticências para grandes intervalos. Suporta contagem de irmãos, botões de primeiro/último e aria-current."
   },
   "componentPages": {
     "table_prop": "Prop",
@@ -326,7 +331,23 @@
     "dialog_close_desc": "Elemento que fecha o diálogo quando ativado.",
     "button_group_variants": "Variantes",
     "button_group_sizes": "Tamanhos",
-    "button_group_states": "Estados"
+    "button_group_states": "Estados",
+    "dropdown_menu_prop_children": "Conteúdo e gatilho do menu.",
+    "alert_dialog_prop_trigger": "Elemento que abre o diálogo.",
+    "alert_dialog_prop_variant": "Variante do botão de ação: default ou destrutivo.",
+    "combobox_prop_options": "Array de objetos { value, label, disabled? }.",
+    "combobox_prop_value": "Valor selecionado controlado.",
+    "combobox_prop_onChange": "Callback quando o valor muda.",
+    "combobox_prop_placeholder": "Texto de placeholder do botão de gatilho.",
+    "combobox_prop_searchPlaceholder": "Placeholder do campo de busca.",
+    "combobox_prop_emptyText": "Texto exibido quando nenhuma opção corresponde à busca.",
+    "combobox_prop_disabled": "Desabilita o combobox.",
+    "breadcrumb_prop_children": "BreadcrumbList e seus itens.",
+    "pagination_prop_page": "Página atual (baseada em 1).",
+    "pagination_prop_totalPages": "Número total de páginas.",
+    "pagination_prop_onPageChange": "Callback quando a página muda.",
+    "pagination_prop_siblingCount": "Número de botões de página exibidos em cada lado da página atual.",
+    "pagination_prop_showFirstLast": "Exibir botões de salto para a primeira e última página."
   },
   "sidebar": {
     "components_heading": "Componentes",
