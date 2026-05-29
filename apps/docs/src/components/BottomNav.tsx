@@ -57,11 +57,20 @@ export default function BottomNav() {
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href)
 
+  const close = () => setSettingsOpen(false)
+
   return (
     <>
       {/* Settings panel */}
       {settingsOpen && (
         <div className={styles.settingsPanel} role="dialog" aria-label={t('settings')}>
+          <div className={styles.settingsPanelLinks}>
+            <Link href="/getting-started" className={`${styles.panelLink} ${isActive('/getting-started') ? styles.panelLinkActive : ''}`} onClick={close}>{t('getting_started')}</Link>
+            <Link href="/tokens/motion" className={`${styles.panelLink} ${isActive('/tokens/motion') ? styles.panelLinkActive : ''}`} onClick={close}>{t('motion_tokens')}</Link>
+            <Link href="/playground" className={`${styles.panelLink} ${isActive('/playground') ? styles.panelLinkActive : ''}`} onClick={close}>{t('playground')}</Link>
+            <a href="https://main--6a1610ad99f4ffa5234828d5.chromatic.com" className={styles.panelLink} target="_blank" rel="noreferrer" onClick={close}>{t('storybook')}</a>
+            <a href="https://github.com/ghiberti85/ui" className={styles.panelLink} target="_blank" rel="noreferrer" onClick={close}>{t('github')}</a>
+          </div>
           <div className={styles.settingsPanelInner}>
             <ThemeSwitcher />
             <LocaleSwitcher />
