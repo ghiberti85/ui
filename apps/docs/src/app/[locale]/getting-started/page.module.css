@@ -219,9 +219,26 @@
 }
 
 @media (max-width: 640px) {
+  .page {
+    padding: 0 0.25rem;
+  }
+
+  .hero {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+
   .section {
     flex-direction: column;
     gap: 1rem;
+    padding: 1.5rem 0;
   }
 
   .stepNumber {
@@ -230,7 +247,32 @@
     font-size: 0.6875rem;
   }
 
+  .stepTitle {
+    font-size: 1.125rem;
+  }
+
+  .stepDesc {
+    font-size: 0.875rem;
+  }
+
+  .themeGrid {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .themeCard {
+    width: 100%;
+  }
+
   .nextGrid {
     grid-template-columns: 1fr;
+  }
+
+  .nextCard {
+    padding: 0.875rem 1rem;
+  }
+
+  .callout {
+    font-size: 0.8125rem;
   }
 }
