@@ -24,6 +24,11 @@ export * from './components/Skeleton'
 export * from './components/Alert'
 export * from './components/Popover'
 export * from './components/Spinner'
+export * from './components/DropdownMenu'
+export * from './components/AlertDialog'
+export * from './components/Combobox'
+export * from './components/Breadcrumb'
+export * from './components/Pagination'
 
 // Utils
 export { cn } from './utils/cn'

@@ -189,6 +189,27 @@ pnpm lint                             # lint all packages
 - [x] Playground docs page with how-it-works explanation (how_title + how_desc i18n keys)
 - [x] Mandatory update rule reinforced in CLAUDE.md — rule #2 explicit 4-item checklist, end-of-iteration flow with bold warning and numbered 1-6 steps
 
+### Done (continued)
+- [x] DropdownMenu component (Radix UI, labels, separators, checkbox/radio items, submenus, keyboard shortcuts)
+- [x] AlertDialog component (Radix UI, destructive variant, same overlay pattern as Dialog)
+- [x] Combobox component (built on Popover, searchable, keyboard navigation, accessible ARIA)
+- [x] Breadcrumb component (pure semantic HTML, custom separator, ellipsis, aria-current)
+- [x] Pagination component (pure HTML, ellipsis for large ranges, siblingCount, showFirstLast, aria-current)
+- [x] 367 unit tests passing across 30 test files
+- [x] Docs pages for all 5 new components with live demos, props tables, and usage code
+- [x] i18n keys for all 5 components in en.json and pt-BR.json
+- [x] ComponentsLayout sidebar updated with 5 new slugs
+
+### Done (continued)
+- [x] Progress component (animated fill, 5 variants, 3 sizes, role=progressbar a11y)
+- [x] Skeleton component (CSS shimmer + SkeletonText + SkeletonAvatar helpers)
+- [x] Alert component (4 variants, built-in SVG icons, optional title, dismiss button)
+- [x] Popover component (Radix UI, animated scale+fade, arrow, PopoverClose)
+- [x] Spinner component (CSS border trick, 4 sizes, 4 variants, accessible label)
+- [x] 326 unit tests passing (39 new tests across 5 new components)
+- [x] Individual docs pages + sidebar links + ComponentsPageClient demos for all 5 components
+- [x] EN/PT-BR i18n keys for all 5 new components
+
 ### Next — Integração de Projetos (requer desktop)
 - [ ] **DS ds-icc** — adicionar design system do projeto ICC (requer acesso ao repo pelo desktop para extrair cores/tipografia)
 - [ ] **DS ds-financas-casal** — adicionar design system do projeto Finanças Casal (idem)

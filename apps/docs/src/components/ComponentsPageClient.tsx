@@ -45,6 +45,29 @@ import {
   PopoverTrigger,
   PopoverContent,
   Spinner,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+  Combobox,
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  Pagination,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -635,6 +658,120 @@ export default function ComponentsPageClient() {
             <Spinner size="xl" label="Extra Large" />
           </div>
           <code className={styles.importLine}>import {'{ Spinner }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'dropdown-menu',
+      name: 'DropdownMenu',
+      description: t('dropdown_menu_desc'),
+      section: 'display',
+      href: '/components/dropdown-menu',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="secondary" size="sm">Open Menu</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Log out</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          <code className={styles.importLine}>import {'{ DropdownMenu, … }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'alert-dialog',
+      name: 'AlertDialog',
+      description: t('alert_dialog_desc'),
+      section: 'display',
+      href: '/components/alert-dialog',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="secondary" size="sm">Open Alert</Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                  <AlertDialogDescription>This action cannot be undone.</AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction>Continue</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </div>
+          <code className={styles.importLine}>import {'{ AlertDialog, … }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'combobox',
+      name: 'Combobox',
+      description: t('combobox_desc'),
+      section: 'form',
+      href: '/components/combobox',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Combobox
+              options={[
+                { value: 'react', label: 'React' },
+                { value: 'vue', label: 'Vue' },
+                { value: 'svelte', label: 'Svelte' },
+              ]}
+              placeholder="Select framework..."
+            />
+          </div>
+          <code className={styles.importLine}>import {'{ Combobox }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'breadcrumb',
+      name: 'Breadcrumb',
+      description: t('breadcrumb_desc'),
+      section: 'layout',
+      href: '/components/breadcrumb',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem><BreadcrumbLink href="/">Home</BreadcrumbLink></BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem><BreadcrumbPage>Page</BreadcrumbPage></BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
+          <code className={styles.importLine}>import {'{ Breadcrumb, … }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'pagination',
+      name: 'Pagination',
+      description: t('pagination_desc'),
+      section: 'layout',
+      href: '/components/pagination',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Pagination page={3} totalPages={10} onPageChange={() => {}} />
+          </div>
+          <code className={styles.importLine}>import {'{ Pagination }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },
