@@ -155,7 +155,12 @@
     "tabs_desc": "Layered sections of content displayed one at a time. Built on Radix UI with keyboard navigation.",
     "accordion_desc": "Vertically stacked interactive headings that each reveal a section of content. Supports single and multiple open items.",
     "toast_desc": "Temporary feedback messages that appear and auto-dismiss. Supports default, success, warning, error, and info variants.",
-    "table_component_desc": "Responsive data table with header, body, footer, and caption. Supports striped rows."
+    "table_component_desc": "Responsive data table with header, body, footer, and caption. Supports striped rows.",
+    "progress_desc": "Animated progress bar with 5 variants (default/success/warning/error/info) and 3 sizes.",
+    "skeleton_desc": "CSS shimmer placeholder for loading states. Includes SkeletonText and SkeletonAvatar helpers.",
+    "alert_desc": "Contextual feedback messages with 4 variants, optional title, built-in icons, and dismiss button.",
+    "popover_desc": "Floating panel built on Radix UI. Supports all 4 sides, arrow, and animated open/close.",
+    "spinner_desc": "CSS-only loading spinner. 4 sizes, 4 variants, accessible label."
   },
   "componentPages": {
     "table_prop": "Prop",
