@@ -19,6 +19,11 @@ export * from './components/Toast'
 export * from './components/Tabs'
 export * from './components/Accordion'
 export * from './components/Table'
+export * from './components/Progress'
+export * from './components/Skeleton'
+export * from './components/Alert'
+export * from './components/Popover'
+export * from './components/Spinner'
 
 // Utils
 export { cn } from './utils/cn'

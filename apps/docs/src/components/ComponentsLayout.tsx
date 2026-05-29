@@ -10,6 +10,7 @@ const COMPONENT_SLUGS = [
   'checkbox', 'radio', 'switch', 'card', 'dialog',
   'tooltip', 'avatar', 'separator', 'typography', 'stack', 'container',
   'tabs', 'accordion', 'toast', 'table',
+  'progress', 'skeleton', 'alert', 'popover', 'spinner',
 ]
 
 const COMPONENT_LABELS: Record<string, string> = {
@@ -18,6 +19,7 @@ const COMPONENT_LABELS: Record<string, string> = {
   card: 'Card', dialog: 'Dialog', tooltip: 'Tooltip', avatar: 'Avatar',
   separator: 'Separator', typography: 'Typography', stack: 'Stack', container: 'Container',
   tabs: 'Tabs', accordion: 'Accordion', toast: 'Toast', table: 'Table',
+  progress: 'Progress', skeleton: 'Skeleton', alert: 'Alert', popover: 'Popover', spinner: 'Spinner',
 }
 
 function getCurrentSlug(pathname: string): string | null {

@@ -36,6 +36,15 @@ import {
   TableHead,
   TableCell,
   TableCaption,
+  Progress,
+  Skeleton,
+  SkeletonText,
+  SkeletonAvatar,
+  Alert,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  Spinner,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -530,6 +539,102 @@ export default function ComponentsPageClient() {
             </Table>
           </div>
           <code className={styles.importLine}>import {'{ Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'progress',
+      name: 'Progress',
+      description: t('progress_desc'),
+      section: 'display',
+      href: '/components/progress',
+      element: (
+        <>
+          <div className={styles.demoColumn} style={{ maxWidth: 480 }}>
+            <Progress value={60} aria-label="Default" />
+            <Progress value={80} variant="success" aria-label="Success" />
+            <Progress value={40} variant="warning" aria-label="Warning" />
+            <Progress value={25} variant="error" aria-label="Error" />
+          </div>
+          <code className={styles.importLine}>import {'{ Progress }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'skeleton',
+      name: 'Skeleton',
+      description: t('skeleton_desc'),
+      section: 'display',
+      href: '/components/skeleton',
+      element: (
+        <>
+          <div className={styles.demoColumn} style={{ maxWidth: 320 }}>
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+              <SkeletonAvatar size={40} />
+              <div style={{ flex: 1 }}><SkeletonText lines={2} /></div>
+            </div>
+            <Skeleton height="120px" />
+            <SkeletonText lines={3} />
+          </div>
+          <code className={styles.importLine}>import {'{ Skeleton, SkeletonText, SkeletonAvatar }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'alert',
+      name: 'Alert',
+      description: t('alert_desc'),
+      section: 'display',
+      href: '/components/alert',
+      element: (
+        <>
+          <div className={styles.demoColumn} style={{ maxWidth: 480 }}>
+            <Alert variant="info" title="Info">This is an informational alert.</Alert>
+            <Alert variant="success" title="Success">Operation completed.</Alert>
+            <Alert variant="warning" title="Warning">Proceed with caution.</Alert>
+            <Alert variant="error" title="Error">Something went wrong.</Alert>
+          </div>
+          <code className={styles.importLine}>import {'{ Alert }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'popover',
+      name: 'Popover',
+      description: t('popover_desc'),
+      section: 'display',
+      href: '/components/popover',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="secondary">Open Popover</Button>
+              </PopoverTrigger>
+              <PopoverContent>
+                <p style={{ margin: 0, fontSize: '0.875rem' }}>This is popover content.</p>
+              </PopoverContent>
+            </Popover>
+          </div>
+          <code className={styles.importLine}>import {'{ Popover, PopoverTrigger, PopoverContent, PopoverClose }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'spinner',
+      name: 'Spinner',
+      description: t('spinner_desc'),
+      section: 'display',
+      href: '/components/spinner',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Spinner size="sm" label="Small" />
+            <Spinner size="md" label="Medium" />
+            <Spinner size="lg" label="Large" />
+            <Spinner size="xl" label="Extra Large" />
+          </div>
+          <code className={styles.importLine}>import {'{ Spinner }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },

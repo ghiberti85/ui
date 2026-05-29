@@ -155,7 +155,12 @@
     "tabs_desc": "Seções de conteúdo empilhadas exibidas uma de cada vez. Construído sobre o Radix UI com navegação por teclado.",
     "accordion_desc": "Cabeçalhos interativos empilhados verticalmente que revelam seções de conteúdo. Suporta um ou múltiplos itens abertos.",
     "toast_desc": "Mensagens de feedback temporárias que aparecem e se dispensam automaticamente. Suporta variantes padrão, sucesso, aviso, erro e informação.",
-    "table_component_desc": "Tabela de dados responsiva com cabeçalho, corpo, rodapé e legenda. Suporta linhas alternadas."
+    "table_component_desc": "Tabela de dados responsiva com cabeçalho, corpo, rodapé e legenda. Suporta linhas alternadas.",
+    "progress_desc": "Barra de progresso animada com 5 variantes (padrão/sucesso/aviso/erro/info) e 3 tamanhos.",
+    "skeleton_desc": "Placeholder shimmer em CSS para estados de carregamento. Inclui SkeletonText e SkeletonAvatar.",
+    "alert_desc": "Mensagens de feedback contextual com 4 variantes, título opcional, ícones integrados e botão de fechar.",
+    "popover_desc": "Painel flutuante baseado em Radix UI. Suporta 4 lados, seta e animação de abertura/fechamento.",
+    "spinner_desc": "Spinner de carregamento em CSS puro. 4 tamanhos, 4 variantes, label acessível."
   },
   "componentPages": {
     "table_prop": "Prop",
