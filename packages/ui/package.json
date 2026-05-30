@@ -12,7 +12,8 @@
     "dev": "tsc -p tsconfig.json --watch",
     "lint": "eslint src",
     "test": "vitest run",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "prepublishOnly": "pnpm test && pnpm lint && pnpm build"
   },
   "peerDependencies": {
     "react": "^18 || ^19",
