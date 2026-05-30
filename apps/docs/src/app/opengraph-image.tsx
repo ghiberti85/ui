@@ -62,6 +62,40 @@ export default async function Image() {
           }}
         />
 
+        {/* Token-stack icon — top right */}
+        <div
+          style={{
+            position: 'absolute',
+            right: 80,
+            top: 64,
+            width: 120,
+            height: 120,
+            borderRadius: 28,
+            background: '#18181b',
+            border: '1px solid rgba(109,40,217,0.3)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, position: 'absolute', left: 22, top: 28 }}>
+            <div style={{ width: 44, height: 10, borderRadius: 5, background: 'white' }} />
+            <div style={{ width: 32, height: 10, borderRadius: 5, background: 'rgba(255,255,255,0.7)' }} />
+            <div style={{ width: 56, height: 10, borderRadius: 5, background: 'rgba(255,255,255,0.45)' }} />
+          </div>
+          <div
+            style={{
+              position: 'absolute',
+              right: 18,
+              top: 24,
+              width: 20,
+              height: 20,
+              borderRadius: 10,
+              background: '#6d28d9',
+            }}
+          />
+        </div>
+
         {/* Content */}
         <div
           style={{
@@ -144,7 +178,7 @@ export default async function Image() {
                 margin: 0,
               }}
             >
-              20 components · 287 tests · TypeScript
+              30 components · 326 tests · TypeScript · React 19
             </p>
           </div>
         </div>
