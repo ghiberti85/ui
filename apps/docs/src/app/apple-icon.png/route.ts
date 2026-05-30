@@ -1,10 +1,8 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const size = { width: 180, height: 180 }
-export const contentType = 'image/png'
 
-export default function AppleIcon() {
+export function GET() {
   return new ImageResponse(
     (
       <div
@@ -19,13 +17,11 @@ export default function AppleIcon() {
           position: 'relative',
         }}
       >
-        {/* Token bars */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, position: 'absolute', left: 40, top: 52 }}>
           <div style={{ width: 79, height: 17, borderRadius: 9, background: 'white' }} />
           <div style={{ width: 56, height: 17, borderRadius: 9, background: 'rgba(255,255,255,0.7)' }} />
           <div style={{ width: 102, height: 17, borderRadius: 9, background: 'rgba(255,255,255,0.45)' }} />
         </div>
-        {/* Purple dot */}
         <div
           style={{
             position: 'absolute',
@@ -39,6 +35,6 @@ export default function AppleIcon() {
         />
       </div>
     ),
-    { ...size },
+    { width: 180, height: 180 },
   )
 }
