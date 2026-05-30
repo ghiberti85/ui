@@ -88,6 +88,8 @@ export default async function LocaleLayout({
     >
       <head>
         <meta name="theme-color" content="#6d28d9" />
+        {/* Explicit apple-touch-icon — iOS ignores Next.js auto-discovery in [locale] segments */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
         {/* Anti-flash: apply dark mode before first paint */}
         <script
           dangerouslySetInnerHTML={{
