@@ -85,6 +85,11 @@ interface ComponentEntry {
   href?: string
 }
 
+function PaginationDemoWrapper() {
+  const [page, setPage] = useState(3)
+  return <Pagination page={page} totalPages={10} onPageChange={setPage} />
+}
+
 export default function ComponentsPageClient() {
   const t = useTranslations('components')
   const [query, setQuery] = useState('')
@@ -769,7 +774,7 @@ export default function ComponentsPageClient() {
       element: (
         <>
           <div className={styles.demo}>
-            <Pagination page={3} totalPages={10} onPageChange={() => {}} />
+            <PaginationDemoWrapper />
           </div>
           <code className={styles.importLine}>import {'{ Pagination }'} from &apos;@ghiberti85/ui&apos;</code>
         </>

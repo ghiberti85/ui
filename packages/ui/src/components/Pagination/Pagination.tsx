@@ -20,8 +20,10 @@ function getRange(start: number, end: number) {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i)
 }
 
-function buildPages(page: number, totalPages: number, siblingCount: number): (number | '...')[] {
-  const totalPageNumbers = siblingCount * 2 + 5 // siblings + current + 2 boundaries + 2 ellipsis
+type PageItem = number | 'left-ellipsis' | 'right-ellipsis'
+
+function buildPages(page: number, totalPages: number, siblingCount: number): PageItem[] {
+  const totalPageNumbers = siblingCount * 2 + 5
 
   if (totalPages <= totalPageNumbers) {
     return getRange(1, totalPages)
@@ -33,21 +35,18 @@ function buildPages(page: number, totalPages: number, siblingCount: number): (nu
   const showLeftDots = leftSibling > 2
   const showRightDots = rightSibling < totalPages - 1
 
-  const firstPage = 1
-  const lastPage = totalPages
-
   if (!showLeftDots && showRightDots) {
     const leftRange = getRange(1, 3 + 2 * siblingCount)
-    return [...leftRange, '...', lastPage]
+    return [...leftRange, 'right-ellipsis', totalPages]
   }
 
   if (showLeftDots && !showRightDots) {
     const rightRange = getRange(totalPages - (3 + 2 * siblingCount) + 1, totalPages)
-    return [firstPage, '...', ...rightRange]
+    return [1, 'left-ellipsis', ...rightRange]
   }
 
   const middleRange = getRange(leftSibling, rightSibling)
-  return [firstPage, '...', ...middleRange, '...', lastPage]
+  return [1, 'left-ellipsis', ...middleRange, 'right-ellipsis', totalPages]
 }
 
 /**
@@ -91,16 +90,16 @@ export const Pagination = ({
             ‹
           </button>
         </li>
-        {pages.map((p, i) =>
-          p === '...' ? (
-            <li key={`ellipsis-${i}`} aria-hidden="true">
+        {pages.map((p) =>
+          p === 'left-ellipsis' || p === 'right-ellipsis' ? (
+            <li key={p} aria-hidden="true">
               <span className={styles.ellipsis}>…</span>
             </li>
           ) : (
             <li key={p}>
               <button
                 className={cn(styles.button, p === page && styles.buttonActive)}
-                onClick={() => onPageChange(p as number)}
+                onClick={() => onPageChange(p)}
                 aria-current={p === page ? 'page' : undefined}
                 aria-label={`Page ${p}`}
               >
