@@ -75,6 +75,28 @@ When removing a component, verify every item is completed before committing:
 
 ---
 
+## Known Gotchas & Platform Quirks
+
+### iOS PWA apple-touch-icon
+**Problem:** Next.js App Router with `[locale]` dynamic segments generates icons at `/en/apple-icon.png`, not `/apple-icon.png`. iOS ignores locale-scoped paths and shows a generic letter icon.
+
+**Solution (do not change this pattern):**
+- Icon served via `app/apple-icon.png/route.ts` — edge route handler at `/apple-icon.png` using `ImageResponse`.
+- `<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png">` added **explicitly** in `<head>` of `[locale]/layout.tsx`. Do NOT rely on Next.js auto-discovery.
+- Do NOT use `[locale]/apple-icon.tsx` — it generates the wrong URL.
+
+### Dark Mode & CSS Custom Properties
+- Dark mode via `data-mode="dark"` on `<html>` (set by `ModeToggle`). Token selector: `[data-theme="ds-minimal"][data-mode="dark"]`.
+- **Never set CSS vars on `document.documentElement.style`** from client components — inline styles override CSS rules including dark mode. Scope to a container ref instead. (See `PlaygroundClient` for the correct pattern.)
+
+### React `'use client'` in component library
+Components that use React hooks (`useState`, `useEffect`, etc.) must have `'use client'` at the top. Without it, they crash with `TypeError: useState is not a function` from Server Components. Current client components: `Avatar`, `Toast`, `Combobox`.
+
+### CSS token undefined — `--color-semantic-surface`
+This token **does not exist**. Use `--color-semantic-background-subtle` instead. If you see transparent or invisible backgrounds, this is the likely cause.
+
+---
+
 ## Architecture Decisions
 
 ### Tokens
