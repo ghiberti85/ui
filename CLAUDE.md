@@ -8,30 +8,72 @@ Monorepo with two main products:
 1. **`@ghiberti85/tokens`** — Design token collection (Style Dictionary v4, W3C format)
 2. **`@ghiberti85/ui`** — Hybrid React component library (styled base + headless primitives)
 
-## Non-Negotiable Rules
+---
 
-These apply to every task, no exceptions:
+## **Non-Negotiable Rules**
 
-1. **Tests** — every component change or addition must have corresponding test coverage (Vitest + Testing Library). Run `pnpm test` before considering any task done.
-2. **Documentation** — **every implementation, edit, or fix — no matter how small — MUST update ALL of the following without exception:** (a) `apps/docs` pages for the affected component/feature, (b) Storybook stories (`*.stories.tsx`) with autodocs and all variants covered, (c) tests in `*.test.tsx`, and (d) the Roadmap section in this file. **Omitting any of these four items is a hard failure — do not consider the task done until all four are complete.**
-3. **Roadmap** — after completing any significant feature or component, update the `## Roadmap` section at the bottom of this file marking items as done and adding new ones.
-4. **i18n** — every user-facing string in `apps/docs` must exist in both `en.json` and `pt-BR.json`.
-5. **No hardcoded values** — components must consume only CSS custom properties (`var(--color-semantic-*)`, `var(--border-radius-*)`, etc.). Never hardcode colors, sizes, or spacing.
+**These apply to every task, no exceptions. Violating any of these is a hard failure.**
 
-## End-of-Iteration Flow (mandatory after every implementation, fix, or edit)
+1. **Tests** — every feature, fix, or edit must have corresponding test coverage (Vitest + Testing Library). Run `pnpm test` before every commit. Zero failing tests allowed.
+2. **Documentation** — after every change, ALL of the following must be updated without exception:
+   - (a) `apps/docs` pages for the affected component/feature
+   - (b) Storybook stories (`*.stories.tsx`) with autodocs and all variants covered
+   - (c) Tests in `*.test.tsx`
+   - (d) Roadmap section in this file
+   Omitting any of these four items is a hard failure.
+3. **Security** — no hardcoded secrets or API tokens. CSS vars only — no `style={{ color: userInput }}`. All external links must have `rel="noopener noreferrer"`. Run `pnpm audit` before adding any new dependency. No `eval()` or `dangerouslySetInnerHTML` without DOMPurify sanitization. Use `next/image` for all images.
+4. **No hardcoded values** — components must consume only CSS custom properties (`var(--color-semantic-*)`, `var(--border-radius-*)`, etc.). Never hardcode colors, sizes, or spacing.
+5. **i18n** — every user-facing string in `apps/docs` must exist in both `en.json` and `pt-BR.json`.
+6. **Clean codebase** — when removing a feature, remove everything: component files, tests, stories, docs page, i18n keys, exports, and sidebar entries. See Component Removal Checklist below.
 
-**⚠️ MANDATORY after every implementation, edit, or fix — no exceptions**
+---
 
-At the end of **every** iteration — no exceptions — execute these steps in order:
+## **End-of-Iteration Flow (mandatory after every implementation, fix, or edit)**
 
-1. **Review/update docs** — ensure `apps/docs` pages reflect the change: new/updated component page, i18n keys added to both `en.json` and `pt-BR.json`, Storybook story created/updated.
-2. **Add/update Storybook stories** — every component change needs a corresponding `*.stories.tsx` update with autodocs and all variants covered.
-3. **pnpm test must pass** — run `pnpm test` from root; fix all failures before proceeding. Never commit with failing tests.
-4. **Update roadmap** — mark completed items in `## Roadmap` and add next items if relevant.
-5. **Commit** — clear, descriptive commit message on the feature branch `claude/friendly-lamport-g7exP`.
-6. **PR → merge** — use `mcp__github__create_pull_request` targeting `main`, then immediately merge with `mcp__github__merge_pull_request` using `squash` method (resolve any conflicts by merging `origin/main` locally first).
+**⚠️ MANDATORY after every implementation, edit, or fix — no exceptions. Complete ALL steps before reporting done.**
 
-This flow is non-negotiable and must be completed before reporting a task as done.
+1. **Update `apps/docs` pages** — component page updated/created, i18n keys added to both `en.json` and `pt-BR.json`, Storybook story created/updated.
+2. **Update Storybook stories** — every component change needs a corresponding `*.stories.tsx` update with autodocs and all variants covered.
+3. **`pnpm test`** — run from root; fix all failures before proceeding. Never commit with failing tests.
+4. **`pnpm lint`** — fix all warnings/errors before proceeding.
+5. **Security check** — no hardcoded secrets, no unsafe patterns (`eval`, unsanitized `dangerouslySetInnerHTML`), all external links have `rel="noopener noreferrer"`, no raw `<img>` tags.
+6. **Update Roadmap** — mark completed items in `## Roadmap` and add next items if relevant.
+7. **Commit** — clear, descriptive commit message on the feature branch `claude/friendly-lamport-g7exP`.
+8. **Push + PR → merge** — use `mcp__github__create_pull_request` targeting `main`, then immediately merge with `mcp__github__merge_pull_request` using `squash` method (resolve any conflicts by merging `origin/main` locally first).
+9. **Verify Vercel deploy** — if the deploy shows ERROR status, read build logs and fix before reporting the task as done.
+
+---
+
+## Security Guidelines
+
+- **Never commit `.env` files or API keys** — use environment variables and `.gitignore`
+- **CSS vars only** — never use `style={{ color: userInput }}` or other dynamic inline styles from user input
+- **External links** — always include `rel="noopener noreferrer"` on `target="_blank"` links
+- **Images** — use `next/image` for all images; never use raw `<img>` tags
+- **Dependency hygiene** — run `pnpm audit` before adding new dependencies; address high/critical vulnerabilities
+- **No `eval()`** — never use `eval()` or `new Function()` with untrusted input
+- **`dangerouslySetInnerHTML`** — only use with DOMPurify-sanitized content; never with raw user input
+- **Server Components by default** — only add `'use client'` when strictly necessary (event handlers, browser APIs, hooks)
+- **No secrets in code** — API keys, tokens, and credentials belong only in environment variables
+
+---
+
+## Component Removal Checklist
+
+When removing a component, verify every item is completed before committing:
+
+- [ ] Delete `packages/ui/src/components/ComponentName/` (all files)
+- [ ] Remove export from `packages/ui/src/index.ts`
+- [ ] Delete docs page `apps/docs/src/app/[locale]/components/[slug]/`
+- [ ] Remove slug from `ComponentsLayout.tsx` (`COMPONENT_SLUGS` array + `COMPONENT_LABELS` map)
+- [ ] Remove component demo from `ComponentsPageClient.tsx`
+- [ ] Remove i18n keys from `apps/docs/messages/en.json`
+- [ ] Remove i18n keys from `apps/docs/messages/pt-BR.json`
+- [ ] Delete `*.stories.tsx` from Storybook app
+- [ ] Run `pnpm test` — must pass
+- [ ] Run `pnpm lint` — must pass
+
+---
 
 ## Architecture Decisions
 
@@ -54,6 +96,8 @@ This flow is non-negotiable and must be completed before reporting a task as don
 - Component files: PascalCase (`Button.tsx`, `Button.module.css`, `Button.test.tsx`, `Button.stories.tsx`)
 - Token files: kebab-case (`color.json`, `border-radius.json`, `dark.json`)
 
+---
+
 ## Adding a New Component
 
 1. Create folder: `packages/ui/src/components/ComponentName/`
@@ -67,6 +111,8 @@ This flow is non-negotiable and must be completed before reporting a task as don
 4. Add to `apps/docs/src/app/[locale]/components/page.tsx`
 5. Run `pnpm test` — must pass before committing
 
+---
+
 ## Adding a New Design System
 
 1. Create folder: `packages/tokens/src/ds-{name}/`
@@ -76,6 +122,8 @@ This flow is non-negotiable and must be completed before reporting a task as don
 5. Add to Storybook toolbar in `apps/storybook/.storybook/preview.ts`
 6. Import CSS in `apps/storybook/.storybook/preview.ts`
 
+---
+
 ## Testing Rules
 
 - Every component must have tests covering: rendering, props/variants, accessibility, interactions, ref forwarding
@@ -83,11 +131,15 @@ This flow is non-negotiable and must be completed before reporting a task as don
 - Coverage: `pnpm --filter @ghiberti85/ui test -- --coverage`
 - Tests must pass in CI — never commit with failing tests
 
+---
+
 ## i18n (docs app)
 
 - Messages: `apps/docs/messages/en.json` (default) and `pt-BR.json`
 - Provider: next-intl with App Router
 - All user-facing strings must be in both files
+
+---
 
 ## Commands
 
@@ -98,7 +150,10 @@ pnpm dev                              # run all apps
 pnpm test                             # run all tests
 pnpm build                            # build everything
 pnpm lint                             # lint all packages
+pnpm audit                            # check for security vulnerabilities
 ```
+
+---
 
 ## Roadmap
 
@@ -210,6 +265,13 @@ pnpm lint                             # lint all packages
 - [x] Individual docs pages + sidebar links + ComponentsPageClient demos for all 5 components
 - [x] EN/PT-BR i18n keys for all 5 new components
 
+### Done (continued)
+- [x] **CLAUDE.md rewrite** — Security Guidelines section, Component Removal Checklist, expanded Non-Negotiable Rules, 9-step End-of-Iteration Flow
+- [x] **CI security audit** — `pnpm audit --audit-level=high` step added to ci.yml (continue-on-error: true)
+- [x] **security.yml workflow** — dedicated GitHub Actions workflow running `pnpm audit` + Dependency Review on every PR to main
+- [x] **prepublishOnly gate** — `packages/ui/package.json` now runs tests + lint + build before any npm publish
+- [x] **Docs quality audit** — all 10 new component pages confirmed to have Demo, Props table, Usage code, and Storybook link sections
+
 ### Next — Integração de Projetos (requer desktop)
 - [ ] **DS ds-icc** — adicionar design system do projeto ICC (requer acesso ao repo pelo desktop para extrair cores/tipografia)
 - [ ] **DS ds-financas-casal** — adicionar design system do projeto Finanças Casal (idem)
@@ -222,6 +284,8 @@ pnpm lint                             # lint all packages
 - [ ] **CLI scaffold** — `npx @ghiberti85/ui init` que instala deps e copia CSS global para o projeto do usuário
 - [ ] **Chromatic visual diff badge** no README com link para o último build
 - [x] **OG image dinâmica** na docs — Next.js `ImageResponse` gerando preview com o design system ativo (home + per-component, DM Sans font, dark card with purple accent bar)
+
+---
 
 ## Owner
 
