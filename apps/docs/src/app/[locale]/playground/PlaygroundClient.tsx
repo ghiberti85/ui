@@ -43,29 +43,38 @@ export default function PlaygroundClient({ labels }: { labels: Labels }) {
   const [fontSize, setFontSize] = useState(16)
   const [copied, setCopied] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  // Scope all CSS var overrides to the preview element only.
+  // This prevents the Playground from polluting the global <html> style
+  // and breaking dark mode on the rest of the site.
+  const previewRef = useRef<HTMLElement>(null)
   const overriddenVars = useRef<Set<string>>(new Set())
 
   const setVar = useCallback((varName: string, value: string) => {
-    document.documentElement.style.setProperty(varName, value)
+    const el = previewRef.current
+    if (!el) return
+    el.style.setProperty(varName, value)
     overriddenVars.current.add(varName)
   }, [])
 
   const removeVar = useCallback((varName: string) => {
-    document.documentElement.style.removeProperty(varName)
+    const el = previewRef.current
+    if (!el) return
+    el.style.removeProperty(varName)
     overriddenVars.current.delete(varName)
   }, [])
 
-  // Apply primary color
+  // Apply primary color to preview
   useEffect(() => {
     if (primary) setVar('--color-semantic-primary', primary)
   }, [primary, setVar])
 
-  // Apply background color
+  // Apply background color to preview
   useEffect(() => {
     if (background) setVar('--color-semantic-background', background)
   }, [background, setVar])
 
-  // Apply border radius (scale sm/md/lg/full proportionally)
+  // Apply border radius (scale sm/md/lg/full proportionally) to preview
   useEffect(() => {
     const md = borderRadius
     const sm = Math.max(0, Math.round(md * 0.6))
@@ -77,22 +86,25 @@ export default function PlaygroundClient({ labels }: { labels: Labels }) {
     setVar('--border-radius-full', `${full}px`)
   }, [borderRadius, setVar])
 
-  // Apply font size base
+  // Apply font size base to preview only
   useEffect(() => {
-    document.documentElement.style.fontSize = `${fontSize}px`
+    const el = previewRef.current
+    if (!el) return
+    el.style.fontSize = `${fontSize}px`
     overriddenVars.current.add('__fontSize__')
   }, [fontSize])
 
   const handleReset = useCallback(() => {
+    const el = previewRef.current
+    if (!el) return
     overriddenVars.current.forEach((v) => {
       if (v === '__fontSize__') {
-        document.documentElement.style.fontSize = ''
+        el.style.fontSize = ''
       } else {
         removeVar(v)
       }
     })
     overriddenVars.current.clear()
-    // Re-read current values from CSS
     setPrimary(getInitialColor('--color-semantic-primary', '#6d28d9'))
     setBackground(getInitialColor('--color-semantic-background', '#ffffff'))
     setBorderRadius(6)
@@ -207,13 +219,13 @@ export default function PlaygroundClient({ labels }: { labels: Labels }) {
       </button>
 
       <div className={styles.layout}>
-        {/* Controls panel */}
+        {/* Controls panel — uses real theme vars, not overridden */}
         <aside className={`${styles.sidebar} ${mobileOpen ? styles.sidebarOpen : ''}`}>
           {controls}
         </aside>
 
-        {/* Preview panel */}
-        <section className={styles.preview} aria-label={labels.preview}>
+        {/* Preview panel — CSS var overrides scoped here only */}
+        <section ref={previewRef} className={styles.preview} aria-label={labels.preview}>
           <h2 className={styles.previewTitle}>{labels.preview}</h2>
 
           {/* Buttons */}
