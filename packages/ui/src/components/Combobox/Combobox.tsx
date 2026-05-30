@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { Popover, PopoverTrigger, PopoverContent } from '../Popover'
 import { cn } from '../../utils/cn'
