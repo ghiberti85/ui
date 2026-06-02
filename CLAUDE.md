@@ -95,6 +95,20 @@ Components that use React hooks (`useState`, `useEffect`, etc.) must have `'use 
 ### CSS token undefined — `--color-semantic-surface`
 This token **does not exist**. Use `--color-semantic-background-subtle` instead. If you see transparent or invisible backgrounds, this is the likely cause.
 
+### Mobile viewport overflow — pages appear as "desktop layout" on mobile
+**Problem:** Any element with `white-space: pre` (e.g. `<CodeBlock>`) that contains long lines will expand the scrollable width of the page beyond the viewport. The browser then renders the full page at that wider width, making it look like a desktop layout — nav, text, and all content shifted to the right.
+
+**Rules (do not remove these):**
+- `body` in `globals.css` must always have `overflow-x: hidden`.
+- `.site-main` in `globals.css` must always have `overflow-x: hidden`.
+- Every page-level `.page` class must have `width: 100%` alongside `max-width`.
+- Every `CodeBlock` wrapper must have `max-width: 100%`.
+
+**When adding a new page or layout:**
+1. Give the root element `width: 100%` AND `max-width: <value>` — never `max-width` alone.
+2. If the page contains code blocks, verify on a 375px viewport that no horizontal scroll appears.
+3. Never remove `overflow-x: hidden` from `body` or `.site-main`.
+
 ---
 
 ## Architecture Decisions
