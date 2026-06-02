@@ -277,3 +277,22 @@
     font-size: 0.8125rem;
   }
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(1.375rem, 6vw, 1.75rem);
+  }
+
+  .section {
+    padding: 1rem 0;
+    gap: 0.75rem;
+  }
+
+  .stepTitle {
+    font-size: 1rem;
+  }
+
+  .nextSteps {
+    padding-top: 1.5rem;
+  }
+}
