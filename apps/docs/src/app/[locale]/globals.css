@@ -61,3 +61,10 @@ body {
     padding-bottom: calc(2rem + 60px);
   }
 }
+
+@media (max-width: 480px) {
+  .site-main {
+    padding: 1.5rem 0.875rem;
+    padding-bottom: calc(1.5rem + 60px);
+  }
+}

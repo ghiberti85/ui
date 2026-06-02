@@ -371,5 +371,16 @@
   .ctaSecondary {
     width: 100%;
     justify-content: center;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 1.5rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 2.5rem);
   }
 }

@@ -58,3 +58,27 @@
   padding: 0.1em 0.4em;
   color: var(--color-semantic-foreground, #0a0a0a);
 }
+
+@media (max-width: 640px) {
+  .table {
+    font-size: 0.8125rem;
+  }
+
+  .th,
+  .tdProp,
+  .tdType,
+  .tdDefault,
+  .tdDesc {
+    padding: 0.5rem 0.625rem;
+  }
+
+  /* Hide "Default" column on small screens to save space */
+  .th:nth-child(3),
+  .tdDefault {
+    display: none;
+  }
+
+  .tdProp { width: 30%; }
+  .tdType { width: 30%; }
+  .tdDesc { width: 40%; }
+}

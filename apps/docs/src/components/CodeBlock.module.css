@@ -55,3 +55,23 @@
 .copyLabel {
   line-height: 1;
 }
+
+@media (max-width: 640px) {
+  .pre {
+    padding: 1rem;
+    padding-right: 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .copyBtn {
+    position: static;
+    display: flex;
+    margin: 0 0.75rem 0.75rem auto;
+    width: fit-content;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
