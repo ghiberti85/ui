@@ -312,11 +312,15 @@ pnpm audit                            # check for security vulnerabilities
 - [x] **prepublishOnly gate** — `packages/ui/package.json` now runs tests + lint + build before any npm publish
 - [x] **Docs quality audit** — all 10 new component pages confirmed to have Demo, Props table, Usage code, and Storybook link sections
 
-### Next — Integração de Projetos (requer desktop)
-- [ ] **DS ds-icc** — adicionar design system do projeto ICC (requer acesso ao repo pelo desktop para extrair cores/tipografia)
-- [ ] **DS ds-financas-casal** — adicionar design system do projeto Finanças Casal (idem)
-- [ ] **DS ds-dev-interview-lab** — adicionar design system do projeto Dev Interview Lab (idem)
-- [ ] Registrar os 3 novos DS no `sd.config.mjs`, Storybook toolbar e docs
+### Done (continued)
+- [x] **DS ds-icc** — Interview Command Center: slate-950 + cyan-400, dark-first, clinical typography (Inter + JetBrains Mono)
+- [x] **DS ds-dil** — DevInterviewLab: navy-950 + lime-400, technical authority, relaxed line-height
+- [x] **DS ds-financas** — Finanças do Casal: warm stone + teal-500, rounded corners, humanist type (DM Sans/Nunito)
+- [x] Registered all 3 new DS in `sd.config.mjs`, `package.json` exports, Storybook toolbar
+- [x] `DESIGN.md` — visual system documentation (semantic bridge pattern, all 6 themes, token reference tables, anti-patterns)
+- [x] 367 unit tests passing
+
+### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição
 - [ ] **Figma Tokens export** — gerar JSON compatível com Figma Tokens / Tokens Studio a partir do Style Dictionary
