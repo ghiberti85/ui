@@ -4,13 +4,22 @@
   padding: 0;
 }
 
+/*
+  overflow-x: clip on html prevents viewport-level horizontal scroll
+  without creating a scroll container (unlike overflow-x: hidden).
+  This means child elements with overflow-x: auto (code blocks) can
+  still scroll horizontally within their own bounds.
+*/
+html {
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-family-sans, var(--font-dm-sans, system-ui, sans-serif));
   background: var(--color-semantic-background, #fff);
   color: var(--color-semantic-foreground, #0a0a0a);
   min-height: 100dvh;
   line-height: 1.5;
-  overflow-x: hidden;
 }
 
 .site-header {
@@ -45,8 +54,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 2rem;
-  /* Prevent code blocks / wide content from expanding the viewport on mobile */
-  overflow-x: hidden;
 }
 
 @media (max-width: 640px) {
