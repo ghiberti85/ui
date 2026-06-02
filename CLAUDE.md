@@ -95,19 +95,23 @@ Components that use React hooks (`useState`, `useEffect`, etc.) must have `'use 
 ### CSS token undefined — `--color-semantic-surface`
 This token **does not exist**. Use `--color-semantic-background-subtle` instead. If you see transparent or invisible backgrounds, this is the likely cause.
 
-### Mobile viewport overflow — pages appear as "desktop layout" on mobile
-**Problem:** Any element with `white-space: pre` (e.g. `<CodeBlock>`) that contains long lines will expand the scrollable width of the page beyond the viewport. The browser then renders the full page at that wider width, making it look like a desktop layout — nav, text, and all content shifted to the right.
+### Mobile viewport overflow — pages appear as "desktop layout" or content clipped on right
+**Problem:** Elements with `white-space: pre` (e.g. `<CodeBlock>`) containing long lines can expand the page's scrollable width beyond the viewport.
 
-**Rules (do not remove these):**
-- `body` in `globals.css` must always have `overflow-x: hidden`.
-- `.site-main` in `globals.css` must always have `overflow-x: hidden`.
+**Critical distinction — `overflow-x: hidden` vs `overflow-x: clip`:**
+- `overflow-x: hidden` creates a new scroll container (BFC). Applied to `site-main` or `body`, it clips content at that element's boundary — content touching the right edge appears "stuck" or cut off. Child elements with `overflow-x: auto` (code blocks) may also lose their ability to scroll.
+- `overflow-x: clip` is the correct approach for the `html` element: it clips at the viewport level without creating a scroll container, so inner elements with `overflow-x: auto` (code blocks) still scroll normally.
+
+**Rules (do not change these):**
+- `html` in `globals.css` must have `overflow-x: clip` — this is the ONLY correct place to prevent viewport-level horizontal scroll.
+- Do NOT add `overflow-x: hidden` to `body` or `.site-main` — it clips content and breaks child scroll containers.
 - Every page-level `.page` class must have `width: 100%` alongside `max-width`.
-- Every `CodeBlock` wrapper must have `max-width: 100%`.
+- Every `CodeBlock` wrapper must have `max-width: 100%` and `overflow: hidden` (for border-radius clipping); `.pre` inside must have `overflow-x: auto`.
 
-**When adding a new page or layout:**
-1. Give the root element `width: 100%` AND `max-width: <value>` — never `max-width` alone.
-2. If the page contains code blocks, verify on a 375px viewport that no horizontal scroll appears.
-3. Never remove `overflow-x: hidden` from `body` or `.site-main`.
+**When adding a new page:**
+1. Give the root `.page` element both `width: 100%` AND `max-width: <value>`.
+2. Use `clamp()` for all font sizes above 1.25rem (e.g. `clamp(1.5rem, 5vw, 2.5rem)`).
+3. Test on a 375px viewport — no horizontal scroll, no content clipped at right edge.
 
 ---
 
