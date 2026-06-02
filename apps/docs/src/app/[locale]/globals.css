@@ -10,6 +10,7 @@ body {
   color: var(--color-semantic-foreground, #0a0a0a);
   min-height: 100dvh;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 .site-header {
@@ -44,6 +45,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 2rem;
+  /* Prevent code blocks / wide content from expanding the viewport on mobile */
+  overflow-x: hidden;
 }
 
 @media (max-width: 640px) {
@@ -59,5 +62,12 @@ body {
   .site-main {
     padding: 2rem 1rem;
     padding-bottom: calc(2rem + 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .site-main {
+    padding: 1.5rem 0.875rem;
+    padding-bottom: calc(1.5rem + 60px);
   }
 }

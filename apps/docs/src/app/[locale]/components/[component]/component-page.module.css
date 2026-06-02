@@ -1,5 +1,6 @@
 .page {
   max-width: 860px;
+  width: 100%;
 }
 
 .breadcrumb {
@@ -119,4 +120,37 @@
 .storybookLink:hover {
   background: var(--color-semantic-primary, #3b82f6);
   color: var(--color-semantic-background, #fff);
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    font-size: 0.9375rem;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .demo,
+  .demoColumn {
+    padding: 1rem;
+  }
+
+  .demoRow {
+    gap: 0.5rem;
+  }
+
+  .storybookLink {
+    width: 100%;
+    justify-content: center;
+  }
 }
