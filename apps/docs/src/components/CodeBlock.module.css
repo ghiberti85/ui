@@ -59,20 +59,18 @@
 
 @media (max-width: 640px) {
   .pre {
-    padding: 1rem;
-    padding-right: 1rem;
+    padding: 0.875rem 1rem;
     font-size: 0.8125rem;
   }
 
   .copyBtn {
-    position: static;
-    display: flex;
-    margin: 0 0.75rem 0.75rem auto;
-    width: fit-content;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6875rem;
   }
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
+  .copyLabel {
+    display: none;
   }
 }
