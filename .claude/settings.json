@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"⚠️ LEMBRETE OBRIGATÓRIO: Após cada atualização de código — 1) git push para claude/friendly-lamport-g7exP  2) Abra o PR com mcp__github__create_pull_request targeting main  3) Resolva conflitos se necessário (git merge origin/main)  4) Faça o merge com mcp__github__merge_pull_request (squash)  5) Verifique o deploy na Vercel — se ERROR, leia os logs e corrija. Não reporte a tarefa como concluída sem completar todos esses passos.\"}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -39,8 +39,8 @@ Monorepo with two main products:
 5. **Security check** — no hardcoded secrets, no unsafe patterns (`eval`, unsanitized `dangerouslySetInnerHTML`), all external links have `rel="noopener noreferrer"`, no raw `<img>` tags.
 6. **Update Roadmap** — mark completed items in `## Roadmap` and add next items if relevant.
 7. **Commit** — clear, descriptive commit message on the feature branch `claude/friendly-lamport-g7exP`.
-8. **Push + PR → merge** — use `mcp__github__create_pull_request` targeting `main`, then immediately merge with `mcp__github__merge_pull_request` using `squash` method (resolve any conflicts by merging `origin/main` locally first).
-9. **Verify Vercel deploy** — if the deploy shows ERROR status, read build logs and fix before reporting the task as done.
+8. **🚨 Push + PR → merge (OBRIGATÓRIO, sem exceções)** — `git push -u origin claude/friendly-lamport-g7exP`, depois use `mcp__github__create_pull_request` targeting `main`, resolva quaisquer conflitos com `git merge origin/main --no-edit` se necessário, e imediatamente faça o merge com `mcp__github__merge_pull_request` usando método `squash`. **Nunca reporte a tarefa como concluída sem abrir e mergear o PR.**
+9. **🚨 Verificar deploy na Vercel (OBRIGATÓRIO)** — use `mcp__2c150976-9830-4b91-99f4-0287eb02861e__list_deployments` para checar o status. Se o deploy mostrar ERROR, leia os build logs com `mcp__2c150976-9830-4b91-99f4-0287eb02861e__get_deployment_build_logs`, corrija o problema, e reabra um novo PR. **Nunca reporte a tarefa como concluída sem confirmar que o deploy está READY.**
 
 ---
 
