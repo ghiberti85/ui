@@ -5,6 +5,8 @@
   overflow: hidden;
   margin-bottom: 2rem;
   max-width: 100%;
+  width: 100%;
+  min-width: 0;
 }
 
 .pre {
@@ -21,6 +23,7 @@
   font-family: var(--font-jetbrains-mono, monospace);
   color: var(--color-semantic-foreground, #0a0a0a);
   white-space: pre;
+  display: block;
 }
 
 .copyBtn {
@@ -59,7 +62,7 @@
 
 @media (max-width: 640px) {
   .pre {
-    padding: 0.875rem 1rem;
+    padding: 0.875rem 3rem 0.875rem 1rem;
     font-size: 0.8125rem;
   }
 
