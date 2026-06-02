@@ -60,12 +60,10 @@
 @media (max-width: 640px) {
   .pre {
     padding: 0.875rem 1rem;
-    /* No extra right padding — button overlaps top corner, small enough not to cover code */
     font-size: 0.8125rem;
   }
 
   .copyBtn {
-    /* Keep absolute so it doesn't push content; reduce to icon-only size */
     top: 0.5rem;
     right: 0.5rem;
     padding: 0.25rem 0.5rem;
@@ -73,6 +71,6 @@
   }
 
   .copyLabel {
-    display: none; /* hide "Copy" text, keep icon only */
+    display: none;
   }
 }
