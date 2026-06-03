@@ -23,7 +23,7 @@ export default function Nav() {
           href="https://main--6a1610ad99f4ffa5234828d5.chromatic.com"
           className={styles.link}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           {t('storybook')}
         </a>
@@ -31,7 +31,7 @@ export default function Nav() {
           href="https://github.com/ghiberti85/ui"
           className={styles.link}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           {t('github')}
         </a>
