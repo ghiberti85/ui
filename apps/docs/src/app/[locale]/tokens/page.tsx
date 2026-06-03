@@ -2,9 +2,12 @@ import { useTranslations } from 'next-intl'
 import styles from './page.module.css'
 
 const DESIGN_SYSTEMS = [
-  { key: 'ds_minimal', theme: 'ds-minimal' },
+  { key: 'ds_minimal',   theme: 'ds-minimal' },
   { key: 'ds_editorial', theme: 'ds-editorial' },
   { key: 'ds_brutalist', theme: 'ds-brutalist' },
+  { key: 'ds_icc',       theme: 'ds-icc' },
+  { key: 'ds_dil',       theme: 'ds-dil' },
+  { key: 'ds_financas',  theme: 'ds-financas' },
 ] as const
 
 const SEMANTIC_COLORS = [

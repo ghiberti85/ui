@@ -11,6 +11,9 @@ import { DM_Sans, Playfair_Display, Bebas_Neue, JetBrains_Mono } from 'next/font
 import '@ghiberti85/tokens/ds-minimal'
 import '@ghiberti85/tokens/ds-editorial'
 import '@ghiberti85/tokens/ds-brutalist'
+import '@ghiberti85/tokens/ds-icc'
+import '@ghiberti85/tokens/ds-dil'
+import '@ghiberti85/tokens/ds-financas'
 import './globals.css'
 
 export const metadata: Metadata = {

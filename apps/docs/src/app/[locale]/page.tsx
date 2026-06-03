@@ -39,6 +39,33 @@ export default function Home() {
       badgeLabel: t('ds_brutalist_badge'),
       buttonLabel: t('ds_cta_button'),
     },
+    {
+      key: 'ds-icc' as const,
+      theme: 'ds-icc',
+      name: t('ds_icc_name'),
+      desc: t('ds_icc_desc'),
+      font: 'Inter',
+      badgeLabel: t('ds_icc_badge'),
+      buttonLabel: t('ds_cta_button'),
+    },
+    {
+      key: 'ds-dil' as const,
+      theme: 'ds-dil',
+      name: t('ds_dil_name'),
+      desc: t('ds_dil_desc'),
+      font: 'Inter',
+      badgeLabel: t('ds_dil_badge'),
+      buttonLabel: t('ds_cta_button'),
+    },
+    {
+      key: 'ds-financas' as const,
+      theme: 'ds-financas',
+      name: t('ds_financas_name'),
+      desc: t('ds_financas_desc'),
+      font: 'DM Sans',
+      badgeLabel: t('ds_financas_badge'),
+      buttonLabel: t('ds_cta_button'),
+    },
   ]
 
   const howItWorks = [
