@@ -313,9 +313,9 @@ pnpm audit                            # check for security vulnerabilities
 - [x] **Docs quality audit** — all 10 new component pages confirmed to have Demo, Props table, Usage code, and Storybook link sections
 
 ### Done (continued)
-- [x] **DS ds-icc** — Interview Command Center: slate-950 + cyan-400, dark-first, clinical typography (Inter + JetBrains Mono)
-- [x] **DS ds-dil** — DevInterviewLab: navy-950 + lime-400, technical authority, relaxed line-height
-- [x] **DS ds-financas** — Finanças do Casal: warm stone + teal-500, rounded corners, humanist type (DM Sans/Nunito)
+- [x] **DS ds-onyx** — Interview Command Center: slate-950 + cyan-400, dark-first, clinical typography (Inter + JetBrains Mono)
+- [x] **DS ds-clean** — DevInterviewLab: navy-950 + lime-400, technical authority, relaxed line-height
+- [x] **DS ds-velvet** — Finanças do Casal: warm stone + teal-500, rounded corners, humanist type (DM Sans/Nunito)
 - [x] Registered all 3 new DS in `sd.config.mjs`, `package.json` exports, Storybook toolbar
 - [x] `DESIGN.md` — visual system documentation (semantic bridge pattern, all 6 themes, token reference tables, anti-patterns)
 - [x] 367 unit tests passing

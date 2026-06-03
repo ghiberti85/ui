@@ -11,8 +11,8 @@ The design system uses a **semantic bridge pattern**: components consume unprefi
 
 ```
 [data-theme="ds-minimal"]  → --color-semantic-primary = #2563EB
-[data-theme="ds-icc"]      → --color-semantic-primary = #22d3ee
-[data-theme="ds-financas"] → --color-semantic-primary = #14b8a6
+[data-theme="ds-onyx"]     → --color-semantic-primary = #22d3ee
+[data-theme="ds-velvet"]   → --color-semantic-primary = #14b8a6
 ```
 
 Dark mode adds `data-mode="dark"` alongside `data-theme`.
@@ -26,9 +26,9 @@ Dark mode adds `data-mode="dark"` alongside `data-theme`.
 | `ds-minimal` | Minimal | Clean, neutral | Light + Dark | General purpose / base |
 | `ds-editorial` | Editorial | Warm, typographic | Light + Dark | Content-heavy sites |
 | `ds-brutalist` | Brutalist | High-contrast, bold | Light + Dark | Statements, portfolios |
-| `ds-icc` | Interview Command Center | Dark-first, clinical | Dark-first | Productivity tool, dense UI |
-| `ds-dil` | DevInterviewLab | Technical authority | Light + Dark | Dev study platform |
-| `ds-financas` | Finanças do Casal | Warm, approachable | Light + Dark | Finance PWA, daily use |
+| `ds-onyx` | Onyx | Dark-first, clinical | Dark-first | Productivity tool, dense UI |
+| `ds-clean` | Clean | Technical authority | Light + Dark | Dev study platform |
+| `ds-velvet` | Velvet | Warm, approachable | Light + Dark | Finance PWA, daily use |
 
 ---
 
@@ -75,7 +75,7 @@ Token: `--spacing-{0,1,2,3,4,5,6,8,10,12,16,20,24}`
 
 ### Border Radius
 
-| Token | ds-minimal | ds-financas | ds-brutalist |
+| Token | ds-minimal | ds-velvet | ds-brutalist |
 |---|---|---|---|
 | `--border-radius-sm` | 4px | 6px | 0px |
 | `--border-radius-md` | 6px | 10px | 0px |
