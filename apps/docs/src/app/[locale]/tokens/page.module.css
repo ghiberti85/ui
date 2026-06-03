@@ -128,26 +128,34 @@
 }
 
 .tokenTableInner {
-  min-width: 560px;
+  min-width: 680px;
 }
 
 .tokenTableHeader {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) repeat(5, 72px);
+  grid-template-columns: minmax(200px, 1fr) repeat(5, 88px);
   gap: 0;
   padding: 0.75rem 1rem;
   background: var(--color-semantic-background-subtle, #fafafa);
   border-bottom: 1px solid var(--color-semantic-border, #e4e4e7);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   color: var(--color-semantic-foreground-muted, #71717a);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
+.tokenTableHeader > span {
+  text-align: center;
+}
+
+.tokenTableHeader > span:first-child {
+  text-align: left;
+}
+
 .tokenRow {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) repeat(5, 72px);
+  grid-template-columns: minmax(200px, 1fr) repeat(5, 88px);
   align-items: center;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--color-semantic-border, #e4e4e7);
