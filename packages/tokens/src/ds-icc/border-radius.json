@@ -1,10 +1,10 @@
 {
   "border-radius": {
     "none": { "$value": "0px",    "$type": "dimension" },
-    "sm":   { "$value": "3px",    "$type": "dimension" },
-    "md":   { "$value": "4px",    "$type": "dimension" },
-    "lg":   { "$value": "6px",    "$type": "dimension" },
-    "xl":   { "$value": "8px",    "$type": "dimension" },
+    "sm":   { "$value": "6px",    "$type": "dimension" },
+    "md":   { "$value": "10px",   "$type": "dimension" },
+    "lg":   { "$value": "14px",   "$type": "dimension" },
+    "xl":   { "$value": "16px",   "$type": "dimension" },
     "full": { "$value": "9999px", "$type": "dimension" }
   }
 }

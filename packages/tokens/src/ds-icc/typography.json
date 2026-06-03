@@ -1,29 +1,30 @@
 {
   "typography": {
     "font-family": {
-      "sans": { "$value": "\"Inter\", system-ui, sans-serif",                "$type": "fontFamily" },
-      "mono": { "$value": "\"JetBrains Mono\", \"Fira Code\", monospace",    "$type": "fontFamily" }
+      "sans": { "$value": "'Outfit', sans-serif",         "$type": "fontFamily" },
+      "mono": { "$value": "'JetBrains Mono', monospace",  "$type": "fontFamily" }
     },
     "font-size": {
       "xs":  { "$value": "0.6875rem", "$type": "dimension" },
-      "sm":  { "$value": "0.8125rem", "$type": "dimension" },
-      "md":  { "$value": "0.9375rem", "$type": "dimension" },
-      "lg":  { "$value": "1.0625rem", "$type": "dimension" },
+      "sm":  { "$value": "0.75rem",   "$type": "dimension" },
+      "md":  { "$value": "0.875rem",  "$type": "dimension" },
+      "lg":  { "$value": "1rem",      "$type": "dimension" },
       "xl":  { "$value": "1.25rem",   "$type": "dimension" },
-      "2xl": { "$value": "1.5rem",    "$type": "dimension" },
-      "3xl": { "$value": "1.875rem",  "$type": "dimension" },
+      "2xl": { "$value": "1.625rem",  "$type": "dimension" },
+      "3xl": { "$value": "2rem",      "$type": "dimension" },
       "4xl": { "$value": "2.25rem",   "$type": "dimension" }
     },
     "font-weight": {
-      "regular":  { "$value": "400", "$type": "fontWeight" },
-      "medium":   { "$value": "500", "$type": "fontWeight" },
-      "semibold": { "$value": "600", "$type": "fontWeight" },
-      "bold":     { "$value": "700", "$type": "fontWeight" }
+      "regular":   { "$value": "400", "$type": "fontWeight" },
+      "medium":    { "$value": "500", "$type": "fontWeight" },
+      "semibold":  { "$value": "600", "$type": "fontWeight" },
+      "bold":      { "$value": "700", "$type": "fontWeight" },
+      "extrabold": { "$value": "800", "$type": "fontWeight" }
     },
     "line-height": {
-      "tight":   { "$value": "1.2",  "$type": "number" },
-      "normal":  { "$value": "1.5",  "$type": "number" },
-      "relaxed": { "$value": "1.65", "$type": "number" }
+      "tight":   { "$value": "1.0",  "$type": "number" },
+      "normal":  { "$value": "1.4",  "$type": "number" },
+      "relaxed": { "$value": "1.55", "$type": "number" }
     }
   }
 }

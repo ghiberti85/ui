@@ -2,9 +2,9 @@
   "border-radius": {
     "none": { "$value": "0px",    "$type": "dimension" },
     "sm":   { "$value": "6px",    "$type": "dimension" },
-    "md":   { "$value": "10px",   "$type": "dimension" },
-    "lg":   { "$value": "14px",   "$type": "dimension" },
-    "xl":   { "$value": "20px",   "$type": "dimension" },
+    "md":   { "$value": "12px",   "$type": "dimension" },
+    "lg":   { "$value": "20px",   "$type": "dimension" },
+    "xl":   { "$value": "24px",   "$type": "dimension" },
     "full": { "$value": "9999px", "$type": "dimension" }
   }
 }
