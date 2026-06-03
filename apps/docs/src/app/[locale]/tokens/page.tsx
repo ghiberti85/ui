@@ -65,25 +65,27 @@ export default function TokensPage() {
         <h2 className={styles.sectionTitle}>{t('semantic_tokens')}</h2>
         <p className={styles.sectionDesc}>{t('semantic_tokens_desc')}</p>
         <div className={styles.tokenTable}>
-          <div className={styles.tokenTableHeader}>
-            <span>{t('token_name')}</span>
-            {DESIGN_SYSTEMS.map(({ key, theme }) => (
-              <span key={theme}>{t(key)}</span>
-            ))}
-          </div>
-          {SEMANTIC_COLORS.map((color) => (
-            <div key={color.key} className={styles.tokenRow}>
-              <code className={styles.tokenName}>{color.var}</code>
-              {DESIGN_SYSTEMS.map(({ theme }) => (
-                <div key={theme} className={styles.tokenCell} data-theme={theme}>
-                  <div
-                    className={styles.tokenSwatch}
-                    style={{ background: `var(${color.var})` }}
-                  />
-                </div>
+          <div className={styles.tokenTableInner}>
+            <div className={styles.tokenTableHeader}>
+              <span>{t('token_name')}</span>
+              {DESIGN_SYSTEMS.map(({ key, theme }) => (
+                <span key={theme}>{t(key)}</span>
               ))}
             </div>
-          ))}
+            {SEMANTIC_COLORS.map((color) => (
+              <div key={color.key} className={styles.tokenRow}>
+                <code className={styles.tokenName}>{color.var}</code>
+                {DESIGN_SYSTEMS.map(({ theme }) => (
+                  <div key={theme} className={styles.tokenCell} data-theme={theme}>
+                    <div
+                      className={styles.tokenSwatch}
+                      style={{ background: `var(${color.var})` }}
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
