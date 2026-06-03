@@ -22,7 +22,7 @@ export default function ThemeSwitcher() {
   return (
     <div className={styles.wrapper}>
       <label htmlFor="theme-select" className={styles.label}>{t('label')}</label>
-      <select id="theme-select" className={styles.select} onChange={handleChange} defaultValue="ds-editorial">
+      <select id="theme-select" className={styles.select} onChange={handleChange} defaultValue="ds-clean">
         {THEMES.map(({ value, label }) => (
           <option key={value} value={value}>{label}</option>
         ))}
