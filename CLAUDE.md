@@ -86,7 +86,7 @@ When removing a component, verify every item is completed before committing:
 - Do NOT use `[locale]/apple-icon.tsx` — it generates the wrong URL.
 
 ### Dark Mode & CSS Custom Properties
-- Dark mode via `data-mode="dark"` on `<html>` (set by `ModeToggle`). Token selector: `[data-theme="ds-minimal"][data-mode="dark"]`.
+- Dark mode via `data-mode="dark"` on `<html>` (set by `ModeToggle`). Token selector: `[data-theme="ds-editorial"][data-mode="dark"]`.
 - **Never set CSS vars on `document.documentElement.style`** from client components — inline styles override CSS rules including dark mode. Scope to a container ref instead. (See `PlaygroundClient` for the correct pattern.)
 
 ### React `'use client'` in component library
@@ -119,7 +119,7 @@ This token **does not exist**. Use `--color-semantic-background-subtle` instead.
 
 ### Tokens
 - Format: W3C Design Token Community Group (DTCG) — `$value`, `$type` keys
-- Three design systems: `ds-minimal`, `ds-editorial`, `ds-brutalist`
+- Five design systems: `ds-editorial`, `ds-brutalist`, `ds-onyx`, `ds-clean`, `ds-velvet`
 - Output: CSS Custom Properties via `[data-theme="ds-*"]` selectors + JS ES6 exports
 - Build tool: Style Dictionary v4 (`sd.config.mjs`)
 - **Semantic bridge**: each theme maps unprefixed vars (`--color-semantic-primary`) to its own prefixed vars so components are theme-agnostic
@@ -199,7 +199,7 @@ pnpm audit                            # check for security vulnerabilities
 
 ### Done
 - [x] Monorepo scaffold (Turborepo + pnpm workspaces)
-- [x] Token package — `ds-minimal`, `ds-editorial`, `ds-brutalist` with full token set
+- [x] Token package — `ds-editorial`, `ds-brutalist`, `ds-onyx`, `ds-clean`, `ds-velvet` with full token set (ds-minimal removed — redundant with ds-clean)
 - [x] Style Dictionary v4 build (CSS vars + JS ES6)
 - [x] Semantic bridge layer — unprefixed vars consumed by components
 - [x] Dark mode tokens (`data-mode="dark"`) for all three DS
