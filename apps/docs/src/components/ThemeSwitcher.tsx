@@ -8,9 +8,9 @@ const THEMES = [
   { value: 'ds-minimal',   label: 'Minimal' },
   { value: 'ds-editorial', label: 'Editorial' },
   { value: 'ds-brutalist', label: 'Brutalist' },
-  { value: 'ds-icc',       label: 'ICC — Interview Command Center' },
-  { value: 'ds-dil',       label: 'DIL — DevInterviewLab' },
   { value: 'ds-financas',  label: 'Finanças do Casal' },
+  { value: 'ds-dil',       label: 'DIL — DevInterviewLab' },
+  { value: 'ds-icc',       label: 'ICC — Interview Command Center' },
 ] as const
 
 export default function ThemeSwitcher() {
