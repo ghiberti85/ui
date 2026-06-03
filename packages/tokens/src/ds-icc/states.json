@@ -1,18 +1,18 @@
 {
   "color": {
     "state": {
-      "success":            { "$value": "#4ade80", "$type": "color" },
-      "success-subtle":     { "$value": "#052e16", "$type": "color" },
-      "success-foreground": { "$value": "#020617", "$type": "color" },
-      "warning":            { "$value": "#fbbf24", "$type": "color" },
-      "warning-subtle":     { "$value": "#1c1408", "$type": "color" },
-      "warning-foreground": { "$value": "#020617", "$type": "color" },
-      "error":              { "$value": "#f87171", "$type": "color" },
-      "error-subtle":       { "$value": "#1f0505", "$type": "color" },
-      "error-foreground":   { "$value": "#f8fafc", "$type": "color" },
+      "success":            { "$value": "#22c67a", "$type": "color" },
+      "success-subtle":     { "$value": "rgba(34,198,122,0.12)",  "$type": "color" },
+      "success-foreground": { "$value": "#111113", "$type": "color" },
+      "warning":            { "$value": "#f5a623", "$type": "color" },
+      "warning-subtle":     { "$value": "rgba(245,166,35,0.12)",  "$type": "color" },
+      "warning-foreground": { "$value": "#111113", "$type": "color" },
+      "error":              { "$value": "#ff6a6a", "$type": "color" },
+      "error-subtle":       { "$value": "rgba(255,106,106,0.12)", "$type": "color" },
+      "error-foreground":   { "$value": "#ffffff", "$type": "color" },
       "info":               { "$value": "#22d3ee", "$type": "color" },
-      "info-subtle":        { "$value": "#030d1f", "$type": "color" },
-      "info-foreground":    { "$value": "#020617", "$type": "color" }
+      "info-subtle":        { "$value": "rgba(34,211,238,0.12)",  "$type": "color" },
+      "info-foreground":    { "$value": "#111113", "$type": "color" }
     }
   }
 }
