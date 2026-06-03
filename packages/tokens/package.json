@@ -12,15 +12,15 @@
     "./ds-minimal":      "./dist/ds-minimal/variables.css",
     "./ds-editorial":    "./dist/ds-editorial/variables.css",
     "./ds-brutalist":    "./dist/ds-brutalist/variables.css",
-    "./ds-icc":          "./dist/ds-icc/variables.css",
-    "./ds-dil":          "./dist/ds-dil/variables.css",
-    "./ds-financas":     "./dist/ds-financas/variables.css",
+    "./ds-onyx":          "./dist/ds-onyx/variables.css",
+    "./ds-clean":          "./dist/ds-clean/variables.css",
+    "./ds-velvet":     "./dist/ds-velvet/variables.css",
     "./ds-minimal/js":   "./dist/ds-minimal/tokens.js",
     "./ds-editorial/js": "./dist/ds-editorial/tokens.js",
     "./ds-brutalist/js": "./dist/ds-brutalist/tokens.js",
-    "./ds-icc/js":       "./dist/ds-icc/tokens.js",
-    "./ds-dil/js":       "./dist/ds-dil/tokens.js",
-    "./ds-financas/js":  "./dist/ds-financas/tokens.js"
+    "./ds-onyx/js":       "./dist/ds-onyx/tokens.js",
+    "./ds-clean/js":       "./dist/ds-clean/tokens.js",
+    "./ds-velvet/js":  "./dist/ds-velvet/tokens.js"
   },
   "devDependencies": {
     "style-dictionary": "^4.3.0"

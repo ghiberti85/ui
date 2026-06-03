@@ -13,9 +13,9 @@ const IMPORT_TOKENS = `// Import the design system CSS (pick one)
 import '@ghiberti85/tokens/ds-minimal'
 // import '@ghiberti85/tokens/ds-editorial'
 // import '@ghiberti85/tokens/ds-brutalist'
-// import '@ghiberti85/tokens/ds-financas'  // Finanças do Casal
-// import '@ghiberti85/tokens/ds-dil'       // DevInterviewLab
-// import '@ghiberti85/tokens/ds-icc'       // Interview Command Center`
+// import '@ghiberti85/tokens/ds-velvet'  // Finanças do Casal
+// import '@ghiberti85/tokens/ds-clean'       // DevInterviewLab
+// import '@ghiberti85/tokens/ds-onyx'       // Interview Command Center`
 
 const HTML_ATTR = `<!-- Apply a theme and optional dark mode -->
 <html data-theme="ds-minimal">
@@ -23,7 +23,7 @@ const HTML_ATTR = `<!-- Apply a theme and optional dark mode -->
 </html>
 
 <!-- Available themes: ds-minimal, ds-editorial, ds-brutalist,
-     ds-financas, ds-dil, ds-icc -->`
+     ds-velvet, ds-clean, ds-onyx -->`
 
 const FIRST_COMPONENT = `import { Button } from '@ghiberti85/ui'
 
@@ -35,7 +35,7 @@ const SWITCH_THEME = `// Switch theme at runtime — no re-render needed
 document.documentElement.setAttribute('data-theme', 'ds-editorial')
 // All available themes:
 // 'ds-minimal' | 'ds-editorial' | 'ds-brutalist'
-// 'ds-financas' | 'ds-dil' | 'ds-icc'`
+// 'ds-velvet' | 'ds-clean' | 'ds-onyx'`
 
 const DARK_MODE = `// Toggle dark mode
 document.documentElement.setAttribute('data-mode', 'dark')
@@ -106,9 +106,9 @@ export default function GettingStartedPage() {
               { value: 'ds-minimal',   label: 'Minimal' },
               { value: 'ds-editorial', label: 'Editorial' },
               { value: 'ds-brutalist', label: 'Brutalist' },
-              { value: 'ds-financas',  label: 'Finanças' },
-              { value: 'ds-dil',       label: 'DIL' },
-              { value: 'ds-icc',       label: 'ICC' },
+              { value: 'ds-velvet',  label: 'Finanças' },
+              { value: 'ds-clean',       label: 'DIL' },
+              { value: 'ds-onyx',       label: 'ICC' },
             ].map(({ value, label }) => (
               <div key={value} className={styles.themeCard} data-theme={value}>
                 <span className={styles.themeCardName}>{label}</span>
