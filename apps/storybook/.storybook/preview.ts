@@ -8,6 +8,9 @@ import './fonts.css'
 import '@ghiberti85/tokens/ds-minimal'
 import '@ghiberti85/tokens/ds-editorial'
 import '@ghiberti85/tokens/ds-brutalist'
+import '@ghiberti85/tokens/ds-icc'
+import '@ghiberti85/tokens/ds-dil'
+import '@ghiberti85/tokens/ds-financas'
 
 const preview: Preview = {
   globalTypes: {
@@ -21,6 +24,9 @@ const preview: Preview = {
           { value: 'ds-minimal',   title: 'Minimal' },
           { value: 'ds-editorial', title: 'Editorial' },
           { value: 'ds-brutalist', title: 'Brutalist' },
+          { value: 'ds-icc',       title: 'ICC (Interview Command Center)' },
+          { value: 'ds-dil',       title: 'DIL (DevInterviewLab)' },
+          { value: 'ds-financas',  title: 'Finanças do Casal' },
         ],
         dynamicTitle: true,
       },
