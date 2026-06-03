@@ -162,7 +162,7 @@ export default function GettingStartedPage() {
             href="https://github.com/ghiberti85/ui"
             className={styles.nextCard}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <span className={styles.nextCardIcon}>📦</span>
             <span className={styles.nextCardLabel}>{t('next_github')}</span>
