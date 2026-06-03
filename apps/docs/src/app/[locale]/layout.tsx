@@ -8,7 +8,6 @@ import ModeToggle from '@/components/ModeToggle'
 import LocaleSwitcher from '@/components/LocaleSwitcher'
 import BottomNav from '@/components/BottomNav'
 import { DM_Sans, Playfair_Display, Bebas_Neue, JetBrains_Mono } from 'next/font/google'
-import '@ghiberti85/tokens/ds-minimal'
 import '@ghiberti85/tokens/ds-editorial'
 import '@ghiberti85/tokens/ds-brutalist'
 import '@ghiberti85/tokens/ds-onyx'
@@ -21,17 +20,17 @@ export const metadata: Metadata = {
     process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
   ),
   title: 'Ghiberti UI — Design System',
-  description: 'Design tokens and React component library — ds-minimal, ds-editorial, ds-brutalist',
+  description: 'Design tokens and React component library — ds-editorial, ds-brutalist, ds-clean, ds-onyx, ds-velvet',
   openGraph: {
     type: 'website',
     siteName: 'Ghiberti UI',
     title: 'Ghiberti UI — Design System',
-    description: 'Design tokens and React component library — ds-minimal, ds-editorial, ds-brutalist',
+    description: 'Design tokens and React component library — ds-editorial, ds-brutalist, ds-clean, ds-onyx, ds-velvet',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ghiberti UI — Design System',
-    description: 'Design tokens and React component library — ds-minimal, ds-editorial, ds-brutalist',
+    description: 'Design tokens and React component library — ds-editorial, ds-brutalist, ds-clean, ds-onyx, ds-velvet',
   },
   manifest: '/manifest.webmanifest',
   appleWebApp: {
@@ -86,7 +85,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      data-theme="ds-minimal"
+      data-theme="ds-editorial"
       className={`${dmSans.variable} ${playfairDisplay.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`}
     >
       <head>

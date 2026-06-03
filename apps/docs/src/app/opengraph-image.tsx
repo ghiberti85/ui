@@ -148,7 +148,7 @@ export default async function Image() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {/* DS pill badges */}
             <div style={{ display: 'flex', gap: '12px' }}>
-              {['ds-minimal', 'ds-editorial', 'ds-brutalist'].map((ds) => (
+              {['ds-editorial', 'ds-brutalist', 'ds-clean'].map((ds) => (
                 <div
                   key={ds}
                   style={{

@@ -2,7 +2,6 @@ import { useTranslations } from 'next-intl'
 import styles from './page.module.css'
 
 const DESIGN_SYSTEMS = [
-  { key: 'ds_minimal',   theme: 'ds-minimal' },
   { key: 'ds_editorial', theme: 'ds-editorial' },
   { key: 'ds_brutalist', theme: 'ds-brutalist' },
   { key: 'ds_velvet',  theme: 'ds-velvet' },

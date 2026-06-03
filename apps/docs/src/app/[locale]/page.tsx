@@ -13,15 +13,6 @@ export default function Home() {
 
   const designSystems = [
     {
-      key: 'ds-minimal' as const,
-      theme: 'ds-minimal',
-      name: t('ds_minimal_name'),
-      desc: t('ds_minimal_desc'),
-      font: 'DM Sans',
-      badgeLabel: t('ds_minimal_badge'),
-      buttonLabel: t('ds_cta_button'),
-    },
-    {
       key: 'ds-editorial' as const,
       theme: 'ds-editorial',
       name: t('ds_editorial_name'),

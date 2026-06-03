@@ -1,7 +1,7 @@
 {
   "name": "Ghiberti UI — Design System",
   "short_name": "Ghiberti UI",
-  "description": "Design tokens and React component library — ds-minimal, ds-editorial, ds-brutalist",
+  "description": "Design tokens and React component library — ds-editorial, ds-brutalist, ds-clean, ds-velvet, ds-onyx",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",

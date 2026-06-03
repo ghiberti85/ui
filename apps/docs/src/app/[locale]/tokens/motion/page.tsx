@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 // Real values from packages/tokens/src/*/motion.json
 const TRANSITION_TOKENS = [
-  { token: '--transition-fast',  minimal: '120ms', editorial: '150ms', brutalist: '80ms' },
-  { token: '--transition-base',  minimal: '200ms', editorial: '250ms', brutalist: '150ms' },
-  { token: '--transition-slow',  minimal: '300ms', editorial: '400ms', brutalist: '250ms' },
+  { token: '--transition-fast',  editorial: '150ms', brutalist: '80ms', clean: '120ms' },
+  { token: '--transition-base',  editorial: '250ms', brutalist: '150ms', clean: '200ms' },
+  { token: '--transition-slow',  editorial: '400ms', brutalist: '250ms', clean: '300ms' },
 ]
 
 const EASING_TOKENS = [
@@ -22,9 +22,9 @@ const EASING_TOKENS = [
 ]
 
 const SPRING_VALUES = {
-  minimal:   'cubic-bezier(0.34, 1.56, 0.64, 1)',
   editorial: 'cubic-bezier(0.25, 1.25, 0.5, 1)',
   brutalist: 'cubic-bezier(0.5, 2, 0.5, 1)',
+  clean:     'cubic-bezier(0.34, 1.56, 0.64, 1)',
 }
 
 export default function MotionTokensPage() {
@@ -39,10 +39,10 @@ export default function MotionTokensPage() {
         <p className={styles.sectionDesc}>{t('transitions_desc')}</p>
         {/* Demo boxes */}
         <div className={styles.demoRow}>
-          {TRANSITION_TOKENS.map(({ token, minimal }) => (
-            <div key={token} className={styles.demoBox} style={{ '--demo-duration': minimal } as React.CSSProperties}>
+          {TRANSITION_TOKENS.map(({ token, editorial }) => (
+            <div key={token} className={styles.demoBox} style={{ '--demo-duration': editorial } as React.CSSProperties}>
               <span className={styles.demoLabel}>{token}</span>
-              <span className={styles.demoValue}>{minimal}</span>
+              <span className={styles.demoValue}>{editorial}</span>
             </div>
           ))}
         </div>
@@ -52,18 +52,18 @@ export default function MotionTokensPage() {
             <thead>
               <tr>
                 <th>{t('token')}</th>
-                <th>ds-minimal</th>
                 <th>ds-editorial</th>
                 <th>ds-brutalist</th>
+                <th>ds-clean</th>
               </tr>
             </thead>
             <tbody>
-              {TRANSITION_TOKENS.map(({ token, minimal, editorial, brutalist }) => (
+              {TRANSITION_TOKENS.map(({ token, editorial, brutalist, clean }) => (
                 <tr key={token}>
                   <td><code className={styles.code}>{token}</code></td>
-                  <td>{minimal}</td>
                   <td>{editorial}</td>
                   <td>{brutalist}</td>
+                  <td>{clean}</td>
                 </tr>
               ))}
             </tbody>
@@ -95,9 +95,9 @@ export default function MotionTokensPage() {
                 <td><code className={styles.code}>--easing-spring</code></td>
                 <td>Spring</td>
                 <td>
-                  <div><small>minimal:</small> <code className={styles.code}>{SPRING_VALUES.minimal}</code></div>
                   <div><small>editorial:</small> <code className={styles.code}>{SPRING_VALUES.editorial}</code></div>
                   <div><small>brutalist:</small> <code className={styles.code}>{SPRING_VALUES.brutalist}</code></div>
+                  <div><small>clean:</small> <code className={styles.code}>{SPRING_VALUES.clean}</code></div>
                 </td>
               </tr>
             </tbody>
