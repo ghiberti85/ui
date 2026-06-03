@@ -102,11 +102,11 @@ export default function GettingStartedPage() {
           <CodeBlock code={HTML_ATTR} language="html" />
           <div className={styles.themeGrid}>
             {[
-              { value: 'ds-editorial', label: 'Editorial' },
+              { value: 'ds-clean',     label: 'Clean' },
+              { value: 'ds-velvet',    label: 'Velvet' },
               { value: 'ds-brutalist', label: 'Brutalist' },
-              { value: 'ds-velvet',  label: 'Velvet' },
-              { value: 'ds-clean',       label: 'Clean' },
-              { value: 'ds-onyx',       label: 'Onyx' },
+              { value: 'ds-editorial', label: 'Editorial' },
+              { value: 'ds-onyx',      label: 'Onyx' },
             ].map(({ value, label }) => (
               <div key={value} className={styles.themeCard} data-theme={value}>
                 <span className={styles.themeCardName}>{label}</span>

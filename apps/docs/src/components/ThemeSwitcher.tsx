@@ -5,11 +5,11 @@ import { useCallback } from 'react'
 import styles from './ThemeSwitcher.module.css'
 
 const THEMES = [
-  { value: 'ds-editorial', label: 'Editorial' },
+  { value: 'ds-clean',     label: 'Clean' },
+  { value: 'ds-velvet',    label: 'Velvet' },
   { value: 'ds-brutalist', label: 'Brutalist' },
-  { value: 'ds-velvet', label: 'Velvet' },
-  { value: 'ds-clean',  label: 'Clean' },
-  { value: 'ds-onyx',   label: 'Onyx' },
+  { value: 'ds-editorial', label: 'Editorial' },
+  { value: 'ds-onyx',      label: 'Onyx' },
 ] as const
 
 export default function ThemeSwitcher() {
