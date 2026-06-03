@@ -85,7 +85,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      data-theme="ds-editorial"
+      data-theme="ds-clean"
       className={`${dmSans.variable} ${playfairDisplay.variable} ${bebasNeue.variable} ${jetbrainsMono.variable}`}
     >
       <head>
