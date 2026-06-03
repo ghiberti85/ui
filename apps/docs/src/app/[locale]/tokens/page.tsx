@@ -2,11 +2,11 @@ import { useTranslations } from 'next-intl'
 import styles from './page.module.css'
 
 const DESIGN_SYSTEMS = [
-  { key: 'ds_editorial', theme: 'ds-editorial' },
+  { key: 'ds_clean',     theme: 'ds-clean' },
+  { key: 'ds_velvet',    theme: 'ds-velvet' },
   { key: 'ds_brutalist', theme: 'ds-brutalist' },
-  { key: 'ds_velvet',  theme: 'ds-velvet' },
-  { key: 'ds_clean',       theme: 'ds-clean' },
-  { key: 'ds_onyx',       theme: 'ds-onyx' },
+  { key: 'ds_editorial', theme: 'ds-editorial' },
+  { key: 'ds_onyx',      theme: 'ds-onyx' },
 ] as const
 
 const SEMANTIC_COLORS = [
