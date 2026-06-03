@@ -320,6 +320,9 @@ pnpm audit                            # check for security vulnerabilities
 - [x] `DESIGN.md` — visual system documentation (semantic bridge pattern, all 6 themes, token reference tables, anti-patterns)
 - [x] 367 unit tests passing
 
+### Done (continued)
+- [x] **Playground expanded controls** — Foreground Color, Border Color, Spacing Scale, Transition Speed, Font Family (4 options) added to sidebar; Preview expanded with Typography, Alert (4 variants), Progress, Spinner, Textarea, Select components; controls grouped by Color / Shape & Scale / Typography / Motion sections
+
 ### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição

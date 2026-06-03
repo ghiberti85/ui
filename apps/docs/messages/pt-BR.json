@@ -282,7 +282,12 @@
     "controls": "Controles",
     "preview": "Visualização",
     "how_title": "Como funciona",
-    "how_desc": "Ajuste os sliders e os seletores de cor à esquerda para sobrescrever as propriedades CSS em tempo real. O painel de visualização reflete cada mudança instantaneamente — sem etapa de build. Copie o trecho CSS gerado e cole no stylesheet global do seu projeto."
+    "how_desc": "Ajuste os controles à esquerda para sobrescrever as propriedades CSS em tempo real. As alterações ficam restritas ao painel de visualização — não destrutivas, sem etapa de build. Copie o trecho CSS gerado e cole no stylesheet global do seu projeto para aplicar as personalizações.",
+    "foreground": "Cor do Texto",
+    "border_color": "Cor das Bordas",
+    "spacing_scale": "Escala de Espaçamento",
+    "transition_speed": "Velocidade de Transição",
+    "font_family": "Família Tipográfica"
   },
   "theme_switcher": {
     "label": "Tema"

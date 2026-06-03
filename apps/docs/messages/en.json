@@ -282,7 +282,12 @@
     "controls": "Controls",
     "preview": "Preview",
     "how_title": "How it works",
-    "how_desc": "Adjust the sliders and color pickers on the left to override CSS custom properties in real time. The preview panel reflects every change instantly — no build step required. Copy the resulting CSS snippet and paste it into your project's global stylesheet."
+    "how_desc": "Adjust controls on the left to override CSS custom properties in real time. Changes are scoped to the preview panel — non-destructive, no build step required. Copy the resulting CSS snippet and paste it into your project's global stylesheet to apply your customizations.",
+    "foreground": "Foreground Color",
+    "border_color": "Border Color",
+    "spacing_scale": "Spacing Scale",
+    "transition_speed": "Transition Speed",
+    "font_family": "Font Family"
   },
   "theme_switcher": {
     "label": "Theme"

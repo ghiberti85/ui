@@ -24,20 +24,25 @@ export default async function PlaygroundPage() {
         </p>
       </div>
       <PlaygroundClient
-      labels={{
-        title: t('title'),
-        description: t('description'),
-        primaryColor: t('primary_color'),
-        background: t('background'),
-        borderRadius: t('border_radius'),
-        fontSize: t('font_size'),
-        reset: t('reset'),
-        copyCss: t('copy_css'),
-        copied: t('copied'),
-        controls: t('controls'),
-        preview: t('preview'),
-      }}
-    />
+        labels={{
+          title: t('title'),
+          description: t('description'),
+          primaryColor: t('primary_color'),
+          background: t('background'),
+          foreground: t('foreground'),
+          borderColor: t('border_color'),
+          borderRadius: t('border_radius'),
+          fontSize: t('font_size'),
+          spacingScale: t('spacing_scale'),
+          transitionSpeed: t('transition_speed'),
+          fontFamily: t('font_family'),
+          reset: t('reset'),
+          copyCss: t('copy_css'),
+          copied: t('copied'),
+          controls: t('controls'),
+          preview: t('preview'),
+        }}
+      />
     </>
   )
 }
