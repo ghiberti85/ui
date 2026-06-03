@@ -5,7 +5,6 @@ import { withMode } from './decorators'
 import './fonts.css'
 
 // Import all design system token files
-import '@ghiberti85/tokens/ds-minimal'
 import '@ghiberti85/tokens/ds-editorial'
 import '@ghiberti85/tokens/ds-brutalist'
 import '@ghiberti85/tokens/ds-onyx'
@@ -16,12 +15,11 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: 'Design System',
-      defaultValue: 'ds-minimal',
+      defaultValue: 'ds-editorial',
       toolbar: {
         title: 'Theme',
         icon: 'paintbrush',
         items: [
-          { value: 'ds-minimal',   title: 'Minimal' },
           { value: 'ds-editorial', title: 'Editorial' },
           { value: 'ds-brutalist', title: 'Brutalist' },
           { value: 'ds-onyx',   title: 'Onyx' },
@@ -50,7 +48,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const theme = context.globals.theme || 'ds-minimal'
+      const theme = context.globals.theme || 'ds-editorial'
       document.documentElement.setAttribute('data-theme', theme)
       return Story()
     },

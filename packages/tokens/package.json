@@ -9,13 +9,11 @@
     "lint": "echo 'No linting needed for tokens'"
   },
   "exports": {
-    "./ds-minimal":      "./dist/ds-minimal/variables.css",
     "./ds-editorial":    "./dist/ds-editorial/variables.css",
     "./ds-brutalist":    "./dist/ds-brutalist/variables.css",
     "./ds-onyx":          "./dist/ds-onyx/variables.css",
     "./ds-clean":          "./dist/ds-clean/variables.css",
     "./ds-velvet":     "./dist/ds-velvet/variables.css",
-    "./ds-minimal/js":   "./dist/ds-minimal/tokens.js",
     "./ds-editorial/js": "./dist/ds-editorial/tokens.js",
     "./ds-brutalist/js": "./dist/ds-brutalist/tokens.js",
     "./ds-onyx/js":       "./dist/ds-onyx/tokens.js",
