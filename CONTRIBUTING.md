@@ -307,7 +307,7 @@ mkdir packages/tokens/src/ds-myname
 
 ### Step 2 — Add token files
 
-Create these files in the new folder (copy from `ds-minimal` and adapt values):
+Create these files in the new folder (copy from `ds-clean` and adapt values):
 
 ```
 ds-myname/

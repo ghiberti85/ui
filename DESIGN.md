@@ -10,7 +10,7 @@
 The design system uses a **semantic bridge pattern**: components consume unprefixed CSS custom properties (`--color-semantic-primary`, `--border-radius-md`, etc.), and each theme maps those to its own prefixed values. Switching themes is a single `data-theme` attribute change on `<html>`.
 
 ```
-[data-theme="ds-minimal"]  → --color-semantic-primary = #2563EB
+[data-theme="ds-clean"]    → --color-semantic-primary = #a3e635
 [data-theme="ds-onyx"]     → --color-semantic-primary = #22d3ee
 [data-theme="ds-velvet"]   → --color-semantic-primary = #14b8a6
 ```
@@ -23,12 +23,11 @@ Dark mode adds `data-mode="dark"` alongside `data-theme`.
 
 | ID | Name | Style | Mode | Primary use |
 |---|---|---|---|---|
-| `ds-minimal` | Minimal | Clean, neutral | Light + Dark | General purpose / base |
-| `ds-editorial` | Editorial | Warm, typographic | Light + Dark | Content-heavy sites |
-| `ds-brutalist` | Brutalist | High-contrast, bold | Light + Dark | Statements, portfolios |
-| `ds-onyx` | Onyx | Dark-first, clinical | Dark-first | Productivity tool, dense UI |
-| `ds-clean` | Clean | Technical authority | Light + Dark | Dev study platform |
+| `ds-clean` | Clean | Technical authority | Light + Dark | Dev study platform *(default)* |
 | `ds-velvet` | Velvet | Warm, approachable | Light + Dark | Finance PWA, daily use |
+| `ds-brutalist` | Brutalist | High-contrast, bold | Light + Dark | Statements, portfolios |
+| `ds-editorial` | Editorial | Warm, typographic | Light + Dark | Content-heavy sites |
+| `ds-onyx` | Onyx | Dark-first, clinical | Dark-first | Productivity tool, dense UI |
 
 ---
 
@@ -75,7 +74,7 @@ Token: `--spacing-{0,1,2,3,4,5,6,8,10,12,16,20,24}`
 
 ### Border Radius
 
-| Token | ds-minimal | ds-velvet | ds-brutalist |
+| Token | ds-clean | ds-velvet | ds-brutalist |
 |---|---|---|---|
 | `--border-radius-sm` | 4px | 6px | 0px |
 | `--border-radius-md` | 6px | 10px | 0px |
@@ -95,13 +94,6 @@ Token: `--spacing-{0,1,2,3,4,5,6,8,10,12,16,20,24}`
 ---
 
 ## Theme Details
-
-### ds-minimal
-- **Palette:** Zinc gray scale + blue accent (#2563EB)
-- **Typography:** DM Sans (UI), JetBrains Mono (code)
-- **Radius:** Conservative (4–8px)
-- **Shadow:** Subtle, low opacity
-- **Personality:** Invisible, lets content lead
 
 ### ds-editorial
 - **Palette:** Warm grays + terracotta primary (#B45309), gold highlight

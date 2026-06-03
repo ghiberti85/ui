@@ -11,9 +11,11 @@ ui/
 ├── packages/
 │   ├── tokens/                    # @ghiberti85/tokens — Design token package
 │   │   ├── src/
-│   │   │   ├── ds-minimal/        # Clean, minimal design system tokens
+│   │   │   ├── ds-clean/          # Technical, navy+lime design system tokens (default)
+│   │   │   ├── ds-velvet/         # Warm, rounded design system tokens
 │   │   │   ├── ds-editorial/      # Elegant, editorial design system tokens
-│   │   │   └── ds-brutalist/      # Bold, high-contrast design system tokens
+│   │   │   ├── ds-brutalist/      # Bold, high-contrast design system tokens
+│   │   │   └── ds-onyx/           # Dark-first, clinical design system tokens
 │   │   ├── dist/                  # Built CSS files (git-ignored, generated)
 │   │   └── sd.config.mjs          # Style Dictionary v4 build config
 │   │
@@ -84,18 +86,20 @@ All token files use the W3C Design Token Community Group format:
 
 The `$value` key holds the token value; `$type` declares the token category. Style Dictionary v4 reads this format and outputs CSS custom properties.
 
-### Three Design Systems
+### Five Design Systems
 
 | Design System | Character | Audience |
 |---------------|-----------|----------|
-| `ds-minimal` | Clean, neutral, high whitespace | SaaS, dashboards |
+| `ds-clean` | Technical authority, navy + lime | Dev study platform *(default)* |
+| `ds-velvet` | Warm, approachable, rounded | Finance PWA, mobile-first |
 | `ds-editorial` | Elegant, serif-influenced, refined | Publishing, content |
 | `ds-brutalist` | Bold, high-contrast, expressive | Portfolio, creative |
+| `ds-onyx` | Dark-first, clinical, dense | Job search / interview tools |
 
 Each design system lives in `packages/tokens/src/ds-{name}/` and provides these token files:
 
 ```
-ds-minimal/
+ds-clean/
 ├── color.json          # Color palette
 ├── typography.json     # Font family, size, weight, line-height
 ├── spacing.json        # Spacing scale
@@ -110,12 +114,12 @@ ds-minimal/
 Components never reference design-system-specific variables. Instead, every design system maps a set of unprefixed semantic variables to its own prefixed tokens:
 
 ```css
-/* ds-minimal/dist/semantic.css */
-[data-theme="ds-minimal"] {
-  --color-semantic-primary: var(--ds-minimal-color-primary);
-  --color-semantic-background: var(--ds-minimal-color-background);
-  --color-semantic-foreground: var(--ds-minimal-color-foreground);
-  --color-semantic-border: var(--ds-minimal-color-border);
+/* ds-clean/dist/semantic.css */
+[data-theme="ds-clean"] {
+  --color-semantic-primary: var(--ds-clean-color-primary);
+  --color-semantic-background: var(--ds-clean-color-background);
+  --color-semantic-foreground: var(--ds-clean-color-foreground);
+  --color-semantic-border: var(--ds-clean-color-border);
   /* … */
 }
 
@@ -133,9 +137,9 @@ Components reference only `var(--color-semantic-*)`. Changing the `data-theme` a
 Dark mode is layered on top of the active design system:
 
 ```css
-[data-theme="ds-minimal"][data-mode="dark"] {
-  --color-semantic-background: var(--ds-minimal-color-background-dark);
-  --color-semantic-foreground: var(--ds-minimal-color-foreground-dark);
+[data-theme="ds-clean"][data-mode="dark"] {
+  --color-semantic-background: var(--ds-clean-color-background-dark);
+  --color-semantic-foreground: var(--ds-clean-color-foreground-dark);
   /* … */
 }
 ```
@@ -250,13 +254,13 @@ dist/*.css  (CSS custom properties per DS + dark mode)
         └── imported by apps/docs (global CSS)
                 │
                 ▼
-        <html data-theme="ds-minimal" data-mode="dark">
+        <html data-theme="ds-clean" data-mode="dark">
                 │
                 ▼
         Component reads var(--color-semantic-primary)
                 │
                 ▼
-        Browser resolves → ds-minimal dark primary color
+        Browser resolves → ds-clean dark primary color
 ```
 
 ---
