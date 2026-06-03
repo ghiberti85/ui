@@ -12,12 +12,18 @@ const INSTALL_YARN  = `yarn add @ghiberti85/tokens @ghiberti85/ui`
 const IMPORT_TOKENS = `// Import the design system CSS (pick one)
 import '@ghiberti85/tokens/ds-minimal'
 // import '@ghiberti85/tokens/ds-editorial'
-// import '@ghiberti85/tokens/ds-brutalist'`
+// import '@ghiberti85/tokens/ds-brutalist'
+// import '@ghiberti85/tokens/ds-icc'       // Interview Command Center
+// import '@ghiberti85/tokens/ds-dil'       // DevInterviewLab
+// import '@ghiberti85/tokens/ds-financas'  // Finanças do Casal`
 
 const HTML_ATTR = `<!-- Apply a theme and optional dark mode -->
 <html data-theme="ds-minimal">
   <!-- for dark mode: data-theme="ds-minimal" data-mode="dark" -->
-</html>`
+</html>
+
+<!-- Available themes: ds-minimal, ds-editorial, ds-brutalist,
+     ds-icc, ds-dil, ds-financas -->`
 
 const FIRST_COMPONENT = `import { Button } from '@ghiberti85/ui'
 
@@ -26,7 +32,10 @@ export default function App() {
 }`
 
 const SWITCH_THEME = `// Switch theme at runtime — no re-render needed
-document.documentElement.setAttribute('data-theme', 'ds-editorial')`
+document.documentElement.setAttribute('data-theme', 'ds-editorial')
+// All available themes:
+// 'ds-minimal' | 'ds-editorial' | 'ds-brutalist'
+// 'ds-icc' | 'ds-dil' | 'ds-financas'`
 
 const DARK_MODE = `// Toggle dark mode
 document.documentElement.setAttribute('data-mode', 'dark')
@@ -93,9 +102,16 @@ export default function GettingStartedPage() {
           <p className={styles.stepDesc}>{t('step_theme_desc')}</p>
           <CodeBlock code={HTML_ATTR} language="html" />
           <div className={styles.themeGrid}>
-            {['ds-minimal', 'ds-editorial', 'ds-brutalist'].map((ds) => (
-              <div key={ds} className={styles.themeCard} data-theme={ds}>
-                <span className={styles.themeCardName}>{ds}</span>
+            {[
+              { value: 'ds-minimal',   label: 'Minimal' },
+              { value: 'ds-editorial', label: 'Editorial' },
+              { value: 'ds-brutalist', label: 'Brutalist' },
+              { value: 'ds-icc',       label: 'ICC' },
+              { value: 'ds-dil',       label: 'DIL' },
+              { value: 'ds-financas',  label: 'Finanças' },
+            ].map(({ value, label }) => (
+              <div key={value} className={styles.themeCard} data-theme={value}>
+                <span className={styles.themeCardName}>{label}</span>
                 <div className={styles.themeCardDot} />
               </div>
             ))}
