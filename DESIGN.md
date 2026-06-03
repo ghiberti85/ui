@@ -117,7 +117,7 @@ Token: `--spacing-{0,1,2,3,4,5,6,8,10,12,16,20,24}`
 - **Shadow:** None or harsh
 - **Personality:** Confrontational, high-contrast
 
-### ds-icc — Interview Command Center
+### ds-onyx — Onyx
 - **Palette:** Slate-950 base + cyan-400 accent (#22d3ee). Dark-first.
 - **Typography:** Inter (UI, data-dense), JetBrains Mono (everywhere code appears)
 - **Radius:** Sharp (3–6px) — clinical, structured
@@ -126,7 +126,7 @@ Token: `--spacing-{0,1,2,3,4,5,6,8,10,12,16,20,24}`
 - **Personality:** Focus mode. No decoration, no warmth. Every pixel earns its place.
 - **Use case:** Job search dashboard, interview tracker, application pipeline
 
-### ds-dil — DevInterviewLab
+### ds-clean — Clean
 - **Palette:** Deep navy (#0a0f1e) + lime-400 accent (#a3e635). Dark-first, light variant available.
 - **Typography:** Inter (UI), JetBrains Mono (code samples, Q&A)
 - **Radius:** Standard (4–8px)
@@ -135,7 +135,7 @@ Token: `--spacing-{0,1,2,3,4,5,6,8,10,12,16,20,24}`
 - **Personality:** Technical authority. Calm confidence. Clear Q&A hierarchy.
 - **Use case:** Study platform, Groq AI features, interview practice
 
-### ds-financas — Finanças do Casal
+### ds-velvet — Velvet
 - **Palette:** Warm stone (#1c1917 dark / #ffffff light) + teal-500 accent (#14b8a6)
 - **Typography:** DM Sans / Nunito (humanist, warm) — approachable, not corporate
 - **Radius:** Rounded (6–14px) — friendly without being bubbly
@@ -168,12 +168,12 @@ Build output: `dist/{ds}/variables.css` + `dist/{ds}/tokens.js`
 
 ```tsx
 // 1. Import a theme CSS
-import '@ghiberti85/tokens/ds-icc'
+import '@ghiberti85/tokens/ds-onyx'
 
 // 2. Apply theme attribute
-<html data-theme="ds-icc">
+<html data-theme="ds-onyx">
   {/* Optional dark mode */}
-  <html data-theme="ds-icc" data-mode="dark">
+  <html data-theme="ds-onyx" data-mode="dark">
 
 // 3. Components consume semantic tokens automatically
 <Button variant="primary">Focused</Button>
