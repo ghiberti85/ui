@@ -2,29 +2,76 @@ import * as React from 'react'
 import { cn } from '../../utils/cn'
 import styles from './Card.module.css'
 
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type CardVariant = 'default' | 'elevated' | 'ghost' | 'filled'
+export type CardOrientation = 'vertical' | 'horizontal'
+export type CardImageAspectRatio = '16/9' | '4/3' | '1/1' | '3/4'
+export type CardImagePosition = 'top' | 'left' | 'right' | 'background'
 
-/**
- * Card component — compound component with sub-components for layout.
- *
- * @example
- * <Card>
- *   <Card.Header>
- *     <Card.Title>Title</Card.Title>
- *     <Card.Description>Description</Card.Description>
- *   </Card.Header>
- *   <Card.Content>Content</Card.Content>
- *   <Card.Footer>Footer</Card.Footer>
- * </Card>
- */
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: CardVariant
+  orientation?: CardOrientation
+  hoverable?: boolean
+}
+
+export interface CardImageProps {
+  src: string
+  alt: string
+  aspectRatio?: CardImageAspectRatio
+  position?: CardImagePosition
+  className?: string
+}
+
+const ASPECT_RATIO_MAP: Record<CardImageAspectRatio, string> = {
+  '16/9': '56.25%',
+  '4/3':  '75%',
+  '1/1':  '100%',
+  '3/4':  '133.33%',
+}
+
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, children, ...props }, ref) => (
-    <div ref={ref} className={cn(styles.card, className)} {...props}>
+  ({ className, children, variant = 'default', orientation = 'vertical', hoverable = false, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(
+        styles.card,
+        styles[`variant-${variant}`],
+        orientation === 'horizontal' && styles.horizontal,
+        hoverable && styles.hoverable,
+        className,
+      )}
+      {...props}
+    >
       {children}
     </div>
   )
 )
 Card.displayName = 'Card'
+
+export const CardImage = React.forwardRef<HTMLDivElement, CardImageProps>(
+  ({ src, alt, aspectRatio = '16/9', position = 'top', className }, ref) => {
+    if (position === 'background') {
+      return (
+        <div ref={ref} className={cn(styles.imageBg, className)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={src} alt={alt} className={styles.imageBgImg} aria-hidden="true" />
+        </div>
+      )
+    }
+
+    const paddingTop = ASPECT_RATIO_MAP[aspectRatio]
+    return (
+      <div
+        ref={ref}
+        className={cn(styles.imageWrapper, styles[`imagePos-${position}`], className)}
+        style={{ paddingTop: position === 'top' ? paddingTop : undefined }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={alt} className={styles.image} />
+      </div>
+    )
+  }
+)
+CardImage.displayName = 'CardImage'
 
 export const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, children, ...props }, ref) => (
@@ -72,6 +119,7 @@ export const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<
 CardFooter.displayName = 'CardFooter'
 
 type CardComponent = typeof Card & {
+  Image: typeof CardImage
   Header: typeof CardHeader
   Title: typeof CardTitle
   Description: typeof CardDescription
@@ -80,6 +128,7 @@ type CardComponent = typeof Card & {
 }
 
 const CardWithSubComponents = Card as CardComponent
+CardWithSubComponents.Image = CardImage
 CardWithSubComponents.Header = CardHeader
 CardWithSubComponents.Title = CardTitle
 CardWithSubComponents.Description = CardDescription
