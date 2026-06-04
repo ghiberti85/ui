@@ -8,7 +8,10 @@ export default function Home() {
   const components = [
     'Button', 'Badge', 'Input', 'Textarea', 'Select', 'Checkbox',
     'Radio', 'Switch', 'Card', 'Dialog', 'Tooltip', 'Avatar',
-    'Separator', 'Typography', 'Stack', 'Container',
+    'Separator', 'Typography', 'Stack', 'Container', 'Toast',
+    'Tabs', 'Accordion', 'Table', 'Progress', 'Skeleton', 'Alert',
+    'Popover', 'Spinner', 'DropdownMenu', 'AlertDialog', 'Combobox',
+    'Breadcrumb', 'Pagination',
   ]
 
   const designSystems = [
