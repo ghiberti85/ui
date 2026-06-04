@@ -72,6 +72,23 @@
   height: 100%;
 }
 
+@media (max-width: 480px) {
+  .horizontal {
+    flex-direction: column;
+  }
+
+  .horizontal .imageWrapper {
+    width: 100%;
+    min-height: unset;
+    padding-top: 56.25% !important; /* fallback 16/9 */
+  }
+
+  .horizontal .imageWrapper.imagePos-left,
+  .horizontal .imageWrapper.imagePos-right {
+    order: unset;
+  }
+}
+
 /* ── CardImage ────────────────────────────────────────────── */
 .imageWrapper {
   position: relative;
