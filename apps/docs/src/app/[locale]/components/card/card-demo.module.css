@@ -1,0 +1,26 @@
+.variantsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.variantsGrid > * {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.horizontalDemo {
+  max-width: 520px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .variantsGrid > * {
+    flex: 1 1 100%;
+  }
+
+  .horizontalDemo {
+    max-width: 100%;
+  }
+}

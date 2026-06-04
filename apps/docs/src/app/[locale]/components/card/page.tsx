@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
 import styles from '../[component]/component-page.module.css'
+import demoStyles from './card-demo.module.css'
 
 export default async function CardPage() {
   const t = await getTranslations('componentPages')
@@ -80,9 +81,9 @@ export default async function CardPage() {
       {/* Live Demo — Variants */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{t('section_demo')}</h2>
-        <div className={styles.demo} style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'flex-start' }}>
+        <div className={`${styles.demo} ${demoStyles.variantsGrid}`}>
           {(['default', 'elevated', 'ghost', 'filled'] as const).map((variant) => (
-            <Card key={variant} variant={variant} style={{ width: 260 }}>
+            <Card key={variant} variant={variant}>
               <CardHeader>
                 <CardTitle style={{ textTransform: 'capitalize' }}>{variant}</CardTitle>
                 <CardDescription>variant=&quot;{variant}&quot;</CardDescription>
@@ -136,7 +137,7 @@ export default async function CardPage() {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Horizontal Layout</h2>
         <div className={styles.demo}>
-          <Card orientation="horizontal" style={{ maxWidth: 520 }}>
+          <Card orientation="horizontal" className={demoStyles.horizontalDemo}>
             <CardImage src="https://picsum.photos/seed/horiz/400/600" alt="Thumbnail" position="left" />
             <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
               <CardHeader>
