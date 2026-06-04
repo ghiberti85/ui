@@ -65,9 +65,9 @@ export const Multiple: Story = {
       <AccordionItem value="item3">
         <AccordionTrigger>Theming</AccordionTrigger>
         <AccordionContent>
-          Switch between <code>ds-minimal</code>, <code>ds-editorial</code>, and{' '}
-          <code>ds-brutalist</code> by changing the <code>data-theme</code> attribute on the root
-          element.
+          Switch between <code>ds-clean</code>, <code>ds-editorial</code>, <code>ds-velvet</code>,{' '}
+          <code>ds-brutalist</code>, or <code>ds-onyx</code> by changing the <code>data-theme</code>{' '}
+          attribute on the root element.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
