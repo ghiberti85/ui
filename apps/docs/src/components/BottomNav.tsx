@@ -70,6 +70,7 @@ export default function BottomNav() {
 
   // Close sheet on route change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSettingsOpen(false)
   }, [pathname])
 
