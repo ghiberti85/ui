@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { usePathname } from '@/i18n/navigation'
@@ -49,6 +49,15 @@ function SettingsIcon() {
   )
 }
 
+function CloseIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  )
+}
+
 export default function BottomNav() {
   const t = useTranslations('nav')
   const pathname = usePathname()
@@ -59,32 +68,92 @@ export default function BottomNav() {
 
   const close = () => setSettingsOpen(false)
 
+  // Close sheet on route change
+  useEffect(() => {
+    close()
+  }, [pathname])
+
+  // Prevent body scroll when sheet is open
+  useEffect(() => {
+    if (settingsOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [settingsOpen])
+
+  const homeActive = isActive('/') && !isActive('/tokens') && !isActive('/components') && !isActive('/getting-started') && !isActive('/playground') && !isActive('/tokens/motion')
+
   return (
     <>
-      {/* Settings panel */}
+      {/* Overlay */}
       {settingsOpen && (
-        <div className={styles.settingsPanel} role="dialog" aria-label={t('settings')}>
-          <div className={styles.settingsPanelLinks}>
-            <Link href="/getting-started" className={`${styles.panelLink} ${isActive('/getting-started') ? styles.panelLinkActive : ''}`} onClick={close}>{t('getting_started')}</Link>
-            <Link href="/tokens/motion" className={`${styles.panelLink} ${isActive('/tokens/motion') ? styles.panelLinkActive : ''}`} onClick={close}>{t('motion_tokens')}</Link>
-            <Link href="/playground" className={`${styles.panelLink} ${isActive('/playground') ? styles.panelLinkActive : ''}`} onClick={close}>{t('playground')}</Link>
-            <a href="https://main--6a1610ad99f4ffa5234828d5.chromatic.com" className={styles.panelLink} target="_blank" rel="noopener noreferrer" onClick={close}>{t('storybook')}</a>
-            <a href="https://github.com/ghiberti85/ui" className={styles.panelLink} target="_blank" rel="noopener noreferrer" onClick={close}>{t('github')}</a>
-          </div>
-          <div className={styles.settingsPanelInner}>
+        <div
+          className={styles.overlay}
+          onClick={close}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Bottom sheet */}
+      <div
+        className={`${styles.sheet} ${settingsOpen ? styles.sheetOpen : ''}`}
+        role="dialog"
+        aria-label={t('settings')}
+        aria-modal="true"
+      >
+        <div className={styles.sheetHandle} aria-hidden="true" />
+
+        <div className={styles.sheetHeader}>
+          <span className={styles.sheetTitle}>{t('settings')}</span>
+          <button className={styles.sheetClose} onClick={close} aria-label="Close">
+            <CloseIcon />
+          </button>
+        </div>
+
+        <div className={styles.sheetLinks}>
+          <Link href="/getting-started" className={`${styles.sheetLink} ${isActive('/getting-started') ? styles.sheetLinkActive : ''}`} onClick={close}>
+            {t('getting_started')}
+          </Link>
+          <Link href="/tokens/motion" className={`${styles.sheetLink} ${isActive('/tokens/motion') ? styles.sheetLinkActive : ''}`} onClick={close}>
+            {t('motion_tokens')}
+          </Link>
+          <Link href="/playground" className={`${styles.sheetLink} ${isActive('/playground') ? styles.sheetLinkActive : ''}`} onClick={close}>
+            {t('playground')}
+          </Link>
+          <a href="https://main--6a1610ad99f4ffa5234828d5.chromatic.com" className={styles.sheetLink} target="_blank" rel="noopener noreferrer" onClick={close}>
+            {t('storybook')}
+          </a>
+          <a href="https://github.com/ghiberti85/ui" className={styles.sheetLink} target="_blank" rel="noopener noreferrer" onClick={close}>
+            {t('github')}
+          </a>
+        </div>
+
+        <div className={styles.sheetControls}>
+          <div className={styles.controlRow}>
+            <span className={styles.controlLabel}>Theme</span>
             <ThemeSwitcher />
+          </div>
+          <div className={styles.controlRow}>
+            <span className={styles.controlLabel}>Lang</span>
             <LocaleSwitcher />
+          </div>
+          <div className={styles.controlRow}>
+            <span className={styles.controlLabel}>Mode</span>
             <ModeToggle />
           </div>
         </div>
-      )}
+      </div>
 
+      {/* Tab bar */}
       <nav className={styles.bottomNav} aria-label="Mobile navigation">
         <Link
           href="/"
-          className={`${styles.tab} ${isActive('/') ? styles.tabActive : ''}`}
-          onClick={() => setSettingsOpen(false)}
+          className={`${styles.tab} ${homeActive ? styles.tabActive : ''}`}
+          onClick={close}
         >
+          <span className={styles.tabIndicator} aria-hidden="true" />
           <HomeIcon />
           <span className={styles.tabLabel}>{t('home')}</span>
         </Link>
@@ -92,8 +161,9 @@ export default function BottomNav() {
         <Link
           href="/tokens"
           className={`${styles.tab} ${isActive('/tokens') ? styles.tabActive : ''}`}
-          onClick={() => setSettingsOpen(false)}
+          onClick={close}
         >
+          <span className={styles.tabIndicator} aria-hidden="true" />
           <TokensIcon />
           <span className={styles.tabLabel}>{t('tokens')}</span>
         </Link>
@@ -101,8 +171,9 @@ export default function BottomNav() {
         <Link
           href="/components"
           className={`${styles.tab} ${isActive('/components') ? styles.tabActive : ''}`}
-          onClick={() => setSettingsOpen(false)}
+          onClick={close}
         >
+          <span className={styles.tabIndicator} aria-hidden="true" />
           <ComponentsIcon />
           <span className={styles.tabLabel}>{t('components')}</span>
         </Link>
@@ -113,6 +184,7 @@ export default function BottomNav() {
           aria-label={t('settings')}
           aria-expanded={settingsOpen}
         >
+          <span className={styles.tabIndicator} aria-hidden="true" />
           <SettingsIcon />
           <span className={styles.tabLabel}>{t('settings')}</span>
         </button>
