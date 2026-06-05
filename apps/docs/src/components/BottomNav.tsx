@@ -70,7 +70,7 @@ export default function BottomNav() {
 
   // Close sheet on route change
   useEffect(() => {
-    close()
+    setSettingsOpen(false)
   }, [pathname])
 
   // Prevent body scroll when sheet is open
