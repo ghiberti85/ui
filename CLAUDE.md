@@ -332,6 +332,18 @@ pnpm audit                            # check for security vulnerabilities
 - [x] Docs pages + sidebar + i18n (EN/PT-BR) for all 4 new components
 - [x] ComponentsPageClient demos for all 4 new components
 
+### Done (continued)
+- [x] **Drawer component** — Radix UI Dialog-based slide-in panel, 4 sides (left/right/top/bottom), DrawerTrigger/Content/Header/Footer/Title/Description/Close sub-components
+- [x] **DataTable component** — sortable columns, client-side search filter, custom cell renderers, accessible table with empty state
+- [x] **OTPInput component** — N separate input boxes, auto-advance, backspace navigation, paste support, error state
+- [x] **TagInput component** — multi-value chip input, Enter/comma to add, backspace removes last, maxTags limit
+- [x] **ChatMessage component** — user/assistant/system roles, avatar + timestamp, ChatContainer scrollable wrapper
+- [x] **StreamingText component** — character-by-character animation, configurable speed, cursor blink, sr-only full text for a11y, onComplete callback
+- [x] 512 unit tests passing across 46 test files
+- [x] Docs pages + sidebar + i18n (EN/PT-BR) + Storybook stories for all 6 new components
+- [x] ComponentsPageClient demos for all 6 new components
+- [x] Vercel production deploy READY — ghiberti-ui.vercel.app
+
 ### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição
