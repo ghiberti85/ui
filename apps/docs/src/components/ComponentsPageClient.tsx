@@ -79,6 +79,10 @@ import {
   NumberInput,
   FileUpload,
   Timeline,
+  Slider,
+  Chip,
+  Rating,
+  Stepper,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -898,6 +902,76 @@ export default function ComponentsPageClient() {
             />
           </div>
           <code className={styles.importLine}>import {'{ Timeline }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'slider',
+      name: 'Slider',
+      description: t('slider_desc'),
+      section: 'display',
+      href: '/components/slider',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Slider defaultValue={60} aria-label="Volume" style={{ maxWidth: 280 }} />
+          </div>
+          <code className={styles.importLine}>import {'{ Slider }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'chip',
+      name: 'Chip',
+      description: t('chip_desc'),
+      section: 'display',
+      href: '/components/chip',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Chip variant="default">React</Chip>
+            <Chip variant="secondary">TypeScript</Chip>
+            <Chip variant="success">Active</Chip>
+            <Chip variant="outline">Draft</Chip>
+          </div>
+          <code className={styles.importLine}>import {'{ Chip }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'rating',
+      name: 'Rating',
+      description: t('rating_desc'),
+      section: 'display',
+      href: '/components/rating',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Rating value={4} readOnly />
+          </div>
+          <code className={styles.importLine}>import {'{ Rating }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'stepper',
+      name: 'Stepper',
+      description: t('stepper_desc'),
+      section: 'display',
+      href: '/components/stepper',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Stepper
+              steps={[
+                { label: 'Account' },
+                { label: 'Profile' },
+                { label: 'Done' },
+              ]}
+              activeStep={1}
+            />
+          </div>
+          <code className={styles.importLine}>import {'{ Stepper }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },
