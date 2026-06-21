@@ -23,8 +23,9 @@ function CalendarDemo() {
 }
 
 function CalendarRangeDemo() {
-  const [range, setRange] = React.useState<Parameters<typeof Calendar>[0]['selected']>(undefined)
-  return <Calendar mode="range" selected={range} onSelect={setRange} />
+  const [range, setRange] = React.useState<{ from: Date | undefined; to?: Date } | undefined>(undefined)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return <Calendar mode="range" selected={range as any} onSelect={setRange as any} />
 }
 
 export default function CalendarPage() {
