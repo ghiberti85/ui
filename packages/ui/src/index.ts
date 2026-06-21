@@ -39,6 +39,12 @@ export * from './components/Slider'
 export * from './components/Chip'
 export * from './components/Rating'
 export * from './components/Stepper'
+export * from './components/Drawer'
+export * from './components/DataTable'
+export * from './components/OTPInput'
+export * from './components/TagInput'
+export * from './components/ChatMessage'
+export * from './components/StreamingText'
 
 // Utils
 export { cn } from './utils/cn'

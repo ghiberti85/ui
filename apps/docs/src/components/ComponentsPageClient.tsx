@@ -83,6 +83,20 @@ import {
   Chip,
   Rating,
   Stepper,
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerClose,
+  DataTable,
+  OTPInput,
+  TagInput,
+  ChatMessage,
+  ChatContainer,
+  StreamingText,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -972,6 +986,124 @@ export default function ComponentsPageClient() {
             />
           </div>
           <code className={styles.importLine}>import {'{ Stepper }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'drawer',
+      name: 'Drawer',
+      description: t('drawer_desc'),
+      section: 'overlay',
+      href: '/components/drawer',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Drawer>
+              <DrawerTrigger asChild>
+                <button style={{ padding: '8px 16px', borderRadius: 6, border: '1px solid var(--color-semantic-border)', background: 'var(--color-semantic-background)', cursor: 'pointer', color: 'var(--color-semantic-foreground)' }}>Open Drawer</button>
+              </DrawerTrigger>
+              <DrawerContent side="right">
+                <DrawerHeader>
+                  <DrawerTitle>Drawer</DrawerTitle>
+                  <DrawerDescription>Slide-in panel from the right.</DrawerDescription>
+                </DrawerHeader>
+                <p style={{ fontSize: '0.875rem', color: 'var(--color-semantic-foreground-muted)' }}>Content goes here.</p>
+                <DrawerFooter>
+                  <DrawerClose asChild>
+                    <button style={{ padding: '8px 16px', borderRadius: 6, border: '1px solid var(--color-semantic-border)', background: 'var(--color-semantic-background)', cursor: 'pointer', color: 'var(--color-semantic-foreground)' }}>Close</button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          </div>
+          <code className={styles.importLine}>import {'{ Drawer, DrawerContent }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'data-table',
+      name: 'DataTable',
+      description: t('data_table_desc'),
+      section: 'display',
+      href: '/components/data-table',
+      element: (
+        <>
+          <div className={styles.demo} style={{ width: '100%' }}>
+            <DataTable
+              columns={[
+                { key: 'name', header: 'Name', sortable: true },
+                { key: 'role', header: 'Role' },
+              ]}
+              data={[
+                { name: 'Alice', role: 'Engineer' },
+                { name: 'Bob', role: 'Designer' },
+              ]}
+            />
+          </div>
+          <code className={styles.importLine}>import {'{ DataTable }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'otp-input',
+      name: 'OTPInput',
+      description: t('otp_input_desc'),
+      section: 'form',
+      href: '/components/otp-input',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <OTPInput length={6} />
+          </div>
+          <code className={styles.importLine}>import {'{ OTPInput }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'tag-input',
+      name: 'TagInput',
+      description: t('tag_input_desc'),
+      section: 'form',
+      href: '/components/tag-input',
+      element: (
+        <>
+          <div className={styles.demo} style={{ width: '100%', maxWidth: 360 }}>
+            <TagInput value={['React', 'TypeScript']} onChange={() => {}} />
+          </div>
+          <code className={styles.importLine}>import {'{ TagInput }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'chat-message',
+      name: 'ChatMessage',
+      description: t('chat_message_desc'),
+      section: 'display',
+      href: '/components/chat-message',
+      element: (
+        <>
+          <div className={styles.demo} style={{ flexDirection: 'column', gap: 8, width: '100%', maxWidth: 360 }}>
+            <ChatContainer>
+              <ChatMessage role="user" content="Hello!" />
+              <ChatMessage role="assistant" content="Hi there!" />
+            </ChatContainer>
+          </div>
+          <code className={styles.importLine}>import {'{ ChatMessage }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'streaming-text',
+      name: 'StreamingText',
+      description: t('streaming_text_desc'),
+      section: 'display',
+      href: '/components/streaming-text',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <StreamingText text="Streaming text animation..." speed={40} />
+          </div>
+          <code className={styles.importLine}>import {'{ StreamingText }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },

@@ -43,3 +43,4 @@ pnpm-debug.log*
 
 # Style Dictionary output
 packages/tokens/dist
+.claude/worktrees/
