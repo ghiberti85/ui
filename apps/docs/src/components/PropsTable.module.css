@@ -50,7 +50,7 @@
 }
 
 .tdProp { width: 14%; }
-.tdType { width: 22%; }
+.tdType { width: 22%; white-space: normal; word-break: break-word; }
 .tdDefault { width: 14%; }
 .tdDesc { width: 50%; color: var(--color-semantic-foreground-muted, #71717a); white-space: normal; min-width: 180px; }
 
