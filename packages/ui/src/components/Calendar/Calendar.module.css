@@ -10,6 +10,7 @@
   width: 100%;
   max-width: 320px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .months {
@@ -50,11 +51,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-1, 4px);
   position: absolute;
-  top: 0;
-  left: var(--spacing-1, 4px);
-  right: var(--spacing-1, 4px);
+  top: var(--spacing-3, 12px);
+  left: var(--spacing-3, 12px);
+  right: var(--spacing-3, 12px);
+  z-index: 1;
 }
 
 .navButton {
