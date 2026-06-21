@@ -76,6 +76,11 @@
   outline-offset: 2px;
 }
 
+/* react-day-picker v9 sets fill on .rdp-chevron — override to follow currentColor */
+.navButton :global(.rdp-chevron) {
+  fill: currentColor;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
