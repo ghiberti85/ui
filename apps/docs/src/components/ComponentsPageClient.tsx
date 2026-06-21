@@ -68,6 +68,17 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Pagination,
+  Calendar,
+  DatePicker,
+  Command,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  NumberInput,
+  FileUpload,
+  Timeline,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -88,6 +99,11 @@ interface ComponentEntry {
 function PaginationDemoWrapper() {
   const [page, setPage] = useState(3)
   return <Pagination page={page} totalPages={10} onPageChange={setPage} />
+}
+
+function NumberInputWrapper() {
+  const [v, setV] = useState<number | undefined>(42)
+  return <NumberInput value={v} onChange={setV} min={0} max={999} label="Quantity" />
 }
 
 export default function ComponentsPageClient() {
@@ -777,6 +793,111 @@ export default function ComponentsPageClient() {
             <PaginationDemoWrapper />
           </div>
           <code className={styles.importLine}>import {'{ Pagination }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'calendar',
+      name: 'Calendar',
+      description: t('calendar_desc'),
+      section: 'display',
+      href: '/components/calendar',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Calendar mode="single" />
+          </div>
+          <code className={styles.importLine}>import {'{ Calendar }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'date-picker',
+      name: 'DatePicker',
+      description: t('date_picker_desc'),
+      section: 'display',
+      href: '/components/date-picker',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <DatePicker placeholder="Pick a date" />
+          </div>
+          <code className={styles.importLine}>import {'{ DatePicker }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'command',
+      name: 'Command',
+      description: t('command_desc'),
+      section: 'overlay',
+      href: '/components/command',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Command style={{ maxWidth: '100%', border: '1px solid var(--color-semantic-border)' }}>
+              <CommandInput placeholder="Search..." />
+              <CommandList>
+                <CommandEmpty>No results.</CommandEmpty>
+                <CommandGroup heading="Actions">
+                  <CommandItem value="new">New File</CommandItem>
+                  <CommandItem value="open">Open</CommandItem>
+                </CommandGroup>
+              </CommandList>
+            </Command>
+          </div>
+          <code className={styles.importLine}>import {'{ Command, … }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'number-input',
+      name: 'NumberInput',
+      description: t('number_input_desc'),
+      section: 'form',
+      href: '/components/number-input',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <NumberInputWrapper />
+          </div>
+          <code className={styles.importLine}>import {'{ NumberInput }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'file-upload',
+      name: 'FileUpload',
+      description: t('file_upload_desc'),
+      section: 'form',
+      href: '/components/file-upload',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <FileUpload label="Drop files here" hint="Any file type" />
+          </div>
+          <code className={styles.importLine}>import {'{ FileUpload }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'timeline',
+      name: 'Timeline',
+      description: t('timeline_desc'),
+      section: 'display',
+      href: '/components/timeline',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <Timeline
+              items={[
+                { title: 'Project started', date: 'Jan 2024', variant: 'success' },
+                { title: 'Beta launched', date: 'Mar 2024', variant: 'info' },
+                { title: 'v1.0 released', date: 'Jun 2024', variant: 'success' },
+              ]}
+            />
+          </div>
+          <code className={styles.importLine}>import {'{ Timeline }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },
