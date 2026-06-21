@@ -30,6 +30,8 @@ export interface SliderProps {
   onChange?: (value: number) => void
   /** Additional className */
   className?: string
+  /** Inline style for the root wrapper */
+  style?: React.CSSProperties
 }
 
 /**
@@ -53,6 +55,7 @@ export const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
       'aria-label': ariaLabel,
       onChange,
       className,
+      style,
       ...props
     },
     ref
@@ -70,7 +73,7 @@ export const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
     }
 
     return (
-      <div className={cn(styles.root, disabled && styles.disabled, className)}>
+      <div className={cn(styles.root, disabled && styles.disabled, className)} style={style}>
         <div className={styles.track}>
           <div className={styles.fill} style={{ width: `${percentage}%` }} />
           <input
