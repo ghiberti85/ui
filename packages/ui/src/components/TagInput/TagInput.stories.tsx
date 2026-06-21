@@ -1,5 +1,5 @@
+import * as React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { useState } from 'react'
 import { TagInput } from './TagInput'
 
 const meta: Meta<typeof TagInput> = {
@@ -11,39 +11,36 @@ const meta: Meta<typeof TagInput> = {
 export default meta
 type Story = StoryObj<typeof TagInput>
 
-export const Default: Story = {
-  render: () => {
-    const [tags, setTags] = useState<string[]>([])
-    return (
-      <div style={{ width: 360 }}>
-        <TagInput value={tags} onChange={setTags} placeholder="Add tag…" />
-      </div>
-    )
-  },
+function DefaultDemo() {
+  const [tags, setTags] = React.useState<string[]>([])
+  return (
+    <div style={{ width: 360 }}>
+      <TagInput value={tags} onChange={setTags} placeholder="Add tag…" />
+    </div>
+  )
 }
 
-export const WithInitialTags: Story = {
-  render: () => {
-    const [tags, setTags] = useState(['React', 'TypeScript', 'CSS'])
-    return (
-      <div style={{ width: 360 }}>
-        <TagInput value={tags} onChange={setTags} />
-      </div>
-    )
-  },
+function WithInitialTagsDemo() {
+  const [tags, setTags] = React.useState(['React', 'TypeScript', 'CSS'])
+  return (
+    <div style={{ width: 360 }}>
+      <TagInput value={tags} onChange={setTags} />
+    </div>
+  )
 }
 
-export const MaxTags: Story = {
-  render: () => {
-    const [tags, setTags] = useState<string[]>([])
-    return (
-      <div style={{ width: 360 }}>
-        <TagInput value={tags} onChange={setTags} maxTags={3} placeholder="Max 3 tags" />
-      </div>
-    )
-  },
+function MaxTagsDemo() {
+  const [tags, setTags] = React.useState<string[]>([])
+  return (
+    <div style={{ width: 360 }}>
+      <TagInput value={tags} onChange={setTags} maxTags={3} placeholder="Max 3 tags" />
+    </div>
+  )
 }
 
+export const Default: Story = { render: () => <DefaultDemo /> }
+export const WithInitialTags: Story = { render: () => <WithInitialTagsDemo /> }
+export const MaxTags: Story = { render: () => <MaxTagsDemo /> }
 export const Disabled: Story = {
   args: { value: ['React', 'TypeScript'], disabled: true },
 }

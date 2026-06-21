@@ -28,7 +28,10 @@ export function StreamingText({
   const [displayed, setDisplayed] = React.useState('')
   const indexRef = React.useRef(0)
   const onCompleteRef = React.useRef(onComplete)
-  onCompleteRef.current = onComplete
+
+  React.useEffect(() => {
+    onCompleteRef.current = onComplete
+  })
 
   React.useEffect(() => {
     if (text.length < indexRef.current) {

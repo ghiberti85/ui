@@ -1,5 +1,5 @@
+import * as React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { useState, useEffect } from 'react'
 import { StreamingText } from './StreamingText'
 
 const meta: Meta<typeof StreamingText> = {
@@ -30,25 +30,27 @@ export const CustomCursor: Story = {
   args: { text: 'Custom cursor character', cursorChar: '|' },
 }
 
+function SimulatedStreamingDemo() {
+  const fullText = 'The quick brown fox jumps over the lazy dog.'
+  const [text, setText] = React.useState('')
+
+  React.useEffect(() => {
+    let i = 0
+    const timer = setInterval(() => {
+      i += 3
+      setText(fullText.slice(0, i))
+      if (i >= fullText.length) clearInterval(timer)
+    }, 50)
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <p style={{ maxWidth: 400, lineHeight: 1.6 }}>
+      <StreamingText text={text} speed={1} />
+    </p>
+  )
+}
+
 export const SimulatedStreaming: Story = {
-  render: () => {
-    const fullText = 'The quick brown fox jumps over the lazy dog.'
-    const [text, setText] = useState('')
-
-    useEffect(() => {
-      let i = 0
-      const timer = setInterval(() => {
-        i += 3
-        setText(fullText.slice(0, i))
-        if (i >= fullText.length) clearInterval(timer)
-      }, 50)
-      return () => clearInterval(timer)
-    }, [])
-
-    return (
-      <p style={{ maxWidth: 400, lineHeight: 1.6 }}>
-        <StreamingText text={text} speed={1} />
-      </p>
-    )
-  },
+  render: () => <SimulatedStreamingDemo />,
 }

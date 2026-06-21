@@ -1,5 +1,5 @@
+import * as React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { useState } from 'react'
 import { OTPInput } from './OTPInput'
 
 const meta: Meta<typeof OTPInput> = {
@@ -27,14 +27,16 @@ export const Disabled: Story = {
   args: { length: 6, disabled: true, value: '123456' },
 }
 
+function ControlledDemo() {
+  const [val, setVal] = React.useState('')
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
+      <OTPInput value={val} onChange={setVal} />
+      <p style={{ fontSize: '0.875rem' }}>Value: {val}</p>
+    </div>
+  )
+}
+
 export const Controlled: Story = {
-  render: () => {
-    const [val, setVal] = useState('')
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
-        <OTPInput value={val} onChange={setVal} />
-        <p style={{ fontSize: '0.875rem' }}>Value: {val}</p>
-      </div>
-    )
-  },
+  render: () => <ControlledDemo />,
 }
