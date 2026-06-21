@@ -13,6 +13,7 @@ const COMPONENT_SLUGS = [
   'progress', 'skeleton', 'alert', 'popover', 'spinner',
   'dropdown-menu', 'alert-dialog', 'combobox', 'breadcrumb', 'pagination',
   'calendar', 'date-picker', 'command', 'number-input', 'file-upload', 'timeline',
+  'slider', 'chip', 'rating', 'stepper',
 ]
 
 const COMPONENT_LABELS: Record<string, string> = {
@@ -26,6 +27,7 @@ const COMPONENT_LABELS: Record<string, string> = {
   breadcrumb: 'Breadcrumb', pagination: 'Pagination',
   calendar: 'Calendar', 'date-picker': 'DatePicker', command: 'Command',
   'number-input': 'NumberInput', 'file-upload': 'FileUpload', timeline: 'Timeline',
+  slider: 'Slider', chip: 'Chip', rating: 'Rating', stepper: 'Stepper',
 }
 
 function getCurrentSlug(pathname: string): string | null {

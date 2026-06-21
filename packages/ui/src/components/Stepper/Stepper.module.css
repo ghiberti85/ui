@@ -1,0 +1,154 @@
+.stepper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Horizontal */
+.orientation-horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.orientation-horizontal .step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orientation-horizontal .stepHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.orientation-horizontal .connector {
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-semantic-border, #e4e4e7);
+  margin: 0 var(--spacing-2, 8px);
+  transition: background-color var(--transition-base, 200ms) ease;
+}
+
+.orientation-horizontal .stepContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--spacing-2, 8px);
+  text-align: center;
+}
+
+/* Vertical */
+.orientation-vertical {
+  flex-direction: column;
+}
+
+.orientation-vertical .step {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-3, 12px);
+}
+
+.orientation-vertical .stepHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orientation-vertical .connector {
+  width: 2px;
+  flex: 1;
+  min-height: 24px;
+  background-color: var(--color-semantic-border, #e4e4e7);
+  margin: var(--spacing-1, 4px) 0;
+  transition: background-color var(--transition-base, 200ms) ease;
+}
+
+.orientation-vertical .stepContent {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--spacing-4, 16px);
+}
+
+/* Shared */
+.indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--border-radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-semantic-border, #e4e4e7);
+  background-color: var(--color-semantic-background, #fff);
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-xs, 0.75rem);
+  font-weight: var(--typography-font-weight-semibold, 600);
+  flex-shrink: 0;
+  transition: background-color var(--transition-base, 200ms) ease,
+    border-color var(--transition-base, 200ms) ease,
+    color var(--transition-base, 200ms) ease;
+}
+
+.stepNumber {
+  font-size: var(--typography-font-size-xs, 0.75rem);
+  font-weight: var(--typography-font-weight-semibold, 600);
+  color: var(--color-semantic-foreground-muted, #71717a);
+}
+
+.stepLabel {
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-sm, 0.875rem);
+  font-weight: var(--typography-font-weight-medium, 500);
+  color: var(--color-semantic-foreground-muted, #71717a);
+}
+
+.stepDescription {
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-xs, 0.75rem);
+  color: var(--color-semantic-foreground-muted, #71717a);
+  margin-top: 2px;
+}
+
+/* Status: active */
+.status-active .indicator {
+  border-color: var(--color-semantic-primary, #2563eb);
+  background-color: var(--color-semantic-primary, #2563eb);
+  color: var(--color-semantic-primary-foreground, #fff);
+}
+
+.status-active .stepNumber {
+  color: var(--color-semantic-primary-foreground, #fff);
+}
+
+.status-active .stepLabel {
+  color: var(--color-semantic-foreground, #18181b);
+  font-weight: var(--typography-font-weight-semibold, 600);
+}
+
+/* Status: completed */
+.status-completed .indicator {
+  border-color: var(--color-semantic-primary, #2563eb);
+  background-color: var(--color-semantic-primary, #2563eb);
+  color: var(--color-semantic-primary-foreground, #fff);
+}
+
+.status-completed .connector {
+  background-color: var(--color-semantic-primary, #2563eb);
+}
+
+.status-completed .stepLabel {
+  color: var(--color-semantic-foreground, #18181b);
+}
+
+/* Status: error */
+.status-error .indicator {
+  border-color: var(--color-semantic-error, #dc2626);
+  background-color: var(--color-semantic-error, #dc2626);
+  color: #fff;
+}
+
+.status-error .stepLabel {
+  color: var(--color-semantic-error, #dc2626);
+}

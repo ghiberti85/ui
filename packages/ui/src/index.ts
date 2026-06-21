@@ -35,6 +35,10 @@ export * from './components/Command'
 export * from './components/NumberInput'
 export * from './components/FileUpload'
 export * from './components/Timeline'
+export * from './components/Slider'
+export * from './components/Chip'
+export * from './components/Rating'
+export * from './components/Stepper'
 
 // Utils
 export { cn } from './utils/cn'

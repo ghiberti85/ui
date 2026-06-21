@@ -1,0 +1,40 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1, 4px);
+}
+
+.root.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.root.readOnly {
+  pointer-events: none;
+}
+
+.star {
+  display: inline-flex;
+  cursor: pointer;
+  color: var(--color-semantic-border, #e4e4e7);
+  transition: color var(--transition-fast, 150ms) ease, transform var(--transition-fast, 150ms) ease;
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.star:focus-visible {
+  outline: 2px solid var(--color-semantic-primary, #2563eb);
+  outline-offset: 2px;
+}
+
+.star.filled {
+  color: var(--color-semantic-warning, #d97706);
+}
+
+.root:not(.readOnly):not(.disabled) .star:hover,
+.root:not(.readOnly):not(.disabled) .star:hover ~ .star {
+  color: var(--color-semantic-warning, #d97706);
+}
+
+.size-sm .star { padding: 1px; }
+.size-md .star { padding: 2px; }
+.size-lg .star { padding: 3px; }
