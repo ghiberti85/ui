@@ -14,7 +14,8 @@ function DatePickerDemo() {
 }
 
 function DateRangeDemo() {
-  const [range, setRange] = React.useState<Parameters<typeof DateRangePicker>[0]['value']>(undefined)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [range, setRange] = React.useState<any>(undefined)
   return <DateRangePicker value={range} onChange={setRange} placeholder="Pick a date range" />
 }
 
