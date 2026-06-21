@@ -323,6 +323,15 @@ pnpm audit                            # check for security vulnerabilities
 ### Done (continued)
 - [x] **Playground expanded controls** — Foreground Color, Border Color, Spacing Scale, Transition Speed, Font Family (4 options) added to sidebar; Preview expanded with Typography, Alert (4 variants), Progress, Spinner, Textarea, Select components; controls grouped by Color / Shape & Scale / Typography / Motion sections
 
+### Done (continued)
+- [x] **Slider component** — range input with fill track, marks with labels, min/max/step, controlled/uncontrolled, accessible aria attributes
+- [x] **Chip component** — 6 variants, 3 sizes, removable with X button, icon slot, disabled state
+- [x] **Rating component** — 5-star interactive rating, hover states, readOnly/disabled, toggle-off, role="img" for readOnly stars (axe compliant)
+- [x] **Stepper component** — horizontal/vertical orientation, completed/active/error/pending statuses, animated connectors, semantic `<ol>` markup
+- [x] 473 unit tests passing across 40 test files
+- [x] Docs pages + sidebar + i18n (EN/PT-BR) for all 4 new components
+- [x] ComponentsPageClient demos for all 4 new components
+
 ### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição
