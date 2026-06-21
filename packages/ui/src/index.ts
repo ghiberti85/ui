@@ -29,6 +29,12 @@ export * from './components/AlertDialog'
 export * from './components/Combobox'
 export * from './components/Breadcrumb'
 export * from './components/Pagination'
+export * from './components/Calendar'
+export * from './components/DatePicker'
+export * from './components/Command'
+export * from './components/NumberInput'
+export * from './components/FileUpload'
+export * from './components/Timeline'
 
 // Utils
 export { cn } from './utils/cn'
