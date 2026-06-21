@@ -42,12 +42,19 @@
   font-weight: var(--typography-font-weight-semibold, 600);
   font-size: var(--typography-font-size-sm, 0.875rem);
   color: var(--color-semantic-foreground, #18181b);
+  width: 100%;
+  text-align: center;
 }
 
 .nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--spacing-1, 4px);
+  position: absolute;
+  top: 0;
+  left: var(--spacing-1, 4px);
+  right: var(--spacing-1, 4px);
 }
 
 .navButton {
