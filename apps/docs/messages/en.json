@@ -189,7 +189,8 @@
     "otp_input_desc": "A one-time password input with individual digit boxes, auto-advance, and paste support.",
     "tag_input_desc": "A multi-value text input that creates removable Chip tags on Enter or comma.",
     "chat_message_desc": "Chat bubble components for user, assistant, and system messages with timestamps and avatars.",
-    "streaming_text_desc": "Animates text character by character with a blinking cursor, simulating LLM streaming output."
+    "streaming_text_desc": "Animates text character by character with a blinking cursor, simulating LLM streaming output.",
+    "hover_card_desc": "Rich preview card shown on hover, built on Radix UI with animated scale and fade."
   },
   "componentPages": {
     "table_prop": "Prop",
