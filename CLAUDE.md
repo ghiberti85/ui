@@ -344,6 +344,18 @@ pnpm audit                            # check for security vulnerabilities
 - [x] ComponentsPageClient demos for all 6 new components
 - [x] Vercel production deploy READY — ghiberti-ui.vercel.app
 
+### Done (continued)
+- [x] **DatePicker component** — input + Popover wrapping Calendar, DateRangePicker variant
+- [x] **Command component** — cmdk-based palette, CommandDialog (⌘K), groups, separators, shortcuts
+- [x] **NumberInput component** — stepper +/− buttons, min/max/step, prefix/suffix, 3 sizes
+- [x] **FileUpload component** — drag-and-drop zone, file previews, size validation, multi-file support
+- [x] **Timeline component** — vertical event list, 5 variants (default/success/warning/error/info), custom icons
+- [x] **HoverCard component** — Radix UI HoverCard, animated scale+fade, arrow, openDelay/closeDelay
+- [x] 519 unit tests passing across 47 test files
+- [x] Docs pages + sidebar + i18n (EN/PT-BR) + Storybook stories for all 6 new components
+- [x] ComponentsPageClient demos for all 6 new components
+- [x] Vercel production deploy READY — ghiberti-ui.vercel.app (PR #103)
+
 ### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição
