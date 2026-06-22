@@ -1,0 +1,39 @@
+.content {
+  background-color: var(--color-semantic-background);
+  border: 1px solid var(--color-semantic-border);
+  border-radius: var(--border-radius-md, 6px);
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.12));
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-sm, 0.875rem);
+  color: var(--color-semantic-foreground);
+  max-width: 320px;
+  z-index: 50;
+
+  transform-origin: var(--radix-hover-card-content-transform-origin);
+  animation-duration: var(--transition-fast, 0.15s);
+  animation-timing-function: ease-out;
+}
+
+.content[data-state="open"] {
+  animation-name: hoverCardIn;
+}
+
+.content[data-state="closed"] {
+  animation-name: hoverCardOut;
+}
+
+@keyframes hoverCardIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes hoverCardOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.95); }
+}
+
+.arrow {
+  fill: var(--color-semantic-background);
+  stroke: var(--color-semantic-border);
+}

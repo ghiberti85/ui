@@ -52,7 +52,7 @@ export const CardImage = React.forwardRef<HTMLDivElement, CardImageProps>(
     if (position === 'background') {
       return (
         <div ref={ref} className={cn(styles.imageBg, className)}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+
           <img src={src} alt={alt} className={styles.imageBgImg} aria-hidden="true" />
         </div>
       )
@@ -65,7 +65,6 @@ export const CardImage = React.forwardRef<HTMLDivElement, CardImageProps>(
         className={cn(styles.imageWrapper, styles[`imagePos-${position}`], className)}
         style={{ paddingTop: position === 'top' ? paddingTop : undefined }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={src} alt={alt} className={styles.image} />
       </div>
     )
