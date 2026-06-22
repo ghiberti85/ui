@@ -48,3 +48,4 @@ export * from './components/StreamingText'
 
 // Utils
 export { cn } from './utils/cn'
+export * from './components/HoverCard'

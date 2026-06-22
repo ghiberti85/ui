@@ -189,7 +189,8 @@
     "otp_input_desc": "A one-time password input with individual digit boxes, auto-advance, and paste support.",
     "tag_input_desc": "A multi-value text input that creates removable Chip tags on Enter or comma.",
     "chat_message_desc": "Chat bubble components for user, assistant, and system messages with timestamps and avatars.",
-    "streaming_text_desc": "Animates text character by character with a blinking cursor, simulating LLM streaming output."
+    "streaming_text_desc": "Animates text character by character with a blinking cursor, simulating LLM streaming output.",
+    "hover_card_desc": "Floating card revealed on hover. Built on Radix UI with animated scale+fade transitions."
   },
   "componentPages": {
     "table_prop": "Prop",
@@ -361,7 +362,13 @@
     "streaming_text_prop_speed": "Milliseconds between each character.",
     "streaming_text_prop_cursor": "Show a blinking cursor while streaming.",
     "streaming_text_prop_cursorChar": "Character used as the cursor.",
-    "streaming_text_prop_onComplete": "Called when the animation finishes."
+    "streaming_text_prop_onComplete": "Called when the animation finishes.",
+    "hover_card_prop_sideOffset": "Distance in pixels between the card and its trigger.",
+    "hover_card_prop_showArrow": "Show an arrow pointer toward the trigger.",
+    "hover_card_prop_align": "Alignment of the card relative to the trigger.",
+    "hover_card_prop_side": "Preferred side to show the card.",
+    "hover_card_prop_openDelay": "Milliseconds before the card opens on hover.",
+    "hover_card_prop_closeDelay": "Milliseconds before the card closes after mouse leave."
   },
   "sidebar": {
     "components_heading": "Components",

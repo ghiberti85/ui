@@ -189,7 +189,8 @@
     "otp_input_desc": "Campo de senha única com caixas individuais por dígito, avanço automático e suporte a colar.",
     "tag_input_desc": "Campo de texto com múltiplos valores que cria tags removíveis ao pressionar Enter ou vírgula.",
     "chat_message_desc": "Componentes de bolha de chat para mensagens de usuário, assistente e sistema com timestamps e avatares.",
-    "streaming_text_desc": "Anima texto caractere por caractere com cursor piscante, simulando saída de streaming de LLM."
+    "streaming_text_desc": "Anima texto caractere por caractere com cursor piscante, simulando saída de streaming de LLM.",
+    "hover_card_desc": "Card flutuante exibido ao passar o mouse. Construído com Radix UI e animações de escala+fade."
   },
   "componentPages": {
     "table_prop": "Prop",
@@ -361,7 +362,13 @@
     "streaming_text_prop_speed": "Milissegundos entre cada caractere.",
     "streaming_text_prop_cursor": "Exibir cursor piscante durante o streaming.",
     "streaming_text_prop_cursorChar": "Caractere usado como cursor.",
-    "streaming_text_prop_onComplete": "Chamado quando a animação termina."
+    "streaming_text_prop_onComplete": "Chamado quando a animação termina.",
+    "hover_card_prop_sideOffset": "Distância em pixels entre o card e o gatilho.",
+    "hover_card_prop_showArrow": "Exibe uma seta apontando para o gatilho.",
+    "hover_card_prop_align": "Alinhamento do card em relação ao gatilho.",
+    "hover_card_prop_side": "Lado preferido para exibir o card.",
+    "hover_card_prop_openDelay": "Milissegundos antes do card abrir ao hover.",
+    "hover_card_prop_closeDelay": "Milissegundos antes do card fechar após o mouse sair."
   },
   "sidebar": {
     "components_heading": "Componentes",
