@@ -4,7 +4,7 @@
 
 A monorepo containing multiple design systems and a hybrid React component library built for authorial projects. Multiple visual identities, one component API.
 
-**46 components · 519 tests · 5 design systems · EN/PT-BR docs**
+**46 components · 519 tests · 9 design systems · EN/PT-BR docs**
 
 ## Packages
 
