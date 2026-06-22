@@ -189,7 +189,8 @@
     "otp_input_desc": "Campo de senha única com caixas individuais por dígito, avanço automático e suporte a colar.",
     "tag_input_desc": "Campo de texto com múltiplos valores que cria tags removíveis ao pressionar Enter ou vírgula.",
     "chat_message_desc": "Componentes de bolha de chat para mensagens de usuário, assistente e sistema com timestamps e avatares.",
-    "streaming_text_desc": "Anima texto caractere por caractere com cursor piscante, simulando saída de streaming de LLM."
+    "streaming_text_desc": "Anima texto caractere a caractere com cursor piscante, simulando saída de streaming de LLM.",
+    "hover_card_desc": "Card de preview rico exibido ao passar o mouse, construído com Radix UI com animação de escala e fade."
   },
   "componentPages": {
     "table_prop": "Prop",
