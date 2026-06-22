@@ -1,0 +1,9 @@
+{
+  "shadow": {
+    "none": { "$value": "none", "$type": "shadow" },
+    "sm":   { "$value": "0 2px 8px rgba(201,168,76,0.08)", "$type": "shadow" },
+    "md":   { "$value": "0 4px 24px rgba(201,168,76,0.15)", "$type": "shadow" },
+    "lg":   { "$value": "0 8px 40px rgba(201,168,76,0.2)", "$type": "shadow" },
+    "xl":   { "$value": "0 16px 64px rgba(201,168,76,0.25)", "$type": "shadow" }
+  }
+}

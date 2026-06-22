@@ -399,6 +399,10 @@ export default function PlaygroundClient({ labels }: { labels: Labels }) {
                   { value: 'ds-brutalist', label: 'Brutalist' },
                   { value: 'ds-editorial', label: 'Editorial' },
                   { value: 'ds-onyx', label: 'Onyx' },
+                  { value: 'ds-aurum', label: 'Aurum' },
+                  { value: 'ds-neon', label: 'Neon' },
+                  { value: 'ds-nature', label: 'Nature' },
+                  { value: 'ds-swiss', label: 'Swiss' },
                 ]}
               />
             </div>

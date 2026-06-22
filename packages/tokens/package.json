@@ -18,7 +18,15 @@
     "./ds-brutalist/js": "./dist/ds-brutalist/tokens.js",
     "./ds-onyx/js":       "./dist/ds-onyx/tokens.js",
     "./ds-clean/js":       "./dist/ds-clean/tokens.js",
-    "./ds-velvet/js":  "./dist/ds-velvet/tokens.js"
+    "./ds-velvet/js":  "./dist/ds-velvet/tokens.js",
+    "./ds-aurum":      "./dist/ds-aurum/variables.css",
+    "./ds-neon":       "./dist/ds-neon/variables.css",
+    "./ds-nature":     "./dist/ds-nature/variables.css",
+    "./ds-swiss":      "./dist/ds-swiss/variables.css",
+    "./ds-aurum/js":   "./dist/ds-aurum/tokens.js",
+    "./ds-neon/js":    "./dist/ds-neon/tokens.js",
+    "./ds-nature/js":  "./dist/ds-nature/tokens.js",
+    "./ds-swiss/js":   "./dist/ds-swiss/tokens.js"
   },
   "devDependencies": {
     "style-dictionary": "^4.3.0"

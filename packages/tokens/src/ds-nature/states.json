@@ -1,0 +1,18 @@
+{
+  "color": {
+    "state": {
+      "success":            { "$value": "#4a7c59", "$type": "color" },
+      "success-subtle":     { "$value": "rgba(74,124,89,0.15)", "$type": "color" },
+      "success-foreground": { "$value": "#ffffff", "$type": "color" },
+      "warning":            { "$value": "#c8892a", "$type": "color" },
+      "warning-subtle":     { "$value": "rgba(200,137,42,0.15)", "$type": "color" },
+      "warning-foreground": { "$value": "#2d3a2e", "$type": "color" },
+      "error":              { "$value": "#b5392a", "$type": "color" },
+      "error-subtle":       { "$value": "rgba(181,57,42,0.12)", "$type": "color" },
+      "error-foreground":   { "$value": "#ffffff", "$type": "color" },
+      "info":               { "$value": "#4a6fa5", "$type": "color" },
+      "info-subtle":        { "$value": "rgba(74,111,165,0.12)", "$type": "color" },
+      "info-foreground":    { "$value": "#ffffff", "$type": "color" }
+    }
+  }
+}

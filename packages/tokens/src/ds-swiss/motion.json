@@ -1,0 +1,9 @@
+{
+  "transition-fast": { "$value": "100ms", "$type": "duration" },
+  "transition-base": { "$value": "150ms", "$type": "duration" },
+  "transition-slow": { "$value": "250ms", "$type": "duration" },
+  "easing-default":  { "$value": "cubic-bezier(0.4, 0, 0.2, 1)",      "$type": "cubicBezier" },
+  "easing-in":       { "$value": "cubic-bezier(0.4, 0, 1, 1)",        "$type": "cubicBezier" },
+  "easing-out":      { "$value": "cubic-bezier(0, 0, 0.2, 1)",        "$type": "cubicBezier" },
+  "easing-spring":   { "$value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "$type": "cubicBezier" }
+}

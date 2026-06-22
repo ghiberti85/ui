@@ -7,6 +7,10 @@ const DESIGN_SYSTEMS = [
   { key: 'ds_brutalist', theme: 'ds-brutalist' },
   { key: 'ds_editorial', theme: 'ds-editorial' },
   { key: 'ds_onyx',      theme: 'ds-onyx' },
+  { key: 'ds_aurum',     theme: 'ds-aurum' },
+  { key: 'ds_neon',      theme: 'ds-neon' },
+  { key: 'ds_nature',    theme: 'ds-nature' },
+  { key: 'ds_swiss',     theme: 'ds-swiss' },
 ] as const
 
 const SEMANTIC_COLORS = [
