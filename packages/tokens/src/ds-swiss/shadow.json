@@ -1,0 +1,9 @@
+{
+  "shadow": {
+    "none": { "$value": "none", "$type": "shadow" },
+    "sm":   { "$value": "0 1px 0 #000", "$type": "shadow" },
+    "md":   { "$value": "0 1px 0 #000, 0 2px 0 #000", "$type": "shadow" },
+    "lg":   { "$value": "2px 2px 0 #000", "$type": "shadow" },
+    "xl":   { "$value": "4px 4px 0 #000", "$type": "shadow" }
+  }
+}

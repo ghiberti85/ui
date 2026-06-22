@@ -1,0 +1,26 @@
+{
+  "color": {
+    "base": {
+      "void":        { "$value": "#0d0d1a", "$type": "color" },
+      "void-light":  { "$value": "#13132a", "$type": "color" },
+      "void-card":   { "$value": "#1a1a2e", "$type": "color" },
+      "magenta":     { "$value": "#ff00cc", "$type": "color" },
+      "magenta-dim": { "$value": "#cc00aa", "$type": "color" },
+      "text-bright": { "$value": "#e0e0ff", "$type": "color" },
+      "text-muted":  { "$value": "#8888bb", "$type": "color" },
+      "grid":        { "$value": "rgba(255,0,204,0.15)", "$type": "color" }
+    },
+    "semantic": {
+      "background":         { "$value": "{color.base.void}",        "$type": "color" },
+      "background-subtle":  { "$value": "{color.base.void-light}",  "$type": "color" },
+      "foreground":         { "$value": "{color.base.text-bright}",  "$type": "color" },
+      "foreground-muted":   { "$value": "{color.base.text-muted}",   "$type": "color" },
+      "border":             { "$value": "{color.base.grid}",         "$type": "color" },
+      "primary":            { "$value": "{color.base.magenta}",      "$type": "color" },
+      "primary-hover":      { "$value": "{color.base.magenta-dim}",  "$type": "color" },
+      "primary-foreground": { "$value": "#ffffff",                   "$type": "color" },
+      "destructive":            { "$value": "#ff3333", "$type": "color" },
+      "destructive-foreground": { "$value": "#ffffff",  "$type": "color" }
+    }
+  }
+}

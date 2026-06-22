@@ -10,6 +10,10 @@ import '@ghiberti85/tokens/ds-brutalist'
 import '@ghiberti85/tokens/ds-onyx'
 import '@ghiberti85/tokens/ds-clean'
 import '@ghiberti85/tokens/ds-velvet'
+import '@ghiberti85/tokens/ds-aurum'
+import '@ghiberti85/tokens/ds-neon'
+import '@ghiberti85/tokens/ds-nature'
+import '@ghiberti85/tokens/ds-swiss'
 
 const preview: Preview = {
   globalTypes: {
@@ -25,6 +29,10 @@ const preview: Preview = {
           { value: 'ds-onyx',   title: 'Onyx' },
           { value: 'ds-clean',  title: 'Clean' },
           { value: 'ds-velvet', title: 'Velvet' },
+          { value: 'ds-aurum',  title: 'Aurum' },
+          { value: 'ds-neon',   title: 'Neon' },
+          { value: 'ds-nature', title: 'Nature' },
+          { value: 'ds-swiss',  title: 'Swiss' },
         ],
         dynamicTitle: true,
       },

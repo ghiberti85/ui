@@ -10,6 +10,10 @@ const THEMES = [
   { value: 'ds-brutalist', label: 'Brutalist' },
   { value: 'ds-editorial', label: 'Editorial' },
   { value: 'ds-onyx',      label: 'Onyx' },
+  { value: 'ds-aurum',     label: 'Aurum' },
+  { value: 'ds-neon',      label: 'Neon' },
+  { value: 'ds-nature',    label: 'Nature' },
+  { value: 'ds-swiss',     label: 'Swiss' },
 ] as const
 
 export default function ThemeSwitcher() {

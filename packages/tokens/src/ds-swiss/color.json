@@ -1,0 +1,24 @@
+{
+  "color": {
+    "base": {
+      "white":     { "$value": "#ffffff", "$type": "color" },
+      "black":     { "$value": "#000000", "$type": "color" },
+      "near-black":{ "$value": "#111111", "$type": "color" },
+      "gray-mid":  { "$value": "#555555", "$type": "color" },
+      "gray-light":{ "$value": "#dddddd", "$type": "color" },
+      "rule":      { "$value": "#e0e0e0", "$type": "color" }
+    },
+    "semantic": {
+      "background":         { "$value": "{color.base.white}",      "$type": "color" },
+      "background-subtle":  { "$value": "#f5f5f5",                 "$type": "color" },
+      "foreground":         { "$value": "{color.base.near-black}", "$type": "color" },
+      "foreground-muted":   { "$value": "{color.base.gray-mid}",   "$type": "color" },
+      "border":             { "$value": "{color.base.rule}",       "$type": "color" },
+      "primary":            { "$value": "{color.base.black}",      "$type": "color" },
+      "primary-hover":      { "$value": "#333333",                 "$type": "color" },
+      "primary-foreground": { "$value": "{color.base.white}",      "$type": "color" },
+      "destructive":            { "$value": "#cc0000", "$type": "color" },
+      "destructive-foreground": { "$value": "#ffffff",  "$type": "color" }
+    }
+  }
+}

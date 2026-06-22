@@ -1,0 +1,26 @@
+{
+  "color": {
+    "base": {
+      "warm-white":   { "$value": "#faf8f4", "$type": "color" },
+      "warm-subtle":  { "$value": "#f0ece4", "$type": "color" },
+      "charcoal":     { "$value": "#2d3a2e", "$type": "color" },
+      "charcoal-mid": { "$value": "#4a5a4b", "$type": "color" },
+      "sage":         { "$value": "#6b8f6b", "$type": "color" },
+      "sage-dark":    { "$value": "#527052", "$type": "color" },
+      "bark":         { "$value": "#c4b5a0", "$type": "color" },
+      "rule":         { "$value": "#d8d0c4", "$type": "color" }
+    },
+    "semantic": {
+      "background":         { "$value": "{color.base.warm-white}",  "$type": "color" },
+      "background-subtle":  { "$value": "{color.base.warm-subtle}", "$type": "color" },
+      "foreground":         { "$value": "{color.base.charcoal}",    "$type": "color" },
+      "foreground-muted":   { "$value": "{color.base.charcoal-mid}","$type": "color" },
+      "border":             { "$value": "{color.base.rule}",        "$type": "color" },
+      "primary":            { "$value": "{color.base.sage}",        "$type": "color" },
+      "primary-hover":      { "$value": "{color.base.sage-dark}",   "$type": "color" },
+      "primary-foreground": { "$value": "#ffffff",                  "$type": "color" },
+      "destructive":            { "$value": "#c0392b", "$type": "color" },
+      "destructive-foreground": { "$value": "#ffffff",  "$type": "color" }
+    }
+  }
+}

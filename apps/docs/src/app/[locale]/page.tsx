@@ -60,6 +60,42 @@ export default function Home() {
       badgeLabel: t('ds_onyx_badge'),
       buttonLabel: t('ds_cta_button'),
     },
+    {
+      key: 'ds-aurum' as const,
+      theme: 'ds-aurum',
+      name: t('ds_aurum_name'),
+      desc: t('ds_aurum_desc'),
+      font: 'Cormorant Garamond',
+      badgeLabel: t('ds_aurum_badge'),
+      buttonLabel: t('ds_cta_button'),
+    },
+    {
+      key: 'ds-neon' as const,
+      theme: 'ds-neon',
+      name: t('ds_neon_name'),
+      desc: t('ds_neon_desc'),
+      font: 'JetBrains Mono',
+      badgeLabel: t('ds_neon_badge'),
+      buttonLabel: t('ds_cta_button'),
+    },
+    {
+      key: 'ds-nature' as const,
+      theme: 'ds-nature',
+      name: t('ds_nature_name'),
+      desc: t('ds_nature_desc'),
+      font: 'Lora',
+      badgeLabel: t('ds_nature_badge'),
+      buttonLabel: t('ds_cta_button'),
+    },
+    {
+      key: 'ds-swiss' as const,
+      theme: 'ds-swiss',
+      name: t('ds_swiss_name'),
+      desc: t('ds_swiss_desc'),
+      font: 'Inter',
+      badgeLabel: t('ds_swiss_badge'),
+      buttonLabel: t('ds_cta_button'),
+    },
   ]
 
   const howItWorks = [

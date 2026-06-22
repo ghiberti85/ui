@@ -22,13 +22,17 @@ A monorepo containing multiple design systems and a hybrid React component libra
 
 ## Design Systems
 
-Five visual identities, all consuming the same component API:
+Nine visual identities, all consuming the same component API:
 
 - **ds-clean** — Technical authority, navy + lime accent. Inter + JetBrains Mono. *(default)*
 - **ds-velvet** — Warm, approachable, rounded. DM Sans/Nunito + teal accent.
 - **ds-brutalist** — Raw, bold, intentional. Bebas Neue + pure primaries.
 - **ds-editorial** — Warm, typographic, refined. Playfair Display + cream tones.
 - **ds-onyx** — Dark-first, clinical. Inter + cyan accent. Productivity/dense UI.
+- **ds-aurum** — Luxury/premium, dark navy + gold. Cormorant Garamond serif headings.
+- **ds-neon** — Cyberpunk/synthwave, near-black + magenta glow. Full monospace stack.
+- **ds-nature** — Organic/sustainable, warm white + sage green. Lora + DM Sans.
+- **ds-swiss** — Ultra-minimal/Bauhaus, white + black. Inter heavy weights, zero radius.
 
 ## Getting Started
 

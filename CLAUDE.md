@@ -356,6 +356,16 @@ pnpm audit                            # check for security vulnerabilities
 - [x] ComponentsPageClient demos for all 6 new components
 - [x] Vercel production deploy READY — ghiberti-ui.vercel.app (PR #103)
 
+### Done (continued)
+- [x] **DS ds-aurum** — Luxury/Premium: deep navy `#0a0f1e` + gold `#c9a84c`, Cormorant Garamond serif headings, generous border radius
+- [x] **DS ds-neon** — Cyberpunk/Synthwave: near-black `#0d0d1a` + magenta `#ff00cc`, full JetBrains Mono stack, neon glow shadows
+- [x] **DS ds-nature** — Organic/Sustainable: warm white `#faf8f4` + sage `#6b8f6b`, Lora + DM Sans, very rounded corners
+- [x] **DS ds-swiss** — Ultra-minimal/Bauhaus: pure white + black `#000000`, Inter heavy weights, zero border radius
+- [x] All 4 new DS registered in `sd.config.mjs`, `package.json` exports, Storybook toolbar, docs layout, ThemeSwitcher, PlaygroundClient
+- [x] i18n keys (EN/PT-BR) for all 4 new DS
+- [x] Tokens page and home page showcase updated to 9 DS
+- [x] 519 unit tests passing
+
 ### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição
