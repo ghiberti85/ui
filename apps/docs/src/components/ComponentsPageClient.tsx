@@ -97,7 +97,6 @@ import {
   ChatMessage,
   ChatContainer,
   StreamingText,
-  HoverCard, HoverCardTrigger, HoverCardContent,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -1105,33 +1104,6 @@ export default function ComponentsPageClient() {
             <StreamingText text="Streaming text animation..." speed={40} />
           </div>
           <code className={styles.importLine}>import {'{ StreamingText }'} from &apos;@ghiberti85/ui&apos;</code>
-        </>
-      ),
-    },
-    {
-      id: 'hover-card',
-      name: 'HoverCard',
-      description: t('hover_card_desc'),
-      section: 'display',
-      href: '/components/hover-card',
-      element: (
-        <>
-          <div className={styles.demo}>
-            <HoverCard openDelay={100}>
-              <HoverCardTrigger asChild>
-                <a href="#" style={{ color: 'var(--color-semantic-primary)', textDecoration: 'underline' }} onClick={(e) => e.preventDefault()}>
-                  @ghiberti85
-                </a>
-              </HoverCardTrigger>
-              <HoverCardContent>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                  <strong style={{ color: 'var(--color-semantic-foreground)' }}>Fernando Ghiberti</strong>
-                  <span style={{ color: 'var(--color-semantic-foreground-muted)', fontSize: '0.875rem' }}>Senior Full-Stack Engineer</span>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
-          </div>
-          <code className={styles.importLine}>import {'{ HoverCard, HoverCardTrigger, HoverCardContent }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },

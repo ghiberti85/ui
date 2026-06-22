@@ -14,7 +14,7 @@ const COMPONENT_SLUGS = [
   'dropdown-menu', 'alert-dialog', 'combobox', 'breadcrumb', 'pagination',
   'calendar', 'date-picker', 'command', 'number-input', 'file-upload', 'timeline',
   'slider', 'chip', 'rating', 'stepper',
-  'drawer', 'data-table', 'otp-input', 'tag-input', 'chat-message', 'streaming-text', 'hover-card',
+  'drawer', 'data-table', 'otp-input', 'tag-input', 'chat-message', 'streaming-text',
 ]
 
 const COMPONENT_LABELS: Record<string, string> = {
@@ -30,7 +30,7 @@ const COMPONENT_LABELS: Record<string, string> = {
   'number-input': 'NumberInput', 'file-upload': 'FileUpload', timeline: 'Timeline',
   slider: 'Slider', chip: 'Chip', rating: 'Rating', stepper: 'Stepper',
   drawer: 'Drawer', 'data-table': 'DataTable', 'otp-input': 'OTPInput',
-  'tag-input': 'TagInput', 'chat-message': 'ChatMessage', 'streaming-text': 'StreamingText', 'hover-card': 'HoverCard',
+  'tag-input': 'TagInput', 'chat-message': 'ChatMessage', 'streaming-text': 'StreamingText',
 }
 
 function getCurrentSlug(pathname: string): string | null {
