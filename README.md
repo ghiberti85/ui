@@ -1,6 +1,6 @@
 # ghiberti85/ui
 
-> Design systems collection and component library — by [Fernando Ghiberti](https://github.com/ghiberti85)
+> Design systems collection and component library by [Fernando Ghiberti](https://github.com/ghiberti85)
 
 A monorepo containing multiple design systems and a hybrid React component library built for authorial projects. Multiple visual identities, one component API.
 
