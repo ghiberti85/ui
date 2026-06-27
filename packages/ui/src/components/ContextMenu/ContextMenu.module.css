@@ -1,0 +1,92 @@
+.content {
+  min-width: 180px;
+  background: var(--color-semantic-background);
+  border: 1px solid var(--color-semantic-border);
+  border-radius: var(--border-radius-md, 6px);
+  padding: 4px;
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.12));
+  z-index: 100;
+  animation-duration: var(--transition-fast, 0.15s);
+  animation-timing-function: ease-out;
+}
+
+.content[data-state="open"] {
+  animation-name: contextMenuIn;
+}
+
+@keyframes contextMenuIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--border-radius-sm, 4px);
+  font-size: var(--typography-font-size-sm, 0.875rem);
+  font-family: var(--typography-font-family-sans);
+  color: var(--color-semantic-foreground);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background var(--transition-fast, 0.15s) ease;
+}
+
+.item[data-highlighted] {
+  background: var(--color-semantic-primary);
+  color: var(--color-semantic-primary-foreground);
+}
+
+.item[data-disabled] {
+  color: var(--color-semantic-foreground-muted);
+  cursor: default;
+  pointer-events: none;
+}
+
+.itemInset {
+  padding-left: 28px;
+}
+
+.checkboxItem,
+.radioItem {
+  padding-left: 28px;
+  position: relative;
+}
+
+.itemIndicator {
+  position: absolute;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.label {
+  padding: 6px 10px;
+  font-size: var(--typography-font-size-xs, 0.75rem);
+  font-family: var(--typography-font-family-sans);
+  font-weight: 600;
+  color: var(--color-semantic-foreground-muted);
+  user-select: none;
+}
+
+.separator {
+  height: 1px;
+  margin: 4px -4px;
+  background: var(--color-semantic-border);
+}
+
+.shortcut {
+  margin-left: auto;
+  font-size: var(--typography-font-size-xs, 0.75rem);
+  color: var(--color-semantic-foreground-muted);
+  letter-spacing: 0.05em;
+}
+
+.subTrigger[data-state="open"] {
+  background: var(--color-semantic-background-subtle);
+}

@@ -18,7 +18,7 @@
     "description": "Uma coleção de design systems e componentes React criados para projetos autorais. Múltiplas identidades visuais, uma API de componentes.",
     "cta_components": "Ver Componentes",
     "cta_tokens": "Explorar Tokens",
-    "stat_components": "46 componentes",
+    "stat_components": "50 componentes",
     "stat_design_systems": "9 design systems",
     "stat_tests": "519 testes",
     "showcase_title": "Nove Design Systems",
@@ -206,7 +206,10 @@
     "tag_input_desc": "Campo de texto com múltiplos valores que cria tags removíveis ao pressionar Enter ou vírgula.",
     "chat_message_desc": "Componentes de bolha de chat para mensagens de usuário, assistente e sistema com timestamps e avatares.",
     "streaming_text_desc": "Anima texto caractere a caractere com cursor piscante, simulando saída de streaming de LLM.",
-    "hover_card_desc": "Card de preview rico exibido ao passar o mouse, construído com Radix UI com animação de escala e fade."
+    "hover_card_desc": "Card de preview rico exibido ao passar o mouse, construído com Radix UI com animação de escala e fade.",
+    "context_menu_desc": "Menu de contexto por clique direito construído no Radix UI com labels, separadores, atalhos, checkboxes, radio items e submenus.",
+    "empty_state_desc": "Placeholder para dados zerados com ícone, título, descrição e botão de ação opcional. Inclui 4 variantes semânticas.",
+    "scroll_area_desc": "Contêiner rolável com estilo personalizado baseado no Radix UI, com scrollbar temática e suporte a eixos vertical, horizontal ou ambos."
   },
   "componentPages": {
     "table_prop": "Prop",

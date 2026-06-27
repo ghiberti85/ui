@@ -100,6 +100,15 @@ import {
   HoverCard,
   HoverCardTrigger,
   HoverCardContent,
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  EmptyState,
+  ScrollArea,
 } from '@ghiberti85/ui'
 import { Link } from '@/i18n/navigation'
 import styles from '@/app/[locale]/components/page.module.css'
@@ -1132,6 +1141,73 @@ export default function ComponentsPageClient() {
             </HoverCard>
           </div>
           <code className={styles.importLine}>import {'{ HoverCard, HoverCardTrigger, HoverCardContent }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'context-menu',
+      name: 'ContextMenu',
+      description: t('context_menu_desc'),
+      section: 'overlay',
+      href: '/components/context-menu',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <ContextMenu>
+              <ContextMenuTrigger>
+                <div style={{ padding: '12px 24px', border: '2px dashed var(--color-semantic-border)', borderRadius: 8, fontSize: '0.875rem', color: 'var(--color-semantic-foreground-muted)', cursor: 'context-menu', userSelect: 'none' }}>Right-click here</div>
+              </ContextMenuTrigger>
+              <ContextMenuContent>
+                <ContextMenuLabel>Actions</ContextMenuLabel>
+                <ContextMenuSeparator />
+                <ContextMenuItem>Cut <ContextMenuShortcut>⌘X</ContextMenuShortcut></ContextMenuItem>
+                <ContextMenuItem>Copy <ContextMenuShortcut>⌘C</ContextMenuShortcut></ContextMenuItem>
+                <ContextMenuItem>Paste <ContextMenuShortcut>⌘V</ContextMenuShortcut></ContextMenuItem>
+              </ContextMenuContent>
+            </ContextMenu>
+          </div>
+          <code className={styles.importLine}>import {'{ ContextMenu, ContextMenuTrigger, ContextMenuContent, … }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'empty-state',
+      name: 'EmptyState',
+      description: t('empty_state_desc'),
+      section: 'display',
+      href: '/components/empty-state',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <EmptyState
+              variant="search"
+              title="No results found"
+              description="Try adjusting your search terms."
+              action={{ label: 'Clear search', onClick: () => {} }}
+            />
+          </div>
+          <code className={styles.importLine}>import {'{ EmptyState }'} from &apos;@ghiberti85/ui&apos;</code>
+        </>
+      ),
+    },
+    {
+      id: 'scroll-area',
+      name: 'ScrollArea',
+      description: t('scroll_area_desc'),
+      section: 'layout',
+      href: '/components/scroll-area',
+      element: (
+        <>
+          <div className={styles.demo}>
+            <ScrollArea style={{ height: 140, width: 200, border: '1px solid var(--color-semantic-border)', borderRadius: 8, padding: 8 }}>
+              {Array.from({ length: 15 }, (_, i) => (
+                <div key={i} style={{ padding: '4px 0', fontSize: '0.8125rem', borderBottom: '1px solid var(--color-semantic-border)', color: 'var(--color-semantic-foreground)' }}>
+                  Item {i + 1}
+                </div>
+              ))}
+            </ScrollArea>
+          </div>
+          <code className={styles.importLine}>import {'{ ScrollArea }'} from &apos;@ghiberti85/ui&apos;</code>
         </>
       ),
     },

@@ -1,0 +1,50 @@
+.root {
+  position: relative;
+  overflow: hidden;
+}
+
+.viewport {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.scrollbar {
+  display: flex;
+  user-select: none;
+  touch-action: none;
+  padding: 2px;
+  background: transparent;
+  transition: background var(--transition-fast, 0.15s) ease;
+}
+
+.scrollbar:hover {
+  background: var(--color-semantic-background-subtle, rgba(0,0,0,0.04));
+}
+
+.scrollbarVertical {
+  width: 10px;
+  height: 100%;
+}
+
+.scrollbarHorizontal {
+  height: 10px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.thumb {
+  flex: 1;
+  border-radius: 999px;
+  background: var(--color-semantic-border);
+  position: relative;
+  transition: background var(--transition-fast, 0.15s) ease;
+}
+
+.thumb:hover {
+  background: var(--color-semantic-foreground-muted);
+}
+
+.corner {
+  background: transparent;
+}
