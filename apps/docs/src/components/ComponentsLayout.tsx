@@ -16,6 +16,7 @@ const COMPONENT_SLUGS = [
   'slider', 'chip', 'rating', 'stepper',
   'drawer', 'data-table', 'otp-input', 'tag-input', 'chat-message', 'streaming-text',
   'hover-card',
+  'context-menu', 'empty-state', 'scroll-area',
 ]
 
 const COMPONENT_LABELS: Record<string, string> = {
@@ -33,6 +34,9 @@ const COMPONENT_LABELS: Record<string, string> = {
   drawer: 'Drawer', 'data-table': 'DataTable', 'otp-input': 'OTPInput',
   'tag-input': 'TagInput', 'chat-message': 'ChatMessage', 'streaming-text': 'StreamingText',
   'hover-card': 'HoverCard',
+  'context-menu': 'ContextMenu',
+  'empty-state': 'EmptyState',
+  'scroll-area': 'ScrollArea',
 }
 
 function getCurrentSlug(pathname: string): string | null {

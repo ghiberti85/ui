@@ -18,7 +18,7 @@
     "description": "A collection of design systems and React components built for authorial projects. Multiple visual identities, one component API.",
     "cta_components": "Browse Components",
     "cta_tokens": "Explore Tokens",
-    "stat_components": "46 components",
+    "stat_components": "50 components",
     "stat_design_systems": "9 design systems",
     "stat_tests": "519 tests",
     "showcase_title": "Nine Design Systems",
@@ -206,7 +206,10 @@
     "tag_input_desc": "A multi-value text input that creates removable Chip tags on Enter or comma.",
     "chat_message_desc": "Chat bubble components for user, assistant, and system messages with timestamps and avatars.",
     "streaming_text_desc": "Animates text character by character with a blinking cursor, simulating LLM streaming output.",
-    "hover_card_desc": "Rich preview card shown on hover, built on Radix UI with animated scale and fade."
+    "hover_card_desc": "Rich preview card shown on hover, built on Radix UI with animated scale and fade.",
+    "context_menu_desc": "Right-click context menu built on Radix UI with labels, separators, shortcuts, checkboxes, radio items, and submenus.",
+    "empty_state_desc": "Zero-data placeholder with icon, title, description, and an optional action button. Includes 4 semantic variants.",
+    "scroll_area_desc": "Custom-styled scrollable container built on Radix UI with themed scrollbar and support for vertical, horizontal, or both axes."
   },
   "componentPages": {
     "table_prop": "Prop",

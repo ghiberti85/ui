@@ -366,6 +366,14 @@ pnpm audit                            # check for security vulnerabilities
 - [x] Tokens page and home page showcase updated to 9 DS
 - [x] 519 unit tests passing
 
+### Done (continued)
+- [x] **ScrollArea component** — Radix UI custom-scrollbar container, vertical/horizontal/both axes, themed scrollbar track and thumb
+- [x] **ContextMenu component** — Radix UI right-click menu, labels, separators, shortcuts, checkbox items, radio items, submenus
+- [x] **EmptyState component** — zero-data placeholder, 4 variants (default/search/error/no-results), icon/title/description/action
+- [x] 541 unit tests passing across 50 test files
+- [x] Docs pages + sidebar + i18n (EN/PT-BR) + Storybook stories for all 3 new components
+- [x] ComponentsPageClient demos for all 3 new components
+
 ### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição

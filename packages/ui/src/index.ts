@@ -46,6 +46,10 @@ export * from './components/TagInput'
 export * from './components/ChatMessage'
 export * from './components/StreamingText'
 
+export * from './components/ContextMenu'
+export * from './components/EmptyState'
+export * from './components/ScrollArea'
+
 // Utils
 export { cn } from './utils/cn'
 export * from './components/HoverCard'
