@@ -1,0 +1,88 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.icon {
+  color: var(--color-semantic-state-error, #dc2626);
+  opacity: 0.7;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 700;
+  color: var(--color-semantic-foreground);
+  font-family: var(--typography-font-family-sans);
+}
+
+.description {
+  margin: 0;
+  max-width: 400px;
+  font-size: 0.9375rem;
+  color: var(--color-semantic-foreground-muted);
+  line-height: 1.6;
+  font-family: var(--typography-font-family-sans);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.primaryAction {
+  padding: 0.5rem 1.25rem;
+  background: var(--color-semantic-primary);
+  color: var(--color-semantic-primary-foreground);
+  border: none;
+  border-radius: var(--border-radius-sm, 4px);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: var(--typography-font-family-sans);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.primaryAction:hover {
+  opacity: 0.85;
+}
+
+.primaryAction:focus-visible {
+  outline: 2px solid var(--color-semantic-primary);
+  outline-offset: 2px;
+}
+
+.secondaryAction {
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  color: var(--color-semantic-foreground);
+  border: 1px solid var(--color-semantic-border);
+  border-radius: var(--border-radius-sm, 4px);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: var(--typography-font-family-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.secondaryAction:hover {
+  background: var(--color-semantic-background-subtle);
+}
+
+.digest {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-semantic-foreground-muted);
+  font-family: var(--typography-font-family-mono, monospace);
+  opacity: 0.6;
+}

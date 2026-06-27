@@ -26,7 +26,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Audit dependencies
+      - name: Audit prod dependencies (blocks on high/critical)
+        run: pnpm audit --audit-level=high --prod
+
+      - name: Audit all dependencies (informational)
         run: pnpm audit --audit-level=moderate
         continue-on-error: true
 

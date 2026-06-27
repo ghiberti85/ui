@@ -30,9 +30,8 @@ jobs:
       - name: Build tokens
         run: pnpm --filter @ghiberti85/tokens build
 
-      - name: Audit dependencies
-        run: pnpm audit --audit-level=high
-        continue-on-error: true
+      - name: Audit dependencies (prod — blocks on high/critical)
+        run: pnpm audit --audit-level=high --prod
 
       - name: Lint
         run: pnpm lint
