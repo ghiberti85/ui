@@ -75,7 +75,7 @@ export default function EmptyStatePage() {
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{t('section_demo')}</h2>
-        <div className={styles.demoRow} style={{ gap: 32, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, border: '1px solid var(--color-semantic-border)', borderRadius: 8, background: 'var(--color-semantic-background-subtle)', overflow: 'hidden' }}>
           <EmptyState
             variant="default"
             title="No content yet"
