@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: lint-ui
+      run: pnpm --filter @ghiberti85/ui lint
+    - name: lint-docs
+      run: pnpm --filter @ghiberti85/docs lint
+      fail_text: "Lint failed — fix errors before committing"
+
+pre-push:
+  jobs:
+    - name: test
+      run: pnpm --filter @ghiberti85/ui test
+      fail_text: "Tests failed — all tests must pass before pushing"
