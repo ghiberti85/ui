@@ -1,6 +1,4 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
@@ -22,9 +20,9 @@ const iconItems = [
   { title: 'Delivered', date: 'Dec 4', icon: '✅', variant: 'success' as const },
 ]
 
-export default function TimelinePage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function TimelinePage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const itemProps = [
     { prop: 'title', type: 'ReactNode', defaultValue: '—', description: t('timeline_item_prop_title') },

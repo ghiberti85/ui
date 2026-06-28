@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import { Skeleton, SkeletonText, SkeletonAvatar } from './Skeleton'
 
 describe('Skeleton', () => {
@@ -60,5 +61,25 @@ describe('SkeletonAvatar', () => {
     const el = container.firstChild as HTMLElement
     expect(el.style.width).toBe('48px')
     expect(el.style.height).toBe('48px')
+  })
+})
+
+describe('Skeleton accessibility', () => {
+  it('Skeleton has no accessibility violations', async () => {
+    const { container } = render(<Skeleton width="200px" height="20px" />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+
+  it('SkeletonText has no accessibility violations', async () => {
+    const { container } = render(<SkeletonText lines={3} />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+
+  it('SkeletonAvatar has no accessibility violations', async () => {
+    const { container } = render(<SkeletonAvatar size={48} />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

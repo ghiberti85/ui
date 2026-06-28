@@ -13,8 +13,20 @@
     "lint": "eslint src",
     "test": "vitest run",
     "test:ui": "vitest --ui",
+    "size": "size-limit",
     "prepublishOnly": "pnpm test && pnpm lint && pnpm build"
   },
+  "size-limit": [
+    {
+      "path": "./src/index.ts",
+      "limit": "120 kB",
+      "import": "{ Button }"
+    },
+    {
+      "path": "./src/index.ts",
+      "limit": "350 kB"
+    }
+  ],
   "peerDependencies": {
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
@@ -34,7 +46,9 @@
     "typescript": "^5.8.0",
     "typescript-eslint": "^8.60.0",
     "vitest": "^3.2.6",
-    "vitest-axe": "1.0.0-pre.5"
+    "vitest-axe": "1.0.0-pre.5",
+    "@size-limit/esbuild": "^11.0.0",
+    "size-limit": "^11.0.0"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

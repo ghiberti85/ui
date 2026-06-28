@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import { ScrollArea, ScrollAreaScrollbar } from './ScrollArea'
 
 describe('ScrollArea', () => {
@@ -67,5 +68,15 @@ describe('ScrollArea', () => {
       </ScrollArea>
     )
     expect(ref.current).toBeTruthy()
+  })
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(
+      <ScrollArea style={{ height: 100 }}>
+        <p>Scrollable content</p>
+      </ScrollArea>
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })
