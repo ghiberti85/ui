@@ -1,21 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
-import { TagInput } from '@ghiberti85/ui'
+import { TagInputDemo, TagInputMaxDemo, TagInputDisabledDemo } from '@/components/demos/TagInputDemo'
 import styles from '../[component]/component-page.module.css'
 
-function TagInputDemo() {
-  const [tags, setTags] = React.useState(['React', 'TypeScript'])
-  return <TagInput value={tags} onChange={setTags} placeholder="Add tag…" />
-}
-
-export default function TagInputPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function TagInputPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'value', type: 'string[]', defaultValue: '—', description: t('tag_input_prop_value') },
@@ -61,8 +53,8 @@ const [tags, setTags] = useState(['React', 'TypeScript'])
         <h2 className={styles.sectionTitle}>{t('section_demo')}</h2>
         <div className={styles.demo} style={{ flexDirection: 'column', gap: 16, width: '100%', maxWidth: 400, alignItems: 'stretch' }}>
           <TagInputDemo />
-          <TagInput value={['Max', 'Three']} onChange={() => {}} maxTags={3} placeholder="Max 3 tags" />
-          <TagInput disabled value={['Disabled', 'Tag']} onChange={() => {}} />
+          <TagInputMaxDemo />
+          <TagInputDisabledDemo />
         </div>
       </section>
 

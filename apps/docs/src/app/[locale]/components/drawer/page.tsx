@@ -1,66 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
-import { Button, Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from '@ghiberti85/ui'
+import { DrawerRightDemo, DrawerLeftDemo } from '@/components/demos/DrawerDemo'
 import styles from '../[component]/component-page.module.css'
 
-function DrawerDemo() {
-  const [open, setOpen] = React.useState(false)
-  return (
-    <>
-      <Button onClick={() => setOpen(true)}>Open Drawer</Button>
-      <Drawer open={open} onOpenChange={setOpen}>
-        <DrawerContent side="right">
-          <DrawerHeader>
-            <DrawerTitle>Drawer Title</DrawerTitle>
-            <DrawerDescription>This is the drawer description.</DrawerDescription>
-          </DrawerHeader>
-          <div style={{ padding: '0 1.5rem 1.5rem', color: 'var(--color-semantic-foreground)' }}>
-            <p>Drawer body content goes here.</p>
-          </div>
-          <DrawerFooter>
-            <DrawerClose asChild>
-              <Button variant="secondary">Close</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </>
-  )
-}
-
-function DrawerLeftDemo() {
-  const [open, setOpen] = React.useState(false)
-  return (
-    <>
-      <Button variant="secondary" onClick={() => setOpen(true)}>Left Side</Button>
-      <Drawer open={open} onOpenChange={setOpen}>
-        <DrawerContent side="left">
-          <DrawerHeader>
-            <DrawerTitle>Left Drawer</DrawerTitle>
-            <DrawerDescription>Slides in from the left.</DrawerDescription>
-          </DrawerHeader>
-          <div style={{ padding: '0 1.5rem 1.5rem', color: 'var(--color-semantic-foreground)' }}>
-            <p>Navigation or settings panel.</p>
-          </div>
-          <DrawerFooter>
-            <DrawerClose asChild>
-              <Button variant="secondary">Close</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </>
-  )
-}
-
-export default function DrawerPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function DrawerPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'side', type: "'left' | 'right' | 'top' | 'bottom'", defaultValue: "'right'", description: t('drawer_prop_side') },
@@ -114,7 +61,7 @@ const [open, setOpen] = useState(false)
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{t('section_demo')}</h2>
         <div className={styles.demoRow} style={{ gap: 12, flexWrap: 'wrap' }}>
-          <DrawerDemo />
+          <DrawerRightDemo />
           <DrawerLeftDemo />
         </div>
       </section>

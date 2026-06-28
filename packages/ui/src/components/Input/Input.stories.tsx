@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import { Input } from './Input'
 
 const meta: Meta<typeof Input> = {
@@ -30,4 +31,16 @@ export const Disabled: Story = {
 
 export const NoLabel: Story = {
   args: { id: 'no-label', placeholder: 'No label' },
+}
+
+export const TypeText: Story = {
+  args: { id: 'type-text', label: 'Username', placeholder: 'Enter your username' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByRole('textbox', { name: 'Username' })
+    await expect(input).toBeInTheDocument()
+    await userEvent.click(input)
+    await userEvent.type(input, 'ghiberti85')
+    await expect(input).toHaveValue('ghiberti85')
+  },
 }

@@ -1,87 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
-import {
-  Command,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandSeparator,
-  CommandShortcut,
-  CommandDialog,
-} from '@ghiberti85/ui'
+import { CommandDemo, CommandDialogDemo } from '@/components/demos/CommandDemos'
 import styles from '../[component]/component-page.module.css'
 
-function CommandDemo() {
-  return (
-    <Command style={{ width: '100%', maxWidth: 420 }}>
-      <CommandInput placeholder="Type a command or search..." />
-      <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Suggestions">
-          <CommandItem value="calendar">📅 Calendar</CommandItem>
-          <CommandItem value="search">🔍 Search</CommandItem>
-          <CommandItem value="settings">⚙️ Settings</CommandItem>
-        </CommandGroup>
-        <CommandSeparator />
-        <CommandGroup heading="Actions">
-          <CommandItem value="new-file">
-            📄 New File
-            <CommandShortcut>⌘N</CommandShortcut>
-          </CommandItem>
-          <CommandItem value="open">
-            📂 Open
-            <CommandShortcut>⌘O</CommandShortcut>
-          </CommandItem>
-        </CommandGroup>
-      </CommandList>
-    </Command>
-  )
-}
-
-function CommandDialogDemo() {
-  const [open, setOpen] = React.useState(false)
-  return (
-    <>
-      <button
-        onClick={() => setOpen(true)}
-        style={{
-          padding: '8px 16px',
-          cursor: 'pointer',
-          background: 'var(--color-semantic-primary)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: 'var(--border-radius-md)',
-          fontFamily: 'var(--typography-font-family-sans)',
-          fontSize: '0.875rem',
-        }}
-      >
-        Open Command Palette (⌘K)
-      </button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search..." />
-        <CommandList>
-          <CommandEmpty>No results.</CommandEmpty>
-          <CommandGroup heading="Navigation">
-            <CommandItem value="home">🏠 Home</CommandItem>
-            <CommandItem value="components">🧩 Components</CommandItem>
-            <CommandItem value="tokens">🎨 Tokens</CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </CommandDialog>
-    </>
-  )
-}
-
-export default function CommandPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function CommandPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'children', type: 'ReactNode', defaultValue: '—', description: t('command_prop_children') },

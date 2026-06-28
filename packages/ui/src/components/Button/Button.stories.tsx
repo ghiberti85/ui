@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
@@ -65,4 +66,15 @@ export const AllSizes: Story = {
       <Button size="lg">Large</Button>
     </div>
   ),
+}
+
+export const Interaction: Story = {
+  args: { variant: 'primary', children: 'Click me' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button', { name: 'Click me' })
+    await expect(button).toBeInTheDocument()
+    await expect(button).not.toBeDisabled()
+    await userEvent.click(button)
+  },
 }

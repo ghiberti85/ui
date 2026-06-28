@@ -1,26 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
-import { Pagination } from '@ghiberti85/ui'
+import { PaginationDemo, PaginationWithFirstLastDemo } from '@/components/demos/PaginationDemo'
 import styles from '../[component]/component-page.module.css'
 
-function PaginationDemo() {
-  const [page, setPage] = React.useState(5)
-  return <Pagination page={page} totalPages={20} onPageChange={setPage} />
-}
-
-function PaginationWithFirstLast() {
-  const [page, setPage] = React.useState(5)
-  return <Pagination page={page} totalPages={20} onPageChange={setPage} showFirstLast />
-}
-
-export default function PaginationPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function PaginationPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'page', type: 'number', defaultValue: '—', description: t('pagination_prop_page') },
@@ -75,7 +62,7 @@ const [page, setPage] = useState(1)
           </div>
           <div className={styles.demoGroup}>
             <span className={styles.demoGroupLabel}>With First/Last buttons</span>
-            <PaginationWithFirstLast />
+            <PaginationWithFirstLastDemo />
           </div>
         </div>
       </section>

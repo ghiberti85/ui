@@ -1,16 +1,14 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
 import { NumberInput } from '@ghiberti85/ui'
+import { NumberInputDemo } from '@/components/demos/NumberInputDemo'
 import styles from '../[component]/component-page.module.css'
 
-export default function NumberInputPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function NumberInputPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'value', type: 'number | undefined', defaultValue: '—', description: t('number_input_prop_value') },
@@ -117,43 +115,5 @@ const [quantity, setQuantity] = useState(1)
         </a>
       </section>
     </div>
-  )
-}
-
-function NumberInputDemo({
-  label,
-  prefix,
-  suffix,
-  step = 1,
-  precision,
-  min,
-  max,
-  defaultVal = 0,
-  helperText,
-}: {
-  label: string
-  prefix?: string
-  suffix?: string
-  step?: number
-  precision?: number
-  min?: number
-  max?: number
-  defaultVal?: number
-  helperText?: string
-}) {
-  const [v, setV] = React.useState<number | undefined>(defaultVal)
-  return (
-    <NumberInput
-      label={label}
-      value={v}
-      onChange={setV}
-      prefix={prefix}
-      suffix={suffix}
-      step={step}
-      precision={precision}
-      min={min}
-      max={max}
-      helperText={helperText}
-    />
   )
 }

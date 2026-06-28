@@ -1,36 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
-import { Calendar } from '@ghiberti85/ui'
+import { CalendarSingleDemo, CalendarRangeDemo } from '@/components/demos/CalendarDemo'
 import styles from '../[component]/component-page.module.css'
 
-function CalendarDemo() {
-  const [date, setDate] = React.useState<Date | undefined>()
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'flex-start' }}>
-      <Calendar mode="single" selected={date} onSelect={setDate} />
-      {date && (
-        <p style={{ fontSize: '0.875rem', color: 'var(--color-semantic-foreground-muted)' }}>
-          Selected: {date.toLocaleDateString()}
-        </p>
-      )}
-    </div>
-  )
-}
-
-function CalendarRangeDemo() {
-  const [range, setRange] = React.useState<{ from: Date | undefined; to?: Date } | undefined>(undefined)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <Calendar mode="range" selected={range as any} onSelect={setRange as any} />
-}
-
-export default function CalendarPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function CalendarPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'mode', type: '"single" | "multiple" | "range"', defaultValue: '"single"', description: t('calendar_prop_mode') },
@@ -82,7 +59,7 @@ const [dates, setDates] = useState<Date[]>()
         <div className={styles.demoRow} style={{ flexWrap: 'wrap', gap: 24 }}>
           <div>
             <p style={{ fontSize: '0.75rem', color: 'var(--color-semantic-foreground-muted)', marginBottom: 8 }}>Single</p>
-            <CalendarDemo />
+            <CalendarSingleDemo />
           </div>
           <div>
             <p style={{ fontSize: '0.75rem', color: 'var(--color-semantic-foreground-muted)', marginBottom: 8 }}>Range</p>

@@ -10,13 +10,17 @@
     "test": "turbo run test",
     "test:ui": "turbo run test:ui",
     "format": "prettier --write \"**/*.{ts,tsx,md,css,json}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,md,css,json}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,css,json}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
   },
   "workspaces": [
     "packages/*",
     "apps/*"
   ],
   "devDependencies": {
+    "@changesets/cli": "^2.31.0",
     "lefthook": "^2.1.9",
     "prettier": "^3.5.0",
     "turbo": "^2.5.0",

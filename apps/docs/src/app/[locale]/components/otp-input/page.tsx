@@ -1,16 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
 import { OTPInput } from '@ghiberti85/ui'
 import styles from '../[component]/component-page.module.css'
 
-export default function OTPInputPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function OTPInputPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'length', type: 'number', defaultValue: '6', description: t('otp_input_prop_length') },
