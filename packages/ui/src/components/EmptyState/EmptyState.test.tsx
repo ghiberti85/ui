@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import userEvent from '@testing-library/user-event'
 import { EmptyState } from './EmptyState'
 
@@ -53,5 +54,19 @@ describe('EmptyState', () => {
       const { unmount } = render(<EmptyState title="Title" variant={variant} />)
       unmount()
     })
+  })
+
+  it('has no accessibility violations', async () => {
+    const { container } = render(<EmptyState title="Nothing here" description="No items found." />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+
+  it('has no accessibility violations with action button', async () => {
+    const { container } = render(
+      <EmptyState title="Nothing here" action={{ label: 'Add item', onClick: () => {} }} />
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

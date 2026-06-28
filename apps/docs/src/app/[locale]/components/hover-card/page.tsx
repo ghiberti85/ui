@@ -1,66 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '@ghiberti85/ui'
+import { HoverCardLinkDemo, HoverCardArrowDemo } from '@/components/demos/HoverCardDemo'
 import styles from '../[component]/component-page.module.css'
 
-function HoverCardDemo() {
-  return (
-    <HoverCard openDelay={100}>
-      <HoverCardTrigger asChild>
-        <a
-          href="#"
-          style={{ color: 'var(--color-semantic-primary)', textDecoration: 'underline', fontWeight: 600 }}
-          onClick={(e) => e.preventDefault()}
-        >
-          @ghiberti85
-        </a>
-      </HoverCardTrigger>
-      <HoverCardContent>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          <strong style={{ color: 'var(--color-semantic-foreground)' }}>Fernando Ghiberti</strong>
-          <span style={{ color: 'var(--color-semantic-foreground-muted)', fontSize: '0.875rem' }}>
-            Senior Full-Stack Engineer & Front-End Tech Lead
-          </span>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
-  )
-}
-
-function HoverCardArrowDemo() {
-  return (
-    <HoverCard openDelay={100}>
-      <HoverCardTrigger asChild>
-        <button
-          style={{
-            padding: '8px 16px',
-            background: 'var(--color-semantic-primary)',
-            color: 'var(--color-semantic-primary-foreground)',
-            border: 'none',
-            borderRadius: 'var(--border-radius-sm)',
-            cursor: 'pointer',
-          }}
-        >
-          Hover for info
-        </button>
-      </HoverCardTrigger>
-      <HoverCardContent showArrow>
-        <p style={{ margin: 0, color: 'var(--color-semantic-foreground)' }}>
-          This card has an arrow pointing to the trigger.
-        </p>
-      </HoverCardContent>
-    </HoverCard>
-  )
-}
-
-export default function HoverCardPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function HoverCardPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'sideOffset', type: 'number', defaultValue: '8', description: t('hover_card_prop_sideOffset') },
@@ -109,7 +56,7 @@ export default function HoverCardPage() {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{t('section_demo')}</h2>
         <div className={styles.demoRow} style={{ gap: 24, flexWrap: 'wrap', alignItems: 'center' }}>
-          <HoverCardDemo />
+          <HoverCardLinkDemo />
           <HoverCardArrowDemo />
         </div>
       </section>

@@ -1,6 +1,4 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
@@ -16,9 +14,9 @@ import {
 import { Button } from '@ghiberti85/ui'
 import styles from '../[component]/component-page.module.css'
 
-export default function DropdownMenuPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function DropdownMenuPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'DropdownMenu', type: 'Radix Root', defaultValue: '—', description: 'Root component that controls open/closed state.' },

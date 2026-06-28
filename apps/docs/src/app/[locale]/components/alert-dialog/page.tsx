@@ -1,6 +1,4 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
@@ -18,9 +16,9 @@ import {
 } from '@ghiberti85/ui'
 import styles from '../[component]/component-page.module.css'
 
-export default function AlertDialogPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function AlertDialogPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'AlertDialog', type: 'Radix Root', defaultValue: '—', description: 'Root component that controls open/closed state.' },

@@ -1,7 +1,4 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
@@ -36,9 +33,9 @@ function ScrollAreaHorizontalDemo() {
   )
 }
 
-export default function ScrollAreaPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function ScrollAreaPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'orientation', type: "'vertical' | 'horizontal' | 'both'", defaultValue: "'vertical'", description: 'Which scrollbar(s) to render.' },

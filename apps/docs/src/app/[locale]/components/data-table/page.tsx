@@ -1,7 +1,4 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
@@ -20,9 +17,9 @@ const data = [
   { name: 'Charlie Brown', role: 'Manager', status: 'Active' },
 ]
 
-export default function DataTablePage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function DataTablePage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'columns', type: 'DataTableColumn[]', defaultValue: '—', description: t('data_table_prop_columns') },

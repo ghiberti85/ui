@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import userEvent from '@testing-library/user-event'
 import { HoverCard, HoverCardTrigger, HoverCardContent } from './HoverCard'
 
@@ -90,5 +91,27 @@ describe('HoverCard', () => {
 
   it('HoverCardContent has correct displayName', () => {
     expect(HoverCardContent.displayName).toBe('HoverCardContent')
+  })
+
+  it('has no accessibility violations when closed', async () => {
+    const { container } = render(
+      <HoverCard>
+        <HoverCardTrigger asChild><button>Hover me</button></HoverCardTrigger>
+        <HoverCardContent>Card content</HoverCardContent>
+      </HoverCard>
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+
+  it('has no accessibility violations when open', async () => {
+    const { container } = render(
+      <HoverCard defaultOpen>
+        <HoverCardTrigger asChild><button>Hover me</button></HoverCardTrigger>
+        <HoverCardContent>Card content</HoverCardContent>
+      </HoverCard>
+    )
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

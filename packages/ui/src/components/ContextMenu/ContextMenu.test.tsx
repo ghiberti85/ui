@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import userEvent from '@testing-library/user-event'
 import {
   ContextMenu,
@@ -83,5 +84,18 @@ describe('ContextMenu', () => {
     )
     await userEvent.pointer({ target: screen.getByTestId('trigger'), keys: '[MouseRight]' })
     expect(screen.getByText('Show toolbar')).toBeInTheDocument()
+  })
+
+  it('has no accessibility violations in closed state', async () => {
+    const { container } = render(<BasicContextMenu />)
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
+  })
+
+  it('has no accessibility violations when open', async () => {
+    const { container } = render(<BasicContextMenu />)
+    await userEvent.pointer({ target: container.querySelector('[data-testid="trigger-area"]')!, keys: '[MouseRight]' })
+    const results = await axe(container)
+    expect(results).toHaveNoViolations()
   })
 })

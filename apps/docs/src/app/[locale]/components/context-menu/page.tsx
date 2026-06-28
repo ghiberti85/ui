@@ -1,7 +1,5 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import type { CSSProperties } from 'react'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
@@ -17,7 +15,7 @@ import {
 } from '@ghiberti85/ui'
 import styles from '../[component]/component-page.module.css'
 
-const triggerBoxStyle: React.CSSProperties = {
+const triggerBoxStyle: CSSProperties = {
   width: 280,
   height: 100,
   display: 'flex',
@@ -60,9 +58,9 @@ function ContextMenuDemo() {
   )
 }
 
-export default function ContextMenuPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function ContextMenuPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'children', type: 'React.ReactNode', defaultValue: '—', description: 'Content shown inside the menu.' },
