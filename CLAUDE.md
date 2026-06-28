@@ -380,6 +380,12 @@ pnpm audit                            # check for security vulnerabilities
 - [x] **Bundle size budget** — `size-limit` + `@size-limit/esbuild` configured; single-component ≤ 120 kB, full library ≤ 350 kB; `pnpm --filter @ghiberti85/ui size` script
 - [x] Vercel production deploy READY — ghiberti-ui.vercel.app (PR #112)
 
+### Done (continued)
+- [x] **RSC conversion complete (15 pages)** — all remaining docs pages converted from `'use client'` to async Server Components: chip, stepper, calendar, combobox, command, date-picker, drawer, tag-input, number-input, streaming-text, otp-input, file-upload, pagination, rating, slider; interactive demos extracted to `src/components/demos/` client files
+- [x] **Storybook interaction tests** — `play()` functions with `userEvent`/`expect` added to Button, Tabs, Accordion, Dialog, Checkbox, Switch, Input stories (7 components, 7 new interaction stories)
+- [x] **Changesets setup** — `@changesets/cli` configured (`access: public`); root scripts `changeset`, `version-packages`, `release` added for semantic versioning and npm publish workflow
+- [x] Vercel production deploy READY — ghiberti-ui.vercel.app (PR #113)
+
 ### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição
