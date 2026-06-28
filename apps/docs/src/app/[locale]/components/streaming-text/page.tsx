@@ -1,16 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
 import { StreamingText } from '@ghiberti85/ui'
 import styles from '../[component]/component-page.module.css'
 
-export default function StreamingTextPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function StreamingTextPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'text', type: 'string', defaultValue: '—', description: t('streaming_text_prop_text') },

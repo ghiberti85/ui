@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './Accordion'
 
 const meta: Meta<typeof Accordion> = {
@@ -72,6 +73,31 @@ export const Multiple: Story = {
       </AccordionItem>
     </Accordion>
   ),
+}
+
+export const ExpandCollapse: Story = {
+  render: () => (
+    <Accordion type="single" collapsible style={{ width: '480px' }}>
+      <AccordionItem value="item1">
+        <AccordionTrigger>What is a design system?</AccordionTrigger>
+        <AccordionContent>A design system is a collection of reusable components.</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item2">
+        <AccordionTrigger>How do I install the package?</AccordionTrigger>
+        <AccordionContent>Run pnpm add @ghiberti85/ui and import the CSS tokens.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const trigger1 = canvas.getByRole('button', { name: 'What is a design system?' })
+    await expect(trigger1).toBeInTheDocument()
+    await userEvent.click(trigger1)
+    await expect(canvas.getByText('A design system is a collection of reusable components.')).toBeVisible()
+    await userEvent.click(canvas.getByRole('button', { name: 'How do I install the package?' }))
+    await expect(canvas.getByText('Run pnpm add @ghiberti85/ui and import the CSS tokens.')).toBeVisible()
+    await userEvent.click(trigger1)
+  },
 }
 
 export const WithDefaultOpen: Story = {

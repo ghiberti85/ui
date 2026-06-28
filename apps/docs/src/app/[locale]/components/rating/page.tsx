@@ -1,28 +1,14 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
 import { Rating } from '@ghiberti85/ui'
+import { RatingDemo } from '@/components/demos/RatingDemo'
 import styles from '../[component]/component-page.module.css'
 
-function RatingDemo() {
-  const [value, setValue] = React.useState(3)
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-      <Rating value={value} onChange={setValue} />
-      <p style={{ fontSize: '0.75rem', color: 'var(--color-semantic-foreground-muted)' }}>
-        Rating: {value} / 5
-      </p>
-    </div>
-  )
-}
-
-export default function RatingPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function RatingPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'value', type: 'number', defaultValue: '—', description: t('rating_prop_value') },

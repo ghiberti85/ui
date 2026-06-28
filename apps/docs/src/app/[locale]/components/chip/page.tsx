@@ -1,29 +1,14 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
 import { Chip } from '@ghiberti85/ui'
+import { ChipRemovableDemo } from '@/components/demos/ChipDemo'
 import styles from '../[component]/component-page.module.css'
 
-function ChipRemovableDemo() {
-  const [tags, setTags] = React.useState(['React', 'TypeScript', 'CSS'])
-  return (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-      {tags.map((tag) => (
-        <Chip key={tag} variant="secondary" onRemove={() => setTags(tags.filter((t) => t !== tag))}>
-          {tag}
-        </Chip>
-      ))}
-    </div>
-  )
-}
-
-export default function ChipPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function ChipPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'variant', type: "'default' | 'secondary' | 'success' | 'warning' | 'destructive' | 'outline'", defaultValue: "'default'", description: t('chip_prop_variant') },

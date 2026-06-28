@@ -1,27 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
-import { DatePicker, DateRangePicker } from '@ghiberti85/ui'
+import { DatePickerDemo, DateRangeDemo } from '@/components/demos/DatePickerDemo'
 import styles from '../[component]/component-page.module.css'
 
-function DatePickerDemo() {
-  const [date, setDate] = React.useState<Date | undefined>()
-  return <DatePicker value={date} onChange={setDate} placeholder="Pick a date" />
-}
-
-function DateRangeDemo() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [range, setRange] = React.useState<any>(undefined)
-  return <DateRangePicker value={range} onChange={setRange} placeholder="Pick a date range" />
-}
-
-export default function DatePickerPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function DatePickerPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'value', type: 'Date | undefined', defaultValue: '—', description: t('date_picker_prop_value') },

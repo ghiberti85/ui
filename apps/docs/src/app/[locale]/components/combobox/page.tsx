@@ -1,37 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { PropsTable } from '@/components/PropsTable'
 import { CodeBlock } from '@/components/CodeBlock'
-import { Combobox } from '@ghiberti85/ui'
+import { ComboboxDemo } from '@/components/demos/ComboboxDemo'
 import styles from '../[component]/component-page.module.css'
 
-const frameworks = [
-  { value: 'react', label: 'React' },
-  { value: 'vue', label: 'Vue' },
-  { value: 'svelte', label: 'Svelte' },
-  { value: 'angular', label: 'Angular' },
-  { value: 'solid', label: 'SolidJS' },
-]
-
-function ComboboxDemo() {
-  const [value, setValue] = React.useState('')
-  return (
-    <Combobox
-      options={frameworks}
-      value={value}
-      onChange={setValue}
-      placeholder="Select a framework..."
-      searchPlaceholder="Search frameworks..."
-    />
-  )
-}
-
-export default function ComboboxPage() {
-  const t = useTranslations('componentPages')
-  const tc = useTranslations('components')
+export default async function ComboboxPage() {
+  const t = await getTranslations('componentPages')
+  const tc = await getTranslations('components')
 
   const props = [
     { prop: 'options', type: '{ value, label, disabled? }[]', defaultValue: '[]', description: t('combobox_prop_options') },
