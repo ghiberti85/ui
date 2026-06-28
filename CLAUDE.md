@@ -374,6 +374,12 @@ pnpm audit                            # check for security vulnerabilities
 - [x] Docs pages + sidebar + i18n (EN/PT-BR) + Storybook stories for all 3 new components
 - [x] ComponentsPageClient demos for all 3 new components
 
+### Done (continued)
+- [x] **Axe accessibility tests 50/50** — 100% component coverage; added axe tests for ContextMenu, EmptyState, HoverCard, ScrollArea, Skeleton; 551 tests passing
+- [x] **Server Component conversion** — 9 docs pages converted from `'use client'` + `useTranslations` to async RSC with `getTranslations` (alert-dialog, chat-message, context-menu, data-table, dropdown-menu, empty-state, hover-card, scroll-area, timeline); EmptyStateDemo + HoverCardDemo extracted as client components
+- [x] **Bundle size budget** — `size-limit` + `@size-limit/esbuild` configured; single-component ≤ 120 kB, full library ≤ 350 kB; `pnpm --filter @ghiberti85/ui size` script
+- [x] Vercel production deploy READY — ghiberti-ui.vercel.app (PR #112)
+
 ### Next — Integração de Projetos
 
 ### Next — Publicação e Distribuição
