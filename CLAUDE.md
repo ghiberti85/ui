@@ -386,14 +386,46 @@ pnpm audit                            # check for security vulnerabilities
 - [x] **Changesets setup** — `@changesets/cli` configured (`access: public`); root scripts `changeset`, `version-packages`, `release` added for semantic versioning and npm publish workflow
 - [x] Vercel production deploy READY — ghiberti-ui.vercel.app (PR #113)
 
-### Next — Integração de Projetos
+### Done (continued)
+- [x] **MIT License** — `LICENSE` file added at repo root (MIT, 2025 Fernando Ghiberti)
+- [x] **Dependabot** — `.github/dependabot.yml` configured: weekly npm updates (grouped: radix-ui, storybook, testing, dev-tooling; semver-major ignored), monthly GitHub Actions updates
+- [x] **Sitemap** — `apps/docs/src/app/sitemap.ts`: all 50 components × 2 locales × static paths, hreflang alternates, priority scores (1.0 home / 0.9 /components / 0.8 component pages / 0.7 others)
+- [x] **robots.ts** — `apps/docs/src/app/robots.ts`: allow all bots, points to sitemap.xml
+- [x] **Coverage thresholds** — `packages/ui/vitest.config.ts`: lines/functions/statements ≥ 75%, branches ≥ 60%
+- [x] **CI coverage step** — `.github/workflows/ci.yml` runs `pnpm --filter @ghiberti85/ui test -- --coverage` after tests (continue-on-error: true)
 
-### Next — Publicação e Distribuição
-- [ ] **Figma Tokens export** — gerar JSON compatível com Figma Tokens / Tokens Studio a partir do Style Dictionary
-- [ ] **npmjs publish** — publicar `@ghiberti85/tokens` e `@ghiberti85/ui` no npm com semantic-release + changesets
-- [ ] **CLI scaffold** — `npx @ghiberti85/ui init` que instala deps e copia CSS global para o projeto do usuário
-- [ ] **Chromatic visual diff badge** no README com link para o último build
-- [x] **OG image dinâmica** na docs — Next.js `ImageResponse` gerando preview com o design system ativo (home + per-component, DM Sans font, dark card with purple accent bar)
+### Next — Publicação e Distribuição (requires owner action)
+
+> **Items below require your direct action — they cannot be executed autonomously.**
+
+#### 1. npmjs publish
+**Requires:**
+- Create an npm account token at npmjs.com → Account → Access Tokens → Generate New Token (type: Automation)
+- Add it as `NPM_TOKEN` in GitHub repo Settings → Secrets and variables → Actions
+- Decide on initial semantic version: `0.1.0` (pre-stable) or `1.0.0` (stable public release)
+- Then run locally: `pnpm changeset` → describe the release → commit → PR → merge
+- CI will auto-publish via `pnpm release` (already wired in `package.json`)
+
+#### 2. Figma Tokens export
+**Requires:**
+- Figma account with Tokens Studio plugin installed
+- Decide export format: W3C DTCG (recommended, already our format) or legacy Figma Tokens JSON
+- Style Dictionary output is already in `packages/tokens/dist/` — needs a transformer script to reshape for Tokens Studio import
+- Optional: use `sd-transforms` package to automate the Figma-compatible output
+
+#### 3. CLI scaffold (`npx @ghiberti85/ui init`)
+**Requires:**
+- Architectural decision: what does `init` do? (copy CSS global, install deps, configure theme, generate config file?)
+- Create `packages/cli/` workspace with a Node.js CLI entry point
+- Publish as `@ghiberti85/create-ui` or `@ghiberti85/ui` bin field
+
+#### 4. Chromatic visual diff badge
+**Requires:**
+- Chromatic project token — available at chromatic.com after linking the repo
+- Add `CHROMATIC_PROJECT_TOKEN` secret to GitHub repo settings
+- Add badge URL to README (format: `https://www.chromatic.com/build?appId=<your-app-id>`)
+
+- [ ] **OG image dinâmica** na docs — Next.js `ImageResponse` gerando preview com o design system ativo (home + per-component, DM Sans font, dark card with purple accent bar)
 
 ---
 
