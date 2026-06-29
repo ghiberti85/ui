@@ -4,7 +4,10 @@
 
 A monorepo containing multiple design systems and a hybrid React component library built for authorial projects. Multiple visual identities, one component API.
 
-**50 components · 541 tests · 9 design systems · EN/PT-BR docs**
+**50 components · 551 tests · 9 design systems · EN/PT-BR docs**
+
+[![Docs](https://img.shields.io/badge/docs-ghiberti--ui.vercel.app-6366f1)](https://ghiberti-ui.vercel.app)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## Packages
 
@@ -63,6 +66,12 @@ pnpm --filter @ghiberti85/docs dev
 ```bash
 # Unit tests (Vitest + Testing Library)
 pnpm test
+
+# Coverage report (lines/functions/statements ≥ 75%, branches ≥ 60%)
+pnpm --filter @ghiberti85/ui test -- --coverage
+
+# Bundle size check (single component ≤ 120 kB, full library ≤ 350 kB)
+pnpm --filter @ghiberti85/ui size
 
 # Interactive test UI
 pnpm test:ui
