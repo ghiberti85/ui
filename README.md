@@ -25,7 +25,7 @@ A monorepo containing multiple design systems and a hybrid React component libra
 
 ## Design Systems
 
-Nine visual identities, all consuming the same component API:
+9 visual identities, all consuming the same component API:
 
 - **ds-clean** — Technical authority, navy + lime accent. Inter + JetBrains Mono. *(default)*
 - **ds-velvet** — Warm, approachable, rounded. DM Sans/Nunito + teal accent.
