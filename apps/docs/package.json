@@ -12,7 +12,7 @@
     "@ghiberti85/tokens": "workspace:*",
     "@ghiberti85/ui": "workspace:*",
     "next": "^15.3.0",
-    "next-intl": "^4.1.0",
+    "next-intl": "^4.13.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
