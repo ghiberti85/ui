@@ -95,22 +95,11 @@ function capitalize(str: string): string {
 }
 
 function loadFont(filename: string): Buffer | null {
-  const candidates = [
-    path.join(process.cwd(), 'node_modules/@fontsource/dm-sans/files', filename),
-    path.join(
-      process.cwd(),
-      '../../node_modules/.pnpm/@fontsource+dm-sans@5.2.8/node_modules/@fontsource/dm-sans/files',
-      filename,
-    ),
-  ]
-  for (const p of candidates) {
-    try {
-      return fs.readFileSync(p)
-    } catch {
-      // try next
-    }
+  try {
+    return fs.readFileSync(path.join(process.cwd(), 'node_modules/@fontsource/dm-sans/files', filename))
+  } catch {
+    return null
   }
-  return null
 }
 
 export default async function Image({ params }: { params: Promise<{ component: string; locale: string }> }) {
