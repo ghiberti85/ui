@@ -9,7 +9,7 @@
     "chromatic": "npx chromatic --project-token=chpt_a8f4fbbe0cb68ab --build-script-name=build-storybook"
   },
   "dependencies": {
-    "@fontsource/bebas-neue": "^5.2.7",
+    "@fontsource/bebas-neue": "^5.3.0",
     "@fontsource/cormorant-garamond": "^5.2.11",
     "@fontsource/dm-sans": "^5.3.0",
     "@fontsource/jetbrains-mono": "^5.2.8",
