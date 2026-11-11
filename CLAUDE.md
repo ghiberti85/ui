@@ -394,6 +394,9 @@ pnpm audit                            # check for security vulnerabilities
 - [x] **Coverage thresholds** — `packages/ui/vitest.config.ts`: lines/functions/statements ≥ 75%, branches ≥ 60%
 - [x] **CI coverage step** — `.github/workflows/ci.yml` runs `pnpm --filter @ghiberti85/ui test -- --coverage` after tests (continue-on-error: true)
 
+### Done (continued)
+- [x] **BottomNav active-tab indicator fix** — mobile tab bar pill was positioned with a percentage-based `transform: translate(-50%, -62%)` hack that visually misaligned it from the icon; replaced with a dedicated `.iconWrap` flex container sized to the icon, with the pill as an `inset: 0` absolute child — centers reliably regardless of icon/label size
+
 ### Next — Publicação e Distribuição (requires owner action)
 
 > **Items below require your direct action — they cannot be executed autonomously.**

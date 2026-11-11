@@ -154,8 +154,10 @@ export default function BottomNav() {
           className={`${styles.tab} ${homeActive ? styles.tabActive : ''}`}
           onClick={close}
         >
-          <span className={styles.tabIndicator} aria-hidden="true" />
-          <HomeIcon />
+          <span className={styles.iconWrap}>
+            <span className={styles.tabIndicator} aria-hidden="true" />
+            <HomeIcon />
+          </span>
           <span className={styles.tabLabel}>{t('home')}</span>
         </Link>
 
@@ -164,8 +166,10 @@ export default function BottomNav() {
           className={`${styles.tab} ${isActive('/tokens') ? styles.tabActive : ''}`}
           onClick={close}
         >
-          <span className={styles.tabIndicator} aria-hidden="true" />
-          <TokensIcon />
+          <span className={styles.iconWrap}>
+            <span className={styles.tabIndicator} aria-hidden="true" />
+            <TokensIcon />
+          </span>
           <span className={styles.tabLabel}>{t('tokens')}</span>
         </Link>
 
@@ -174,8 +178,10 @@ export default function BottomNav() {
           className={`${styles.tab} ${isActive('/components') ? styles.tabActive : ''}`}
           onClick={close}
         >
-          <span className={styles.tabIndicator} aria-hidden="true" />
-          <ComponentsIcon />
+          <span className={styles.iconWrap}>
+            <span className={styles.tabIndicator} aria-hidden="true" />
+            <ComponentsIcon />
+          </span>
           <span className={styles.tabLabel}>{t('components')}</span>
         </Link>
 
@@ -185,8 +191,10 @@ export default function BottomNav() {
           aria-label={t('settings')}
           aria-expanded={settingsOpen}
         >
-          <span className={styles.tabIndicator} aria-hidden="true" />
-          <SettingsIcon />
+          <span className={styles.iconWrap}>
+            <span className={styles.tabIndicator} aria-hidden="true" />
+            <SettingsIcon />
+          </span>
           <span className={styles.tabLabel}>{t('settings')}</span>
         </button>
       </nav>
